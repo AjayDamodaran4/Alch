@@ -1,0 +1,1949 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "dab3082d-9bae-44d0-b001-670002a57e8e",
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "f1f491ad-0441-4c68-988d-f61dfa26f512",
+      "identifier": [
+        {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "MR",
+                "display": "Medical record number"
+              }
+            ]
+          },
+          "value": "d3062bbfbb67fe58d5154e64341bf52df366131602e4b287216228670dac7165"
+        }
+      ]
+    },
+    {
+      "resourceType": "ImagingStudy",
+      "id": "93616f55-ee86-4a94-b096-ae1d924ca493",
+      "identifier": [
+        {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "ACSN",
+                "display": "Accession ID"
+              }
+            ]
+          },
+          "value": "5c4cf130d4b38f6acd2d66899250e64cbf2189f766894551adb39abd81f8acfa"
+        }
+      ],
+      "status": "available",
+      "subject": {
+        "reference": "#f1f491ad-0441-4c68-988d-f61dfa26f512"
+      },
+      "procedureCode": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "396205005",
+              "display": "CT brain without contrast"
+            }
+          ],
+          "text": "CT brain without contrast"
+        }
+      ]
+    },
+    {
+      "resourceType": "Device",
+      "id": "4177a7a2-b31f-4808-a2ab-bb8f53b64573",
+      "manufacturer": "annalise.ai",
+      "deviceName": [
+        {
+          "name": "annalise-ctb-analytics",
+          "type": "model-name"
+        }
+      ],
+      "modelNumber": "annalise-ctb-analytics",
+      "version": [
+        {
+          "value": "1.0"
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "250e9d69-0a3e-4d90-8ab5-7b36ad67b220",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "colloid_cyst",
+            "display": "Colloid cyst"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200298",
+            "display": "Colloid cyst"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.609000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Colloid cyst is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "49841001",
+            "display": "Third ventricle"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID7137",
+            "display": "third ventricle"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "0787d533-f48c-49d5-a46e-ee7a156384bc"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.892399722977860991741841232923734833273314"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "0.555625557899475100",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "f845d827-00e3-426e-9b68-8bb739d86ab0",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "extra_axial_collection_air",
+            "display": "Pneumocephalus"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200326",
+            "display": "Pneumocephalus"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.610000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Pneumocephalus is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "279245009",
+            "display": "Space of ventricular system of brain"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID13786",
+            "display": "ventricular system of brain"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "255846b2-8299-4e39-9a8d-8ba129b6c92c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.123811119900293019168396292147672815992555"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "0.0863295793533325200",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "2607fc9c-10c2-4ebc-9863-d9df2ccaace0",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "obstructive_hydrocephalus",
+            "display": "Obstructive hydrocephalus"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200395",
+            "display": "Obstructive hydrocephalus"
+          }
+        ],
+        "text": "Obstructive hydrocephalus"
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.611000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Obstructive hydrocephalus is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "280371009",
+            "display": "Brain cerebrospinal fluid pathway"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID7170",
+            "display": "cerebrospinal fluid pathway"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "abb97078-e590-42bf-9b73-276ff51a26c3"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.110152608699380995769827331863184456658399"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "9a0651e6-b447-4d37-8cdf-10ee520520bc",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "transependymal_oedema",
+            "display": "Transependymal oedema"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200451",
+            "display": "Transependymal oedema"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.613000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Transependymal oedema is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "12738006",
+            "display": "Brain"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID6434",
+            "display": "brain"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "4f5938db-2ade-4d94-80ea-910930e872e5"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.240087635446142053319602393764214397392055"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "3.2304531335830690",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "9b75f603-bbcc-4168-b641-b0a1a2aa45e8",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "vasogenic_oedema",
+            "display": "Vasogenic oedema"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200459",
+            "display": "Vasogenic oedema"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.614000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Vasogenic oedema is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "83678007",
+            "display": "Cerebrum"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID6434",
+            "display": "brain"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "3a621d34-b3e3-429d-b647-301f95b11ae0"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.544250060683042428636961537434467752432411"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "0.488553047180175800",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "0857a8e5-d9c6-41c9-9dd0-4b287bc220a1",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "fda_acute_infarction_inc_hyperdense",
+            "display": "Acute infarct"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200469",
+            "display": "Acute infarct"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.615000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Acute infarct is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "12738006",
+            "display": "Brain"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID6434",
+            "display": "brain"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "5084d064-c7b1-4161-940b-81feb81dc9ec"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.119488217953044496110508692539693253812634"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "5.02907574176788340",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "0f65b2f7-7ed5-4c8f-b824-d6c4901cc636",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "fda_mass_effect",
+            "display": "Mass effect"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200471",
+            "display": "Mass effect"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.617000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Mass effect is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "12738006",
+            "display": "Brain"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID6434",
+            "display": "brain"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "5f814168-e08c-4946-9906-cc9ad20e1538"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.129301503415240804339491685238468727810555"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "0.878235697746276900",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "51ea2bcf-e677-40f2-aaa1-20dc3e1761dd",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "fracture_calvarial_or_skull_base",
+            "display": "Calvarial / skull base fracture"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200472",
+            "display": "Calvarial / skull base fracture"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.618000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Calvarial / skull base fracture is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "31467002",
+            "display": "Base of skull"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "10927008",
+            "display": "Calvarium"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID28731",
+            "display": "base of cranium"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID9196",
+            "display": "skull"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "556a2a87-e0f1-494e-89cb-2e615b1aedce"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.916365054998408394925133326170513177658746"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "0.0575578212738037100",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "a0956eb0-47cc-4b19-b7f7-29947059a954",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "https://www.annalise.ai/guides",
+            "code": "intraaxial_mass_no_ventricular_no_csf",
+            "display": "Intra-axial lesion"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90200473",
+            "display": "Intra-axial lesion"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.619000+00:00",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID28473",
+            "display": "absent"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2667000",
+            "display": "Absent"
+          },
+          {
+            "system": "http://nuancepowerscribe.com/ai",
+            "code": "90090301",
+            "display": "Finding Qualifier"
+          }
+        ],
+        "text": "absent"
+      },
+      "note": [
+        {
+          "text": "Intra-axial lesion is absent"
+        }
+      ],
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "12738006",
+            "display": "Brain"
+          },
+          {
+            "system": "http://radlex.org",
+            "code": "RID6434",
+            "display": "brain"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "226984c9-553b-459c-8b82-f92ecb3cb833"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.725107749709103601373719570779443366560031"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID28473",
+                "display": "absent"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090301",
+                "display": "Finding Qualifier"
+              }
+            ]
+          },
+          "valueString": "absent"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radlex.org",
+                "code": "RID33",
+                "display": "probably"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "2931005",
+                "display": "Probably"
+              },
+              {
+                "system": "http://nuancepowerscribe.com/ai",
+                "code": "90090302",
+                "display": "Finding Probability"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": "0.387199521064758300",
+            "unit": "percent",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "ca6767bc-0018-4684-88c8-64bcac75563c",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "http://radelement.org",
+            "code": "RDES1",
+            "display": "Traumatic Brain Injury"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.620000+00:00",
+      "bodySite": {
+        "coding": [
+          {
+            "system": "http://radlex.org",
+            "code": "RID6390",
+            "display": "brain region"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radelement.org",
+                "code": "RDE26",
+                "display": "Intraventricular hemorrhage"
+              }
+            ],
+            "text": "Intraventricular hemorrhage"
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://radelement.org",
+                "code": "RDE26.3",
+                "display": "Absent"
+              }
+            ],
+            "text": "Absent"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radelement.org",
+                "code": "RDE14",
+                "display": "Subdural hematoma mixed density or CSF-like"
+              }
+            ],
+            "text": "Acute subdural/epidural hematoma"
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://radelement.org",
+                "code": "RDE14.3",
+                "display": "Absent"
+              }
+            ],
+            "text": "Absent"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "5b5ce6bf-f600-4b65-95e3-e8f17422b612"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.742391654908514058422399996741887616032080"
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "33eeb726-4f6d-4c41-9e75-36caa46dbfc7",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "http://radelement.org",
+            "code": "RDES194",
+            "display": "Critical Test Results - Acute Intracranial Hemorrhage"
+          }
+        ]
+      },
+      "effectiveDateTime": "2023-09-27T15:49:04.621000+00:00",
+      "derivedFrom": [
+        {
+          "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://radelement.org",
+                "code": "RDE1287",
+                "display": "Acute intracranial blood products"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://radelement.org",
+                "code": "RDE1287.1",
+                "display": "absent"
+              }
+            ],
+            "text": "absent"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "110180",
+                "display": "Study Instance UID"
+              }
+            ]
+          },
+          "valueString": "ca7db6969c8d9c83da0be8a69433dc1513d4187c06cd5df5d45cb9eaf5c5a472"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "113607",
+                "display": "Series Number"
+              }
+            ]
+          },
+          "valueString": "4"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112002",
+                "display": "Series Instance UID"
+              }
+            ]
+          },
+          "valueString": "e6789cefc0503132666afa9b43ab64187463e12893dbf6ab4db8fb1d3ba4b87c"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112039",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "valueString": "af8d3ab2-1b7d-4f38-aa58-e6e55610fb26"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "code": "112040",
+                "display": "Tracking Unique Identifier"
+              }
+            ]
+          },
+          "valueString": "1.2.36.1.2001.1005.78.865860867723200424694888064501711209375876"
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "b5ab7aa0-e078-4db2-88d9-e59cb08cec46",
+      "status": "final",
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "246501002",
+            "display": "Technique"
+          }
+        ]
+      },
+      "valueString": "AI Technique"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "RAD",
+          "display": "Radiology"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "68604-8",
+        "display": "Radiology Diagnostic study note"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "#4177a7a2-b31f-4808-a2ab-bb8f53b64573"
+  },
+  "result": [
+    {
+      "reference": "#250e9d69-0a3e-4d90-8ab5-7b36ad67b220"
+    },
+    {
+      "reference": "#f845d827-00e3-426e-9b68-8bb739d86ab0"
+    },
+    {
+      "reference": "#2607fc9c-10c2-4ebc-9863-d9df2ccaace0"
+    },
+    {
+      "reference": "#9a0651e6-b447-4d37-8cdf-10ee520520bc"
+    },
+    {
+      "reference": "#9b75f603-bbcc-4168-b641-b0a1a2aa45e8"
+    },
+    {
+      "reference": "#0857a8e5-d9c6-41c9-9dd0-4b287bc220a1"
+    },
+    {
+      "reference": "#0f65b2f7-7ed5-4c8f-b824-d6c4901cc636"
+    },
+    {
+      "reference": "#51ea2bcf-e677-40f2-aaa1-20dc3e1761dd"
+    },
+    {
+      "reference": "#a0956eb0-47cc-4b19-b7f7-29947059a954"
+    },
+    {
+      "reference": "#ca6767bc-0018-4684-88c8-64bcac75563c"
+    },
+    {
+      "reference": "#33eeb726-4f6d-4c41-9e75-36caa46dbfc7"
+    },
+    {
+      "reference": "#b5ab7aa0-e078-4db2-88d9-e59cb08cec46"
+    }
+  ],
+  "imagingStudy": [
+    {
+      "reference": "#93616f55-ee86-4a94-b096-ae1d924ca493"
+    }
+  ],
+  "conclusion": "Annalise generated FHIR"
+}
