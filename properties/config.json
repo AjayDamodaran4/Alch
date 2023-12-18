@@ -7,6 +7,7 @@
   "requestPort" : "8080",
   "container_name" : "aiservice",
   "output_path" : "/verification/output/",
+  "config_file_path" : "/verification/jobconfig/1/config.json",
   "TZ":"Europe/Stockholm",
   "runMode" : "auto",
   "container_input_path" : "/app/input",
@@ -14,5 +15,6 @@
   "container_prior_path" : "/app/prior",
   "container_temp_path" : "/app/temp",
   "docker_image" : "annalise-xray-chest-fhir_sc:2.0.3"
-
 }
+
+

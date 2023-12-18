@@ -11,21 +11,29 @@ class DockerUtils(object):
     container_name = Config.get_value_of_config_key("container_name")
     client = docker.from_env()
     container = client.containers.get(container_name)
-    container_info = container.attrs
-    ip_address = container_info['NetworkSettings']['IPAddress']
+    # container_info = container.attrs
+    # ip_address = container_info['NetworkSettings']['IPAddress']
 
-    def __int__(self, input_path=None, output_path=None):
-        self.compose_file_path = Config.get_value_of_config_key("compose_file_path")
-        self.input_path = input_path
-        self.output_path = output_path
+    # def __int__(self, input_path=None, output_path=None):
+    #     client = docker.from_env()
+    #     self.compose_file_path = Config.get_value_of_config_key("compose_file_path")
+    #     self.input_path = input_path
+    #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
+        existing_container = self.client.containers.get("aiservice")
+        if existing_container:
+            print("aiservice container is already running")
+            existing_container.stop()
+            existing_container.remove()
+            print("Stopping the container and launching a new container")
 
         volumes = {
             input_path: {'bind': '/app/input', 'mode': 'rw'},
             output_path: {'bind': '/app/output', 'mode': 'rw'},
             Config.get_value_of_config_key("container_temp_path"): {'bind': '/app/temporary', 'mode': 'rw'},
-            Config.get_value_of_config_key("container_prior_path"): {'bind': '/app/prior', 'mode': 'rw'}
+            Config.get_value_of_config_key("container_prior_path"): {'bind': '/app/prior', 'mode': 'rw'},
+            Config.get_value_of_config_key("config_file_path"): {'bind': '/app/config.json', 'mode': 'rw'}
         }
 
         environment = {
@@ -78,34 +86,34 @@ class DockerUtils(object):
     #         except subprocess.CalledProcessError as e:
     #             print(f"Error starting the container: {str(e)}")
     #
-    # def check_container_logs(self):
-    #     target_string = "uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)"
-    #     max_check_time_seconds = 300  # Maximum checking time (seconds)
-    #     check_interval_seconds = 10
-    #     try:
-    #         client = docker.from_env()
-    #
-    #         start_time = time.time()
-    #         elapsed_time = 0
-    #
-    #         while elapsed_time < max_check_time_seconds:
-    #             container = client.containers.get(self.container_name)
-    #             logs = container.logs().decode("utf-8")
-    #
-    #             if target_string in logs:
-    #                 print(f"Found the target string '{target_string}' in the container logs.")
-    #                 break
-    #
-    #             time.sleep(check_interval_seconds)
-    #             elapsed_time = time.time() - start_time
-    #
-    #         if elapsed_time >= max_check_time_seconds:
-    #             print("Maximum check time reached. Target string not found in the container logs.")
-    #
-    #     except docker.errors.NotFound:
-    #         print(f"Container '{self.container_name}' not found.")
-    #     except Exception as e:
-    #         print(f"Error: {str(e)}")
+    def check_container_logs(self):
+        target_string = "uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)"
+        max_check_time_seconds = 300  # Maximum checking time (seconds)
+        check_interval_seconds = 10
+        try:
+            client = docker.from_env()
+    
+            start_time = time.time()
+            elapsed_time = 0
+    
+            while elapsed_time < max_check_time_seconds:
+                container = client.containers.get(self.container_name)
+                logs = container.logs().decode("utf-8")
+    
+                if target_string in logs:
+                    print(f"Found the target string '{target_string}' in the container logs.")
+                    break
+    
+                time.sleep(check_interval_seconds)
+                elapsed_time = time.time() - start_time
+    
+            if elapsed_time >= max_check_time_seconds:
+                print("Maximum check time reached. Target string not found in the container logs.")
+    
+        except docker.errors.NotFound:
+            print(f"Container '{self.container_name}' not found.")
+        except Exception as e:
+            print(f"Error: {str(e)}")
     #
     # def get_container_ip_address(self):
     #     try:

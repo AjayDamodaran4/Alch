@@ -1,5 +1,5 @@
 import os
-from config_reader import Config
+from .config_reader import Config
 
 
 class GenericUtils(object):
@@ -20,5 +20,6 @@ class GenericUtils(object):
         # Create the new folder with the next sequential number
         new_folder_path = os.path.join(parent_directory, str(next_folder_number))
         os.makedirs(new_folder_path)
+        os.chmod(new_folder_path, 0o777)
 
         return new_folder_path
