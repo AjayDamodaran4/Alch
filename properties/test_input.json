@@ -1,6 +1,6 @@
 {
 
-  "input_path_TC1278" : "/verification/testdata/cxr/validstudy_1AP,1PA,1LA/"
+  "input_path_TC321" : "/cxr_testdata/validstudy_1AP,1PA,1LA/"
   
 }
 

@@ -1,4 +1,4 @@
-import os
+import os, json
 from .config_reader import Config
 
 
@@ -23,3 +23,19 @@ class GenericUtils(object):
         os.chmod(new_folder_path, 0o777)
 
         return new_folder_path
+    
+    
+    def validate_files_presence(self,files_list, folder_path):
+        for file in files_list:
+            file_path = os.path.join(folder_path, file)
+            assert os.path.isfile(file_path), f"File {file} not found in {folder_path}"
+        print("Annalise-cxr-FHIR.json and resultManifest.json files are available in the OUTPUT folder")
+            
+            
+    def parse_json_file(self, file_name, folder_path):
+        file_path = os.path.join(folder_path, file_name)
+        with open(file_path, 'r') as file:
+            file_contents = json.load(file)
+        print(f"{file_name} parsed successfully.")
+        return file_contents
+

@@ -10,7 +10,7 @@ from .config_reader import Config
 class DockerUtils(object):
     container_name = Config.get_value_of_config_key("container_name")
     client = docker.from_env()
-    container = client.containers.get(container_name)
+    # container = client.containers.get(container_name)
     # container_info = container.attrs
     # ip_address = container_info['NetworkSettings']['IPAddress']
 
@@ -21,7 +21,13 @@ class DockerUtils(object):
     #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
-        existing_container = self.client.containers.get("aiservice")
+        existing_container = None  # Initialize as None
+        try:
+            existing_container = self.client.containers.get(self.container_name)
+            
+        except docker.errors.NotFound:
+            print("aiservice container is not running")
+            print("launching aiservice container")
         if existing_container:
             print("aiservice container is already running")
             existing_container.stop()
@@ -87,7 +93,8 @@ class DockerUtils(object):
     #             print(f"Error starting the container: {str(e)}")
     #
     def check_container_logs(self):
-        target_string = "uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)"
+        # target_string = "uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)"
+        target_string = "Job processed successfully"
         max_check_time_seconds = 300  # Maximum checking time (seconds)
         check_interval_seconds = 10
         try:
@@ -101,7 +108,7 @@ class DockerUtils(object):
                 logs = container.logs().decode("utf-8")
     
                 if target_string in logs:
-                    print(f"Found the target string '{target_string}' in the container logs.")
+                    print(f"'{target_string}' message is observed in the container logs.")
                     break
     
                 time.sleep(check_interval_seconds)
