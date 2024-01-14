@@ -5,6 +5,7 @@ from marinaalchemist import BaseClass
 
 class TestDocker(BaseClass):
     
+    @pytest.fixture
     def test_autorun(self):
         input_path = self.config.get_value_of_test_input_key("input_path_TC321")
         output_path = self.generic_util.output_folder_generator()
@@ -15,8 +16,19 @@ class TestDocker(BaseClass):
         resultManifest_contents = self.generic_util.parse_json_file('resultManifest.json', output_path)
         assert resultManifest_contents["status"]["code"] == "ANALYSIS_COMPLETE"
         assert resultManifest_contents["status"]["text"] == "Study Processed Successfully"
+        return output_path
 
-            
+    def test_fhir(self,test_autorun):
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     # def test_autorun(self):
     #     input_path = self.config.get_value_of_test_input_key("input_path_TC1278")
