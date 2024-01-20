@@ -12,6 +12,10 @@ class BaseClass(object):
     url_util = None
     docker_util = None
     generic_util = None
+    dicom_util = None
     observation_df = None
     non_observation_df = None
-
+    fhir_input_path = None
+    fhir_output_path = None
+    fhir_contents = None
+    

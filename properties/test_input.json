@@ -1,6 +1,7 @@
 {
 
-  "input_path_TC321" : "/cxr_testdata/validstudy_1AP,1PA,1LA/"
-  
+  "input_path_TC321" : "/cxr_testdata/validstudy_1AP,1PA,1LA/",
+  "input_path_TC222" : "/cxr_testdata/only_lat",
+  "input_path_TC123" : "/cxr_testdata/validstudy_1AP,1PA,1LA/"
 }
 

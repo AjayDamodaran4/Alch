@@ -13,7 +13,9 @@
             "bodySite_Snomed.code": "818983003",
             "bodySite_Snomed.display": "Abdomen",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "acute_aortic_syndrome": [
@@ -30,7 +32,9 @@
             "bodySite_Snomed.code": "15825003",
             "bodySite_Snomed.display": "Aorta",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "unfolded_aorta": [
@@ -47,7 +51,9 @@
             "bodySite_Snomed.code": "113262008",
             "bodySite_Snomed.display": "Thoracic aorta",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "aortic_arch_calcification": [
@@ -64,7 +70,9 @@
             "bodySite_Snomed.code": "57034009",
             "bodySite_Snomed.display": "Aortic Arch",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "aortic_stent": [
@@ -81,37 +89,109 @@
             "bodySite_Snomed.code": "15825003",
             "bodySite_Snomed.display": "Aorta",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
-    "focal_airspace_opacity": [
+    "RDES225": [
         {
-            "Annalise_observation.code": "focal_airspace_opacity",
-            "Annalise_observation.display": "Focal airspace opacity",
-            "Annalise_system": "https://www.annalise.ai/guides",
-            "Nuance_observation.code": "90200015",
-            "Nuance_observation.display": "Focal airspace opacity",
-            "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_observation.code": "RDES44",
-            "RadElement_observation.display": "Pneumothorax",
+            "RadElement_observation.code": "RDES225",
+            "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": false
-        }
-    ],
-    "multifocal_airspace_opacity": [
-        {
-            "Annalise_observation.code": "multifocal_airspace_opacity",
-            "Annalise_observation.display": "Multifocal airspace opacity",
-            "Annalise_system": "https://www.annalise.ai/guides",
-            "Nuance_observation.code": "90200016",
-            "Nuance_observation.display": "Multifocal airspace opacity",
-            "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_observation.code": "RDES44",
-            "RadElement_observation.display": "Pneumothorax",
-            "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": false
-        }
-    ],
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
+                },
+        {"focal_airspace_opacity": [
+                {
+                    "Annalise_observation.code": "focal_airspace_opacity",
+                    "Annalise_observation.display": "Focal airspace opacity",
+                    "Annalise_system": "https://www.annalise.ai/guides",
+                    "Nuance_observation.code": "90200015",
+                    "Nuance_observation.display": "Focal airspace opacity",
+                    "Nuance_system": "http://nuancepowerscribe.com/ai",
+                    "bodySite_Radlex.code": "RID1301",
+                    "bodySite_Radlex.display": "lung",
+                    "radlex_system": "http://radlex.org",
+                    "bodySite_Snomed.code": "39607008",
+                    "bodySite_Snomed.display": "Lung",
+                    "snomed_system": "http://snomed.info/sct",
+                    "RadElement_observation.code": "RDES225",
+                    "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
+                    "RadElement_system": "http://radelement.org",
+                    "RadElement_coding_system": false,
+                    "Annalise_coding_system": true,
+                    "Nuance_coding_system": true
+                }
+            ]},
+        {"multifocal_airspace_opacity": [
+                {
+                    "Annalise_observation.code": "multifocal_airspace_opacity",
+                    "Annalise_observation.display": "Multifocal airspace opacity",
+                    "Annalise_system": "https://www.annalise.ai/guides",
+                    "Nuance_observation.code": "90200016",
+                    "Nuance_observation.display": "Multifocal airspace opacity",
+                    "Nuance_system": "http://nuancepowerscribe.com/ai",
+                    "bodySite_Radlex.code": "RID1301",
+                    "bodySite_Radlex.display": "lung",
+                    "radlex_system": "http://radlex.org",
+                    "bodySite_Snomed.code": "39607008",
+                    "bodySite_Snomed.display": "Lung",
+                    "snomed_system": "http://snomed.info/sct",
+                    "RadElement_observation.code": "RDES225",
+                    "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
+                    "RadElement_system": "http://radelement.org",
+                    "RadElement_coding_system": false,
+                    "Annalise_coding_system": true,
+                    "Nuance_coding_system": true
+                }
+            ]},
+        {"diffuse_lower_airspace_opacity": [
+                {
+                    "Annalise_observation.code": "diffuse_lower_airspace_opacity",
+                    "Annalise_observation.display": "Diffuse lower airspace opacity",
+                    "Annalise_system": "https://www.annalise.ai/guides",
+                    "Nuance_observation.code": "90200018",
+                    "Nuance_observation.display": "Diffuse lower airspace opacity",
+                    "Nuance_system": "http://nuancepowerscribe.com/ai",
+                    "bodySite_Radlex.code": "RID1354",
+                    "bodySite_Radlex.display": "lower lung zone",
+                    "radlex_system": "http://radlex.org",
+                    "bodySite_Snomed.code": "281394001",
+                    "bodySite_Snomed.display": "Lower zone of lung",
+                    "snomed_system": "http://snomed.info/sct",
+                    "RadElement_observation.code": "RDES225",
+                    "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
+                    "RadElement_system": "http://radelement.org",
+                    "RadElement_coding_system": true,
+                    "Annalise_coding_system": true,
+                    "Nuance_coding_system": true
+                }
+            ]},
+        {"diffuse_upper_airspace_opacity": [
+                {
+                    "Annalise_observation.code": "diffuse_upper_airspace_opacity",
+                    "Annalise_observation.display": "Diffuse upper airspace opacity",
+                    "Annalise_system": "https://www.annalise.ai/guides",
+                    "Nuance_observation.code": "90200020",
+                    "Nuance_observation.display": "Diffuse upper airspace opacity",
+                    "Nuance_system": "http://nuancepowerscribe.com/ai",
+                    "bodySite_Radlex.code": "RID1348",
+                    "bodySite_Radlex.display": "upper lung zone",
+                    "radlex_system": "http://radlex.org",
+                    "bodySite_Snomed.code": "281392002",
+                    "bodySite_Snomed.display": "Upper zone of lung",
+                    "snomed_system": "http://snomed.info/sct",
+                    "RadElement_observation.code": "RDES225",
+                    "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
+                    "RadElement_system": "http://radelement.org",
+                    "RadElement_coding_system": true,
+                    "Annalise_coding_system": true,
+                    "Nuance_coding_system": true
+                }
+            ]}
+        ],
     "diffuse_airspace_opacity": [
         {
             "Annalise_observation.code": "diffuse_airspace_opacity",
@@ -126,35 +206,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
-        }
-    ],
-    "diffuse_lower_airspace_opacity": [
-        {
-            "Annalise_observation.code": "diffuse_lower_airspace_opacity",
-            "Annalise_observation.display": "Diffuse lower airspace opacity",
-            "Annalise_system": "https://www.annalise.ai/guides",
-            "Nuance_observation.code": "90200018",
-            "Nuance_observation.display": "Diffuse lower airspace opacity",
-            "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_observation.code": "RDES44",
-            "RadElement_observation.display": "Pneumothorax",
-            "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
-        }
-    ],
-    "RDES225": [
-        {
-            "Annalise_observation.code": "diffuse_upper_airspace_opacity",
-            "Annalise_observation.display": "Diffuse upper airspace opacity",
-            "Annalise_system": "https://www.annalise.ai/guides",
-            "Nuance_observation.code": "90200020",
-            "Nuance_observation.display": "Diffuse upper airspace opacity",
-            "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_observation.code": "RDES225",
-            "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
-            "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "diffuse_perihilar_airspace_opacity": [
@@ -171,7 +225,9 @@
             "bodySite_Snomed.code": "63907008",
             "bodySite_Snomed.display": "Perihilar region of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "acute_humerus_fracture": [
@@ -188,7 +244,9 @@
             "bodySite_Snomed.code": "85050009",
             "bodySite_Snomed.display": "Humerus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": false
         }
     ],
     "acute_rib_fracture": [
@@ -205,7 +263,9 @@
             "bodySite_Snomed.code": "78904004",
             "bodySite_Snomed.display": "Chest wall",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": false
         }
     ],
     "acute_clavicle_fracture": [
@@ -222,7 +282,9 @@
             "bodySite_Snomed.code": "51299004",
             "bodySite_Snomed.display": "Clavicle",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": false
         }
     ],
     "shoulder_arthritis": [
@@ -233,7 +295,15 @@
             "Nuance_observation.code": "90200028",
             "Nuance_observation.display": "Shoulder arthritis",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID39518",
+            "bodySite_Radlex.display": "shoulder",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "16982005",
+            "bodySite_Snomed.display": "Shoulder",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "shoulder_dislocation": [
@@ -244,7 +314,15 @@
             "Nuance_observation.code": "90200029",
             "Nuance_observation.display": "Shoulder dislocation",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID39518",
+            "bodySite_Radlex.display": "shoulder",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "16982005",
+            "bodySite_Snomed.display": "Shoulder",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "shoulder_fixation": [
@@ -255,7 +333,15 @@
             "Nuance_observation.code": "90200033",
             "Nuance_observation.display": "Shoulder fixation",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID39518",
+            "bodySite_Radlex.display": "shoulder",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "16982005",
+            "bodySite_Snomed.display": "Shoulder",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "shoulder_replacement": [
@@ -266,7 +352,15 @@
             "Nuance_observation.code": "90200035",
             "Nuance_observation.display": "Shoulder replacement",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID39518",
+            "bodySite_Radlex.display": "shoulder",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "16982005",
+            "bodySite_Snomed.display": "Shoulder",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "airway_stent": [
@@ -283,7 +377,9 @@
             "bodySite_Snomed.code": "89187006",
             "bodySite_Snomed.display": "Airway",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "axillary_clips": [
@@ -300,7 +396,9 @@
             "bodySite_Snomed.code": "91470000",
             "bodySite_Snomed.display": "Axilla",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "biliary_stent": [
@@ -317,7 +415,9 @@
             "bodySite_Snomed.code": "34707002",
             "bodySite_Snomed.display": "Biliary tract structure",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "breast_implant": [
@@ -334,7 +434,9 @@
             "bodySite_Snomed.code": "76752008",
             "bodySite_Snomed.display": "Breast",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "bronchiectasis": [
@@ -351,7 +453,9 @@
             "bodySite_Snomed.code": "955009",
             "bodySite_Snomed.display": "Bronchus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "bullae_diffuse": [
@@ -368,7 +472,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "bullae_lower": [
@@ -379,7 +485,15 @@
             "Nuance_observation.code": "90200049",
             "Nuance_observation.display": "Lower zone bullae",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID1354",
+            "bodySite_Radlex.display": "lower lung zone",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "281394001",
+            "bodySite_Snomed.display": "Lower zone of lung",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "bullae_upper": [
@@ -396,7 +510,9 @@
             "bodySite_Snomed.code": "281392002",
             "bodySite_Snomed.display": "Upper zone of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "calcified_axillary_nodes": [
@@ -413,7 +529,9 @@
             "bodySite_Snomed.code": "91470000",
             "bodySite_Snomed.display": "Axilla",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "calcified_granuloma": [
@@ -430,7 +548,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "calcified_hilar_lymphadenopathy": [
@@ -447,7 +567,9 @@
             "bodySite_Snomed.code": "46750007",
             "bodySite_Snomed.display": "Hilum of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "calcified_neck_nodes": [
@@ -464,7 +586,9 @@
             "bodySite_Snomed.code": "45048000",
             "bodySite_Snomed.display": "Neck",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "calcified_pleural_plaque": [
@@ -481,7 +605,9 @@
             "bodySite_Snomed.code": "3120008",
             "bodySite_Snomed.display": "Pleura",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "calcified_pulmonary_mass": [
@@ -498,7 +624,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "cardiac_valve_prosthesis": [
@@ -515,7 +643,9 @@
             "bodySite_Snomed.code": "17401000",
             "bodySite_Snomed.display": "Cardiac valve",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "cardiomegaly": [
@@ -532,7 +662,9 @@
             "bodySite_Snomed.code": "302509004",
             "bodySite_Snomed.display": "Entire heart",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "cavitating_mass": [
@@ -549,7 +681,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "cavitating_mass_internal_content": [
@@ -566,7 +700,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "cervical_flexion": [
@@ -583,7 +719,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "chronic_clavicle_fracture": [
@@ -600,7 +738,9 @@
             "bodySite_Snomed.code": "51299004",
             "bodySite_Snomed.display": "Clavicle",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "chronic_humerus_fracture": [
@@ -617,7 +757,9 @@
             "bodySite_Snomed.code": "85050009",
             "bodySite_Snomed.display": "Humerus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "chronic_rib_fracture": [
@@ -634,7 +776,9 @@
             "bodySite_Snomed.code": "78904004",
             "bodySite_Snomed.display": "Chest wall",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "clavicle_fixation": [
@@ -651,7 +795,9 @@
             "bodySite_Snomed.code": "51299004",
             "bodySite_Snomed.display": "Clavicle",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "clavicle_lesion": [
@@ -668,7 +814,9 @@
             "bodySite_Snomed.code": "51299004",
             "bodySite_Snomed.display": "Clavicle",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "coronary_stent": [
@@ -685,7 +833,9 @@
             "bodySite_Snomed.code": "41801008",
             "bodySite_Snomed.display": "Coronary artery",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "diaphragmatic_elevation": [
@@ -696,7 +846,15 @@
             "Nuance_observation.code": "90200086",
             "Nuance_observation.display": "Diaphragmatic elevation",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID1524",
+            "bodySite_Radlex.display": "diaphragm",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "5798000",
+            "bodySite_Snomed.display": "Diaphragm",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "diaphragmatic_eventration": [
@@ -707,7 +865,15 @@
             "Nuance_observation.code": "90200087",
             "Nuance_observation.display": "Diaphragmatic eventration",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID1524",
+            "bodySite_Radlex.display": "diaphragm",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "5798000",
+            "bodySite_Snomed.display": "Diaphragm",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "diffuse_pleural_thickening": [
@@ -724,7 +890,9 @@
             "bodySite_Snomed.code": "3120008",
             "bodySite_Snomed.display": "Pleura",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "dish": [
@@ -741,7 +909,9 @@
             "bodySite_Snomed.code": "420345000",
             "bodySite_Snomed.display": "Vertebra",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "distended_bowel": [
@@ -758,7 +928,9 @@
             "bodySite_Snomed.code": "113276009",
             "bodySite_Snomed.display": "Bowel",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "electronic_cardiac_devices": [
@@ -775,7 +947,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "gallstones": [
@@ -792,7 +966,9 @@
             "bodySite_Snomed.code": "50519007",
             "bodySite_Snomed.display": "Right upper quadrant of abdomen",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "gastric_band": [
@@ -809,7 +985,9 @@
             "bodySite_Snomed.code": "25271004",
             "bodySite_Snomed.display": "Gastroesophageal junction",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "hiatus_hernia": [
@@ -826,7 +1004,9 @@
             "bodySite_Snomed.code": "280062008",
             "bodySite_Snomed.display": "Esophageal hiatus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "hilar_lymphadenopathy": [
@@ -843,7 +1023,9 @@
             "bodySite_Snomed.code": "53074004",
             "bodySite_Snomed.display": "Bronchial lymph node",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "humeral_lesion": [
@@ -860,7 +1042,9 @@
             "bodySite_Snomed.code": "85050009",
             "bodySite_Snomed.display": "Humerus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "hyperinflation": [
@@ -877,7 +1061,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "hyperlucency": [
@@ -894,7 +1080,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "image_obscured": [
@@ -911,7 +1099,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "in_position_cvc": [
@@ -928,7 +1118,9 @@
             "bodySite_Snomed.code": "244390008",
             "bodySite_Snomed.display": "Head and neck vein",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "in_position_ett": [
@@ -945,7 +1137,9 @@
             "bodySite_Snomed.code": "44567001",
             "bodySite_Snomed.display": "Trachea",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "in_position_ngt": [
@@ -962,7 +1156,9 @@
             "bodySite_Snomed.code": "32849002",
             "bodySite_Snomed.display": "Esophagus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "in_position_pac": [
@@ -979,7 +1175,9 @@
             "bodySite_Snomed.code": "81040000",
             "bodySite_Snomed.display": "Pulmonary artery",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "incompletely_imaged": [
@@ -996,7 +1194,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "inferior_mediastinal_mass": [
@@ -1013,7 +1213,9 @@
             "bodySite_Snomed.code": "72410000",
             "bodySite_Snomed.display": "Mediastinum",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "intercostal_drain": [
@@ -1030,7 +1232,9 @@
             "bodySite_Snomed.code": "47495005",
             "bodySite_Snomed.display": "Intercostal space",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "internal_foreign_body": [
@@ -1047,7 +1251,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "interstitial_thickening_diffuse": [
@@ -1064,7 +1270,9 @@
             "bodySite_Snomed.code": "113254000",
             "bodySite_Snomed.display": "Interstitial tissue of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "interstitial_thickening_lower": [
@@ -1081,7 +1289,9 @@
             "bodySite_Snomed.code": "113254000",
             "bodySite_Snomed.display": "Interstitial tissue of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "interstitial_thickening_upper": [
@@ -1098,7 +1308,9 @@
             "bodySite_Snomed.code": "113254000",
             "bodySite_Snomed.display": "Interstitial tissue of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "interstitial_thickening_volloss_diffuse": [
@@ -1115,7 +1327,9 @@
             "bodySite_Snomed.code": "113254000",
             "bodySite_Snomed.display": "Interstitial tissue of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "interstitial_thickening_volloss_lower": [
@@ -1132,7 +1346,9 @@
             "bodySite_Snomed.code": "113254000",
             "bodySite_Snomed.display": "Interstitial tissue of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "interstitial_thickening_volloss_upper": [
@@ -1149,7 +1365,9 @@
             "bodySite_Snomed.code": "113254000",
             "bodySite_Snomed.display": "Interstitial tissue of lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "kyphosis": [
@@ -1166,7 +1384,9 @@
             "bodySite_Snomed.code": "297167000",
             "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "linear_atelectasis": [
@@ -1183,7 +1403,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "loculated_effusion": [
@@ -1200,7 +1422,9 @@
             "bodySite_Snomed.code": "91381003",
             "bodySite_Snomed.display": "Pleural cavity",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "lung_collapse": [
@@ -1217,7 +1441,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "lung_resection_volloss": [
@@ -1234,7 +1460,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "lung_sutures": [
@@ -1251,7 +1479,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "malpositioned_cvc": [
@@ -1268,7 +1498,9 @@
             "bodySite_Snomed.code": "244390008",
             "bodySite_Snomed.display": "Head and neck vein",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "malpositioned_ett": [
@@ -1285,7 +1517,9 @@
             "bodySite_Snomed.code": "44567001",
             "bodySite_Snomed.display": "Trachea",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "malpositioned_gastric_band": [
@@ -1302,7 +1536,9 @@
             "bodySite_Snomed.code": "25271004",
             "bodySite_Snomed.display": "Gastroesophageal junction",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "malpositioned_ngt": [
@@ -1319,7 +1555,9 @@
             "bodySite_Snomed.code": "32849002",
             "bodySite_Snomed.display": "Esophagus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "malpositioned_pac": [
@@ -1336,7 +1574,9 @@
             "bodySite_Snomed.code": "81040000",
             "bodySite_Snomed.display": "Pulmonary artery",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "mastectomy": [
@@ -1353,7 +1593,9 @@
             "bodySite_Snomed.code": "76752008",
             "bodySite_Snomed.display": "Breast",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "mediastinal_clips": [
@@ -1370,7 +1612,9 @@
             "bodySite_Snomed.code": "72410000",
             "bodySite_Snomed.display": "Mediastinum",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "miliary": [
@@ -1387,7 +1631,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "multiple_pulmonary_masses": [
@@ -1404,7 +1650,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "neck_clips": [
@@ -1421,7 +1669,9 @@
             "bodySite_Snomed.code": "45048000",
             "bodySite_Snomed.display": "Neck",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "nipple_shadow": [
@@ -1438,7 +1688,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "oesophageal_stent": [
@@ -1455,7 +1707,9 @@
             "bodySite_Snomed.code": "32849002",
             "bodySite_Snomed.display": "Esophagus",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "osteopaenia": [
@@ -1472,7 +1726,9 @@
             "bodySite_Snomed.code": "84667006",
             "bodySite_Snomed.display": "Cervical vertebra",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "overexposed": [
@@ -1489,7 +1745,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "patient_rotated": [
@@ -1506,7 +1764,9 @@
             "bodySite_Snomed.code": "55678000",
             "bodySite_Snomed.display": "Spinous process of vertebra",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "pectus_carinatum": [
@@ -1523,7 +1783,9 @@
             "bodySite_Snomed.code": "56873002",
             "bodySite_Snomed.display": "Breast bone",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "pectus_excavatum": [
@@ -1540,7 +1802,9 @@
             "bodySite_Snomed.code": "56873002",
             "bodySite_Snomed.display": "Breast bone",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "peribronchial_cuffing": [
@@ -1557,7 +1821,9 @@
             "bodySite_Snomed.code": "54233001",
             "bodySite_Snomed.display": "Peribronchial tissue",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "pericardial_fat_pad": [
@@ -1574,7 +1840,9 @@
             "bodySite_Snomed.code": "42267001",
             "bodySite_Snomed.display": "Pericardial fat",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "RDES254": [
@@ -1585,10 +1853,18 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
+            "bodySite_Radlex.code": "RID1362",
+            "bodySite_Radlex.display": "pleura",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "3120008",
+            "bodySite_Snomed.display": "Pleura",
+            "snomed_system": "http://snomed.info/sct",
             "RadElement_observation.code": "RDES254",
             "RadElement_observation.display": "Pleural Effusion",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "pleural_mass": [
@@ -1605,7 +1881,9 @@
             "bodySite_Snomed.code": "91381003",
             "bodySite_Snomed.display": "Pleural cavity",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "RDES76": [
@@ -1616,10 +1894,18 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
+            "bodySite_Radlex.code": "RID1301",
+            "bodySite_Radlex.display": "lung",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "39607008",
+            "bodySite_Snomed.display": "Lung",
+            "snomed_system": "http://snomed.info/sct",
             "RadElement_observation.code": "RDES76",
             "RadElement_observation.display": "Pneumonia",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "RDES44": [
@@ -1630,10 +1916,18 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
+            "bodySite_Radlex.code": "RID1301",
+            "bodySite_Radlex.display": "lung",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "39607008",
+            "bodySite_Snomed.display": "Lung",
+            "snomed_system": "http://snomed.info/sct",
             "RadElement_observation.code": "RDES44",
             "RadElement_observation.display": "Pneumothorax",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "pulmonary_artery_enlargement": [
@@ -1650,7 +1944,9 @@
             "bodySite_Snomed.code": "81040000",
             "bodySite_Snomed.display": "Pulmonary artery",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "pulmonary_congestion": [
@@ -1667,7 +1963,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "rib_fixation": [
@@ -1684,7 +1982,9 @@
             "bodySite_Snomed.code": "113197003",
             "bodySite_Snomed.display": "Bone structure of rib",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "rib_lesion": [
@@ -1701,7 +2001,9 @@
             "bodySite_Snomed.code": "113197003",
             "bodySite_Snomed.display": "Bone structure of rib",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "rib_resection": [
@@ -1718,7 +2020,9 @@
             "bodySite_Snomed.code": "113197003",
             "bodySite_Snomed.display": "Bone structure of rib",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "rotator_cuff_anchor": [
@@ -1735,7 +2039,9 @@
             "bodySite_Snomed.code": "7885001",
             "bodySite_Snomed.display": "Rotator cuff",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "scapular_fracture": [
@@ -1752,7 +2058,9 @@
             "bodySite_Snomed.code": "79601000",
             "bodySite_Snomed.display": "Scapula",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "scapular_lesion": [
@@ -1769,7 +2077,9 @@
             "bodySite_Snomed.code": "79601000",
             "bodySite_Snomed.display": "Scapula",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "scoliosis": [
@@ -1786,7 +2096,9 @@
             "bodySite_Snomed.code": "297167000",
             "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "segmental_collapse": [
@@ -1803,7 +2115,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "simple_effusion": [
@@ -1820,7 +2134,9 @@
             "bodySite_Snomed.code": "91381003",
             "bodySite_Snomed.display": "Pleural cavity",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "simple_pneumothorax": [
@@ -1837,7 +2153,9 @@
             "bodySite_Snomed.code": "91381003",
             "bodySite_Snomed.display": "Pleural cavity",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "single_pulmonary_mass": [
@@ -1854,7 +2172,9 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "RDES227": [
@@ -1865,10 +2185,18 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
+            "bodySite_Radlex.code": "RID1301",
+            "bodySite_Radlex.display": "lung",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "39607008",
+            "bodySite_Snomed.display": "Lung",
+            "snomed_system": "http://snomed.info/sct",
             "RadElement_observation.code": "RDES227",
             "RadElement_observation.display": "Chest Radiograph Pulmonary Nodules",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "spinal_fixation": [
@@ -1885,7 +2213,9 @@
             "bodySite_Snomed.code": "51282000",
             "bodySite_Snomed.display": "Bone structure of spine",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "spine_arthritis": [
@@ -1902,7 +2232,9 @@
             "bodySite_Snomed.code": "8983005",
             "bodySite_Snomed.display": "Intervertebral joint",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "spine_lesion": [
@@ -1919,7 +2251,9 @@
             "bodySite_Snomed.code": "1141986006",
             "bodySite_Snomed.display": "Thoracic spinal column region",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "RDES230": [
@@ -1930,10 +2264,15 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
+            "bodySite_Radlex.code": "RID7741",
+            "bodySite_Radlex.display": "spine",
+            "radlex_system": "http://radlex.org",
             "RadElement_observation.code": "RDES230",
             "RadElement_observation.display": "Vertebral Compression Fracture",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "sternotomy_wires": [
@@ -1950,7 +2289,9 @@
             "bodySite_Snomed.code": "56873002",
             "bodySite_Snomed.display": "Breast bone",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "subcutaneous_emphysema": [
@@ -1967,7 +2308,9 @@
             "bodySite_Snomed.code": "71966008",
             "bodySite_Snomed.display": "Subcutaneous tissue",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "RDES228": [
@@ -1978,10 +2321,18 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
+            "bodySite_Radlex.code": "RID56",
+            "bodySite_Radlex.display": "abdomen",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "818983003",
+            "bodySite_Snomed.display": "Abdomen",
+            "snomed_system": "http://snomed.info/sct",
             "RadElement_observation.code": "RDES228",
             "RadElement_observation.display": "Pneumoperitoneum",
             "RadElement_system": "http://radelement.org",
-            "RadElement_coding_system": true
+            "RadElement_coding_system": true,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "superior_mediastinal_mass": [
@@ -1998,7 +2349,9 @@
             "bodySite_Snomed.code": "72410000",
             "bodySite_Snomed.display": "Mediastinum",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "tension_pneumothorax": [
@@ -2009,7 +2362,15 @@
             "Nuance_observation.code": "nan",
             "Nuance_observation.display": "nan",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
-            "RadElement_coding_system": false
+            "bodySite_Radlex.code": "RID1301",
+            "bodySite_Radlex.display": "lung",
+            "radlex_system": "http://radlex.org",
+            "bodySite_Snomed.code": "39607008",
+            "bodySite_Snomed.display": "Lung",
+            "snomed_system": "http://snomed.info/sct",
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "tracheal_deviation": [
@@ -2026,7 +2387,9 @@
             "bodySite_Snomed.code": "44567001",
             "bodySite_Snomed.display": "Trachea",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "underexposed": [
@@ -2043,7 +2406,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ],
     "underinflation": [
@@ -2060,7 +2425,9 @@
             "bodySite_Snomed.code": "51185008",
             "bodySite_Snomed.display": "Chest",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_coding_system": false
+            "RadElement_coding_system": false,
+            "Annalise_coding_system": true,
+            "Nuance_coding_system": true
         }
     ]
 }

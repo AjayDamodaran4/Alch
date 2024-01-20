@@ -22,3 +22,16 @@ class Config(object):
         with open(cls.__path_test_input) as f:
             my_json = json.load(f)
             return my_json.get(key)
+        
+    @classmethod
+    def update_value_of_config_key(cls, key, value):
+        """
+        Used to access the config.json file with Key name.
+        :param key: Key name that which is required.
+        :return: Value of the key from the config.json
+        """
+        with open(cls.__path_config) as f:
+            my_json = json.load(f)
+            my_json[key] = str(value) + "/Annalise-cxr-FHIR.json"
+        with open(cls.__path_config, 'w') as f:
+            json.dump(my_json, f, indent=2)

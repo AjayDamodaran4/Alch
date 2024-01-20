@@ -1,5 +1,5 @@
 from .base import BaseClass
-from .utils import AllureReport, URLConstant, Config, ExcelUtils, LogUtils, DockerUtils, GenericUtils
+from .utils import AllureReport, URLConstant, Config, ExcelUtils, LogUtils, DockerUtils, GenericUtils, DicomUtils
 
 
 __all__ = [
@@ -10,7 +10,8 @@ __all__ = [
     'LogUtils',
     'DockerUtils',
     'URLConstant',
-    'GenericUtils'
+    'GenericUtils',
+    'DicomUtils'
 ]
 
 
