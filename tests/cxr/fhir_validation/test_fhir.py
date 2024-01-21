@@ -19,8 +19,10 @@ class TestFHIR(BaseClass):
     The test_fhir_obs_code verifies the Observation code of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
     '''
     def test_fhir_obs_code(self):
-        print("testing Annalise observation code")
+        
         fhir_contents = self.fhir_contents
+        with allure.step("FHIR contents"):
+            self.allure_util.allure_attach_with_text("contents of FHIR report", str(fhir_contents))
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
         count = 0
