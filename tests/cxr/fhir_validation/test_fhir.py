@@ -22,7 +22,7 @@ class TestFHIR(BaseClass):
         
         fhir_contents = self.fhir_contents
         with allure.step("FHIR contents"):
-            self.allure_util.allure_attach_with_text("contents of FHIR report", str(fhir_contents))
+            self.allure_util.allure_attach_with_text("contents of FHIR report", fhir_contents)
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
         count = 0
@@ -30,6 +30,8 @@ class TestFHIR(BaseClass):
         try:
             for observation in range(3,len(fhir_contents['contained'])):
                 target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                with allure.step("Observation Code"):
+                    self.allure_util.allure_attach_with_text("Observation Code", target_obs)
                 if target_obs == "246501002":
                     count+=1
                     pass
