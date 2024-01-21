@@ -1,0 +1,59 @@
+try {
+    node {
+        def moduleName = 'QA_Automation_script'
+
+        stage ('Clean the workspace') {
+          deleteDir()
+        }
+
+        //Code checkout from SCM
+        checkout([
+          $class: 'GitSCM',
+          branches: scm.branches,
+          extensions: scm.extensions + [[$class: 'CloneOption', noTags: false, reference: '', shallow: true]],
+          userRemoteConfigs: scm.userRemoteConfigs
+        ])
+
+        stage("GIT INFO"){
+        echo ":::::::::::GIT_LAST_SHORT_COMMIT::::::::::::::::::::::::"
+
+        GIT_LAST_SHORT_COMMIT = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+        sh("echo ${GIT_LAST_SHORT_COMMIT} > GIT_LAST_SHORT_COMMIT_${GIT_LAST_SHORT_COMMIT}")
+
+        echo ":::::::::::GIT_COMMITTER_EMAIL::::::::::::::::::::::::"
+
+        GIT_COMMITTER_EMAIL = sh(returnStdout: true, script: "git show -s --pretty=%ae").trim()
+        sh("echo ${GIT_COMMITTER_EMAIL} > GIT_COMMITTER_EMAIL_${GIT_COMMITTER_EMAIL}")
+
+        echo ":::::::::::GIT_COMMITTER_NAME::::::::::::::::::::::::"
+
+        GIT_COMMITTER_NAME = sh(returnStdout: true, script: "git show -s --pretty=%an").trim()
+        sh("echo ${GIT_COMMITTER_NAME} > GIT_COMMITTER_NAME-${GIT_COMMITTER_NAME}")
+
+        }
+
+        stage("Prepare initial checks"){
+                sh"""
+                (
+                    if [ -d "$WORKSPACE/results/reports" ]
+                    then
+                        rm -rf $WORKSPACE/results/reports
+                    fi
+                )"""
+        }
+       stage("Creating virtual env and installing dependancy"){
+                   sh"""
+                   (
+                         poetry install
+                         poetry show
+                   )"""
+       }
+    }
+}
+catch (exc) {
+    //Notify over failed build
+
+    echo 'Something failed in the build !!!'
+    throw exc
+
+}
