@@ -51,6 +51,7 @@ try {
                          poetry install
                          poetry show
                          pwd
+                         ls
                    )"""
        }
        stage("Invoking testing"){
