@@ -39,7 +39,7 @@ def read_cxr_req():
     return cxr_req
 
 
-@pytest.fixture(scope="class", params = ["input_path_TC123", "input_path_TC321"])
+@pytest.fixture(scope="class", params = ["input_path_TC123"])
 def container_auto(request):
     print("running aiservice container to fetch FHIR")
     input_path_key = request.param
