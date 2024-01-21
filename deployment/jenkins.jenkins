@@ -1,3 +1,7 @@
+
+
+
+
 try {
     node {
         def moduleName = 'QA_Automation_script'
@@ -48,6 +52,14 @@ try {
                          poetry show
                    )"""
        }
+       stage("Invoking testing"){
+               script {
+                       if (env.JOB_NAME == "test_jenkins"){
+                           sh label: '', script: '''
+                           poetry run pytest tests/cxr/fhir_validation/test_fhir.py'''
+                       }
+               }
+       }
     }
 }
 catch (exc) {
@@ -56,4 +68,13 @@ catch (exc) {
     echo 'Something failed in the build !!!'
     throw exc
 
+}
+finally{
+    echo 'Finally block'
+    node{
+        stage("results"){
+                
+                allure includeProperties: false, jdk: '', results: [[path: 'results/reports']]
+            }
+    }
 }
