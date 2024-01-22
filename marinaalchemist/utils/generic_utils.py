@@ -1,6 +1,6 @@
 import os, json
 from .config_reader import Config
-
+import conftest
 
 class GenericUtils(object):
 
@@ -159,3 +159,84 @@ class GenericUtils(object):
             return True
         else:
             return False
+        
+        
+    def verify_snomed_code(self,target,observation, fhir_contents):
+        self.cxr_req = conftest.read_cxr_req()
+        bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
+        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
+        print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
+
+
+
+    def verify_radlex_code(self,target,observation, fhir_contents):
+        self.cxr_req = conftest.read_cxr_req()
+        bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
+        if target == "RDES230":
+        # Special case: Set fhir_bodySite_radlex_code from a different coding index
+            fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+        else:
+            fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
+        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
+        print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
+
+        
+        
+    def verify_observation_225(self, observation, fhir_contents):
+
+    # Verify the bodySite for the Chest Radiograph Pulmonary Nodules observation (RDES225).
+
+    # Parameters:
+    # - observation: Index of the observation.
+    # - fhir_contents: Contents of the FHIR report.
+
+    # Raises:
+    # - AssertionError: If the bodySite codes do not match.
+
+        target = "RDES225"
+        display_value = None
+        if len(fhir_contents["contained"][observation]["component"]) == 4 :
+            display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+        elif len(fhir_contents["contained"][observation]["component"]) > 4 :
+            display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
+        
+        if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
+            raise ValueError(f"Unexpected display value: {display_value}")
+        print(f"ZZZ {display_value}")
+        key = None
+        sub_key = None
+
+        if display_value in ['absent', 'focal']:
+            key = 1
+            sub_key = "focal_airspace_opacity"
+            # Additional condition for 'absent' case
+            if display_value == 'absent':
+                display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+        elif display_value == 'multifocal':
+            key = 2
+            sub_key = "multifocal_airspace_opacity"
+        elif display_value == 'diffuse lower':
+            key = 3
+            sub_key = "diffuse_lower_airspace_opacity"
+        elif display_value == 'diffuse upper':
+            key = 4
+            sub_key = "diffuse_upper_airspace_opacity"
+
+        if key is None or sub_key is None:
+            raise ValueError(f"Unexpected key or sub_key values: {key}, {sub_key}")
+
+        bodySite_snomed_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Snomed.code"]
+        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+        
+        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
+            f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code}"
+
+        bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
+        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
+        
+        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
+            f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code}"
+
+        print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
+            f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json")

@@ -15,9 +15,9 @@ class TestFHIR(BaseClass):
 
         # with allure.step("fhir_statics"):
         #     self.allure_util.allure_attach_with_text("resourceType of FHIR report", str(self.fhir_json['resourceType']))
-    '''
-    The test_fhir_obs_code verifies the Observation code of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
-    '''
+    # '''
+    # The test_fhir_obs_code verifies the Observation code of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
+    # '''
     def test_fhir_obs_code(self):
         
         fhir_contents = self.fhir_json
@@ -131,96 +131,29 @@ class TestFHIR(BaseClass):
     ''' 
     def test_obs_bodsite_code(self):
         print("testing observation Bodysite Code")
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
-        count = 0
-        try:
-            for observation in range(3,len(fhir_contents['contained'])):
-                target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-                if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
-                    count+=1
-                    pass
-                
-                elif target == "RDES230": # This block verifies the bodySite of Vertebral Compression Fracture Observation observation
-                    print(target)
-                    bodySite_radlex_code_as_per_req = cxr_req[target][0]["bodySite_Radlex.code"]
-                    fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                    assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                    print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                    count+=1
-                
-                elif target == "RDES225": # This block verifies the bodySite of Chest Radiograph Pulmonary Nodules observation
-                    if fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"] == "absent":
-                        print("correct")
-                        bodySite_snomed_code_as_per_req = cxr_req[target][1]["focal_airspace_opacity"][0]["bodySite_Snomed.code"]
-                        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requrirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-                        print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
-                        bodySite_radlex_code_as_per_req = cxr_req[target][1]["focal_airspace_opacity"][0]["bodySite_Radlex.code"]
-                        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-                        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                        print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                        count+=1
-                    elif fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"] == "focal":
-                        bodySite_snomed_code_as_per_req = cxr_req[target][1]["focal_airspace_opacity"][0]["bodySite_Snomed.code"]
-                        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requrirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-                        print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
-                        bodySite_radlex_code_as_per_req = cxr_req[target][1]["focal_airspace_opacity"][0]["bodySite_Radlex.code"]
-                        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-                        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                        print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                        count+=1
-                        
-                    elif fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"] == "multifocal":
-                        bodySite_snomed_code_as_per_req = cxr_req[target][2]["multifocal_airspace_opacity"][0]["bodySite_Snomed.code"]
-                        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requrirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-                        print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
-                        bodySite_radlex_code_as_per_req = cxr_req[target][2]["multifocal_airspace_opacity"][0]["bodySite_Radlex.code"]
-                        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-                        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                        print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                        count+=1
-                
-                    elif fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"] == "diffuse lower":
-                        bodySite_snomed_code_as_per_req = cxr_req[target][3]["diffuse_lower_airspace_opacity"][0]["bodySite_Snomed.code"]
-                        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requrirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-                        print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
-                        bodySite_radlex_code_as_per_req = cxr_req[target][3]["diffuse_lower_airspace_opacity"][0]["bodySite_Radlex.code"]
-                        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-                        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                        print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                        count+=1
-                        
-                    elif fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"] == "diffuse upper":
-                        bodySite_snomed_code_as_per_req = cxr_req[target][4]["diffuse_upper_airspace_opacity"][0]["bodySite_Snomed.code"]
-                        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requrirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-                        print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
-                        bodySite_radlex_code_as_per_req = cxr_req[target][4]["diffuse_upper_airspace_opacity"][0]["bodySite_Radlex.code"]
-                        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-                        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                        print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                        count+=1
 
-                else: # This block verifies the bodySite of all observations other than Vertebral Compression Fracture and Chest Radiograph Pulmonary Nodules
-                    bodySite_snomed_code_as_per_req = cxr_req[target][0]["bodySite_Snomed.code"]
-                    fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-                    assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requrirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-                    print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
-                    bodySite_radlex_code_as_per_req = cxr_req[target][0]["bodySite_Radlex.code"]
-                    fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-                    assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requrirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-                    print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
-                    count+=1
-
-            print(count)
+        # try:
+        for observation in range(3,len(fhir_contents['contained'])):
+            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
+                pass
             
-        except Exception as e:
-            print(f"An exception occurred: {e}")
+            elif target == "RDES230": # This block verifies the bodySite of Vertebral Compression Fracture Observation observation
+                self.generic_util.verify_radlex_code(target,observation,fhir_contents)
+            
+            elif target == "RDES225": # This block verifies the bodySite of Chest Radiograph Pulmonary Nodules observation
+                self.generic_util.verify_observation_225(observation,fhir_contents)
+                
+            else: # This block verifies the bodySite of all observations other than Vertebral Compression Fracture and Chest Radiograph Pulmonary Nodules
+                self.generic_util.verify_snomed_code(target,observation,fhir_contents)
+                self.generic_util.verify_radlex_code(target,observation,fhir_contents)
+                
+
+        # except Exception as e:
+        #     print(f"An exception occurred: {e}")
     
     
     # def test_study_uid(self):
