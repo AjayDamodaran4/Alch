@@ -36,7 +36,7 @@ class TestFHIR(BaseClass):
                     count+=1
                     pass
                 
-                elif len(fhir_contents["contained"][observation]["code"]["coding"])==2:
+                elif len(fhir_contents["contained"][observation]["code"]["coding"])==2 and cxr_req[target_obs][0]["Annalise_coding_system"]  and cxr_req[target_obs][0]["Nuance_coding_system"]:
                     Annalise_code_as_per_req = cxr_req[target_obs][0]["Annalise_observation.code"]
                     fhir_annalise_obs_code = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
                     assert Annalise_code_as_per_req == fhir_annalise_obs_code, f"{Annalise_code_as_per_req} from requrirement and {fhir_annalise_obs_code} from FHIR are not matching"
