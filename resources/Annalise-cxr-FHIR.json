@@ -959,11 +959,11 @@
       ],
       "bodySite": {
         "coding": [
-          {
-            "system": "http://snomed.info/sct",
-            "code": "39607008",
-            "display": "Lung"
-          },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39607008",
+              "display": "Lung"
+            },
           {
             "system": "http://radlex.org",
             "code": "RID1301",

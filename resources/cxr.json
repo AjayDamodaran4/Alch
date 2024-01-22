@@ -100,8 +100,8 @@
             "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
                 },
         {"focal_airspace_opacity": [
                 {
@@ -165,8 +165,8 @@
                     "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
                     "RadElement_system": "http://radelement.org",
                     "RadElement_coding_system": true,
-                    "Annalise_coding_system": true,
-                    "Nuance_coding_system": true
+                    "Annalise_coding_system": false,
+                    "Nuance_coding_system": false
                 }
             ]},
         {"diffuse_upper_airspace_opacity": [
@@ -187,8 +187,8 @@
                     "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
                     "RadElement_system": "http://radelement.org",
                     "RadElement_coding_system": true,
-                    "Annalise_coding_system": true,
-                    "Nuance_coding_system": true
+                    "Annalise_coding_system": false,
+                    "Nuance_coding_system": false
                 }
             ]}
         ],
@@ -1863,8 +1863,8 @@
             "RadElement_observation.display": "Pleural Effusion",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
         }
     ],
     "pleural_mass": [
@@ -1904,8 +1904,8 @@
             "RadElement_observation.display": "Pneumonia",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
         }
     ],
     "RDES44": [
@@ -1926,8 +1926,8 @@
             "RadElement_observation.display": "Pneumothorax",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
         }
     ],
     "pulmonary_artery_enlargement": [
@@ -2195,8 +2195,8 @@
             "RadElement_observation.display": "Chest Radiograph Pulmonary Nodules",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
         }
     ],
     "spinal_fixation": [
@@ -2271,8 +2271,8 @@
             "RadElement_observation.display": "Vertebral Compression Fracture",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
         }
     ],
     "sternotomy_wires": [
@@ -2331,8 +2331,8 @@
             "RadElement_observation.display": "Pneumoperitoneum",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
-            "Annalise_coding_system": true,
-            "Nuance_coding_system": true
+            "Annalise_coding_system": false,
+            "Nuance_coding_system": false
         }
     ],
     "superior_mediastinal_mass": [
