@@ -1,7 +1,7 @@
 {
     "abdominal_clips": [
         {
-            "Annalise_observation.code": "abdominal_chips",
+            "Annalise_observation.code": "abdominal_clips",
             "Annalise_observation.display": "Abdominal clips",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200000",
