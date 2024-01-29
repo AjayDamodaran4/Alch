@@ -198,12 +198,12 @@ class GenericUtils(object):
         display_value = None
         if len(fhir_contents["contained"][observation]["component"]) == 4 :
             display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
-        elif len(fhir_contents["contained"][observation]["component"]) > 4 :
+        elif len(fhir_contents["contained"][observation]["component"]) ==5 :
             display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
         
         if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
             raise ValueError(f"Unexpected display value: {display_value}")
-        print(f"ZZZ {display_value}")
+
         key = None
         sub_key = None
 
@@ -240,3 +240,61 @@ class GenericUtils(object):
 
         print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
             f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json")
+
+
+
+    # def verify_tracking_uid(self, fhir_contents):
+    # # """
+    # # Verify the Tracking Unique Identifier for a given observation in the FHIR report.
+
+    # # Parameters:
+    # # - observation: Index of the observation.
+    # # - fhir_contents: Contents of the FHIR report.
+
+    # # Raises:
+    # # - AssertionError: If the Tracking Unique Identifier codes do not match.
+    # # """
+    #     for observation in range(3,len(fhir_contents['contained'])):
+    #         target = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
+
+    #         if target == '246501002':
+    #             pass
+
+    #         tracking_uid_presence = self.is_tracking_uid_present(fhir_contents)
+    #         assert tracking_uid_presence, f"Tracking Unique Identifier is not present for the observation {target} in FHIR"
+    #         for each in range(len(fhir_contents["contained"][observation]["component"])):
+    #             code_coding_values = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values()
+    #             if 'Tracking Unique Identifier' in code_coding_values:
+    #                 tracking_uid_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
+    #                 tracking_uid_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+
+    #                 assert tracking_uid_code == "112040", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
+    #                 assert tracking_uid_display == "Tracking Unique Identifier", f"Tracking ID Display of {target} observation from FHIR report does not match the requirement"
+
+    
+    # def verify_tracking_id(self, fhir_contents):
+    # # """
+    # # Verify the Tracking Identifier for a given observation in the FHIR report.
+
+    # # Parameters:
+    # # - observation: Index of the observation.
+    # # - fhir_contents: Contents of the FHIR report.
+
+    # # Raises:
+    # # - AssertionError: If the Tracking Unique Identifier codes do not match.
+    # # """
+    #     for observation in range(3,len(fhir_contents['contained'])):
+    #         target = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
+
+    #         if target == '246501002':
+    #             pass
+
+    #         tracking_id_presence = self.is_tracking_identifier_present(fhir_contents)
+    #         assert tracking_id_presence, f"Tracking Identifier is not present for the observation {target} in FHIR"
+    #         for each in range(len(fhir_contents["contained"][observation]["component"])):
+    #             code_coding_values = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values()
+    #             if 'Tracking Identifier' in code_coding_values:
+    #                 tracking_id_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
+    #                 tracking_id_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+    #                 assert tracking_id_code == "112039", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
+    #                 assert tracking_id_display == "Tracking Identifier", f"Tracking ID Display of {target} observation from FHIR report does not match the requirement"
