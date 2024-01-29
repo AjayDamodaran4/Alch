@@ -16,6 +16,7 @@ class TestFHIR(BaseClass):
             self.allure_util.allure_attach_with_text("contents of FHIR report", str(fhir_contents))
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
+        failures = {}
         total_observations_in_fhir = 0
         for observation in range(3,len(fhir_contents['contained'])):
             target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])        
@@ -51,8 +52,8 @@ class TestFHIR(BaseClass):
                             self.allure_util.allure_attach_with_text(f"Observation code from FHIR report matches with requirement for {target_obs} observation", str(f"{Nuance_code_as_per_req}, {fhir_nuance_obs_code}"))
                         # print(f"Nuance observation code {Nuance_code_as_per_req} from Requirements and {fhir_nuance_obs_code} from FHIR json is matching")
                     except AssertionError as e:
-                        print(f"Assertion error: {e}")
-                        raise AssertionError(f"Test failed due to exception: {e}")
+                        failures["Assertion Error for : "] = f"{target_obs} observation"
+                        
                             
                 elif cxr_req[target_obs][0]["RadElement_coding_system"]:
                     assert len(fhir_contents["contained"][observation]["code"]["coding"])==1, f"More than one Coding systems are displayed in FHIR for {target_obs} observation. Only one coding system is expected as per requirement"
@@ -80,8 +81,10 @@ class TestFHIR(BaseClass):
                         self.allure_util.allure_attach_with_text(f"Observation code from FHIR report matches with requirement for {target_obs} observation", str(f"{Annalise_code_as_per_req}, {fhir_annalise_obs_code}"))
                     # print(f"Annalise observation code {Annalise_code_as_per_req} from Requirements and {fhir_annalise_obs_code} from FHIR json is matching")
 
-
-
+        if failures is not None:
+            with allure.step("failures"):
+                self.allure_util.allure_attach_with_text(f"failures are ", str(failures))
+            pytest.fail(f"Test failed")
             
 
     '''
