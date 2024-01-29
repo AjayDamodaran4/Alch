@@ -8,6 +8,7 @@ from .config_reader import Config
 from marinaalchemist import BaseClass
 from .allurereport import AllureReport
 import allure
+from docker.errors import NotFound
 
 
 class DockerUtils(BaseClass):
@@ -46,7 +47,8 @@ class DockerUtils(BaseClass):
             
         except docker.errors.NotFound:
             allure.attach("aiservice container is not running", "status of aiservice container", allure.attachment_type.TEXT)
-            
+            raise
+        
         if existing_container:
             allure.attach("aiservice container is already running", "status of aiservice container", allure.attachment_type.TEXT)
             existing_container.stop()
@@ -64,11 +66,10 @@ class DockerUtils(BaseClass):
             )
         except docker.errors.ImageNotFound as e:
             # Handle the case where the specified Docker image is not found
-            allure.attach(f"Error: Docker image not found - {e}", "Docker Image not found", allure.attachment_type.TEXT)
+            allure.attach(f"Error: Docker image : {Config.get_value_of_config_key("docker_image")} not found in Instance", "Docker Image not found", allure.attachment_type.TEXT)
 
         except Exception as e:
             # Handle other exceptions
-            # AllureReport.allure_attach_with_text(f"An error occurred: {e}")
             allure.attach(f"An error occurred: {e}", "Error Occured!", allure.attachment_type.TEXT)
 
     #
