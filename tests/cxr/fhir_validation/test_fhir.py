@@ -18,12 +18,16 @@ class TestFHIR(BaseClass):
         cxr_req = self.cxr_req
         failures = {}
         total_observations_in_fhir = 0
-        for observation in range(3,len(fhir_contents['contained'])):
-            target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])        
         
+        for observation in range(3,len(fhir_contents['contained'])):
+            total_observations_in_fhir+=1
+        
+        with allure.step(f"Total Number of Observations present in FHIR"):
+            self.allure_util.allure_attach_with_text(str(total_observations_in_fhir))
         # non_nuance_findings = ["acute_humerus_fracture", "acute_rib_fracture", "acute_clavicle_fracture"]
         for observation in range(3,len(fhir_contents['contained'])):
             target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            
             if target_obs == "246501002":
                 pass
             
@@ -87,6 +91,8 @@ class TestFHIR(BaseClass):
                             self.allure_util.allure_attach_with_text(f"Observation code from FHIR report matches with requirement for {target_obs} observation", str(f"{Annalise_code_as_per_req}, {fhir_annalise_obs_code}"))
                     except AssertionError as e:
                         failures["ANNALISE Observation code not matching for : "] = f"{target_obs} observation"
+                        
+        
         if failures is not None:
             with allure.step("failures"):
                 self.allure_util.allure_attach_with_text(f"failures are ", str(failures))

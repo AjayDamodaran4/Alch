@@ -1,7 +1,7 @@
 {
     "abdominal_clips": [
         {
-            "Annalise_observation.code": "abdominal_chips",
+            "Annalise_observation.code": "abdominal_clips",
             "Annalise_observation.display": "Abdominal clips",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200000",
@@ -1859,7 +1859,7 @@
             "bodySite_Snomed.code": "3120008",
             "bodySite_Snomed.display": "Pleura",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_observation.code": "RDES25",
+            "RadElement_observation.code": "RDES254",
             "RadElement_observation.display": "Pleural Effusion",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
