@@ -43,6 +43,7 @@ class DockerUtils(object):
             existing_container = self.client.containers.get(self.container_name)
             
         except docker.errors.NotFound:
+            pass
             # AllureReport.allure_attach_with_text("aiservice container is not running")
             
             # print("aiservice container is not running")
