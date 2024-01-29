@@ -66,10 +66,10 @@ class DockerUtils(BaseClass):
             )
         except docker.errors.ImageNotFound as e:
             # Handle the case where the specified Docker image is not found
-            allure.attach(f"Error: Docker image : {Config.get_value_of_config_key("docker_image")} not found in Instance", "Docker Image not found", allure.attachment_type.TEXT)
+            allure.attach(f"Error: Docker image : {Config.get_value_of_config_key('docker_image')} not found in Instance", "Docker Image not found", allure.attachment_type.TEXT)
 
         except Exception as e:
-            # Handle other exceptions
+            # Handle other exceptions   
             allure.attach(f"An error occurred: {e}", "Error Occured!", allure.attachment_type.TEXT)
 
     #
