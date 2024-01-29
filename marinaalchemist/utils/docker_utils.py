@@ -47,7 +47,7 @@ class DockerUtils(BaseClass):
             
         except docker.errors.NotFound:
             allure.attach("aiservice container is not running", "status of aiservice container", allure.attachment_type.TEXT)
-            raise
+            
         
         if existing_container:
             allure.attach("aiservice container is already running", "status of aiservice container", allure.attachment_type.TEXT)
@@ -67,7 +67,7 @@ class DockerUtils(BaseClass):
         except docker.errors.ImageNotFound as e:
             # Handle the case where the specified Docker image is not found
             allure.attach(f"Error: Docker image : {Config.get_value_of_config_key('docker_image')} not found in Instance", "Docker Image not found", allure.attachment_type.TEXT)
-
+            raise
         except Exception as e:
             # Handle other exceptions   
             allure.attach(f"An error occurred: {e}", "Error Occured!", allure.attachment_type.TEXT)
