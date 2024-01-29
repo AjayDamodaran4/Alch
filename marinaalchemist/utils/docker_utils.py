@@ -5,8 +5,7 @@ import re
 import subprocess
 import time
 from .config_reader import Config
-from allurereport import AllureReport
-import allurereport
+from .allurereport import AllureReport
 
 class DockerUtils(object):
     container_name = Config.get_value_of_config_key("container_name")
@@ -64,10 +63,12 @@ class DockerUtils(object):
             )
         except docker.errors.ImageNotFound as e:
             # Handle the case where the specified Docker image is not found
+            AllureReport.log_to_allure(f"Error: Docker image not found - {e}")
             print(f"Error: Docker image not found - {e}")
 
         except Exception as e:
             # Handle other exceptions
+            AllureReport.log_to_allure(f"An error occurred: {e}")
             print(f"An error occurred: {e}")
 
 
