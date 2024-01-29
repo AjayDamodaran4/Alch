@@ -23,7 +23,7 @@ class TestFHIR(BaseClass):
             total_observations_in_fhir+=1
         
         with allure.step(f"Total Number of Observations present in FHIR"):
-            self.allure_util.allure_attach_with_text(str(total_observations_in_fhir))
+            self.allure_util.allure_attach_with_text(f"Total Number of Observations present in FHIR",str(total_observations_in_fhir))
         # non_nuance_findings = ["acute_humerus_fracture", "acute_rib_fracture", "acute_clavicle_fracture"]
         for observation in range(3,len(fhir_contents['contained'])):
             target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
