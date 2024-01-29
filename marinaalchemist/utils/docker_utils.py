@@ -24,7 +24,7 @@ class DockerUtils(BaseClass):
     #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
-        allure.dynamic.description("98798797 ")
+        allure.attach("This will be attached in Allure report", "Attachment Description", allure.attachment_type.TEXT)
         # with allure.step("Failures"):
         #     self.allure_util.allure_attach_with_text(f"98988", str(9898))
         volumes = {
