@@ -23,7 +23,7 @@ class DockerUtils(object):
 
     def container_autorun(self, input_path, output_path):
         with allure.step("Failures"):
-            AllureReport.allure_attach_with_text(f"9898", str(9898))
+            AllureReport.allure_attach_with_text(f"98988", str(9898))
         volumes = {
             input_path: {'bind': '/app/input', 'mode': 'rw'},
             output_path: {'bind': '/app/output', 'mode': 'rw'},
