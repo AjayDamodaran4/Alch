@@ -16,10 +16,10 @@ class AllureReport(object):
             name = name + " Timestamp: " + str(timestamp)
             allure.attach(self.__driver_utils.take_screenshot(), name=name, attachment_type=self.__attachment_type)
 
-    def allure_attach_with_text(self, name, body):
+    def allure_attach_with_text(self, name=None, body=None):
         timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         name = name + " Timestamp: " + str(timestamp)
         allure.attach(name=name, body=body)
         
-    def log_to_allure(self,message):
-        allure.attach(message, name="Print Statement", attachment_type=allure.attachment_type.TEXT)
+    # def log_to_allure(self,message):
+    #     allure.attach(message, name="Print Statement", attachment_type=allure.attachment_type.TEXT)
