@@ -1,4 +1,4 @@
-import os, json
+import os, json, allure, allurereport
 from .config_reader import Config
 import conftest
 
@@ -173,9 +173,13 @@ class GenericUtils(object):
     def verify_radlex_code(self,target,observation, fhir_contents):
         self.cxr_req = conftest.read_cxr_req()
         bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
+        # with allure.step(f"Fetching bodySite code for {target_obs} observation - ANNALISE coding system"):
+        #         self.allure_util.allure_attach_with_text(f"Annalise display as per requirement for {target_obs} observation", str(Annalise_display_as_per_req))
         if target == "RDES230":
         # Special case: Set fhir_bodySite_radlex_code from a different coding index
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+            # with allure.step(f"Fetching observation display for {target_obs} observation - ANNALISE coding system"):
+            #     self.allure_util.allure_attach_with_text(f"Annalise display as per requirement for {target_obs} observation", str(Annalise_display_as_per_req))
         else:
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
         assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
