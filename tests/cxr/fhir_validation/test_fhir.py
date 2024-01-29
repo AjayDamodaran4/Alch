@@ -58,9 +58,9 @@ class TestFHIR(BaseClass):
                         RadElement_code_as_per_req = cxr_req[target_obs][0]["RadElement_observation.code"]
                         fhir_RadElement_obs_code = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
                         with allure.step(f"Fetching observation code for {target_obs} observation - RADELEMENT coding system"):
-                            self.allure_util.allure_attach_with_text(f"Nuance code as per requirement for {target_obs} observation", str(RadElement_code_as_per_req))
-                            self.allure_util.allure_attach_with_text(f"Nuance code from FHIR report for {target_obs} observation", str(fhir_RadElement_obs_code))
-                        assert RadElement_code_as_per_req == fhir_RadElement_obs_code, "radele code not match"
+                            self.allure_util.allure_attach_with_text(f"RadElement code as per requirement for {target_obs} observation", str(RadElement_code_as_per_req))
+                            self.allure_util.allure_attach_with_text(f"RadElement code from FHIR report for {target_obs} observation", str(fhir_RadElement_obs_code))
+                        assert RadElement_code_as_per_req == fhir_RadElement_obs_code, f"{RadElement_code_as_per_req} from requrirement and {fhir_RadElement_obs_code} from FHIR are not matching"
                         with allure.step(f"Verification of Observation code for {target_obs} observation - RADELEMENT coding system"):
                             self.allure_util.allure_attach_with_text(f"Observation code from FHIR report matches with requirement for {target_obs} observation", str(f"{RadElement_code_as_per_req}, {fhir_RadElement_obs_code}"))
                         # print(f"RadElement observation code {RadElement_code_as_per_req} from Requirements and {fhir_RadElement_obs_code} from FHIR json is matching")
