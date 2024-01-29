@@ -2328,7 +2328,7 @@
             "bodySite_Snomed.display": "Abdomen",
             "snomed_system": "http://snomed.info/sct",
             "RadElement_observation.code": "RDES228",
-            "RadElement_observation.display": "Pneumoperitoneum",
+            "RadElement_observation.display": "Pneumoperitonem",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
             "Annalise_coding_system": false,
