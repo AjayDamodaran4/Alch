@@ -6,6 +6,7 @@ import subprocess
 import time
 from .config_reader import Config
 from .allurereport import AllureReport
+import allure
 
 class DockerUtils(object):
     container_name = Config.get_value_of_config_key("container_name")
@@ -21,7 +22,8 @@ class DockerUtils(object):
     #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
-        AllureReport.allure_attach_with_text("9898")
+        with allure.step("Failures"):
+            self.allure_util.allure_attach_with_text(f"9898 ", str(9898))
         volumes = {
             input_path: {'bind': '/app/input', 'mode': 'rw'},
             output_path: {'bind': '/app/output', 'mode': 'rw'},
