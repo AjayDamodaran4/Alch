@@ -1,5 +1,5 @@
 {
-  "fhir_json_path": "resources/Annalise-cxr-FHIR.json",
+  "fhir_json_path": "/verification/output/75/Annalise-cxr-FHIR.json",
   "cxr_req": "resources/cxr.json",
   "excel_file_path": "resources/CXR-FHIR_Latest.xlsx",
   "compose_file_path": "/nuance/doc_compose/docker-compose.yaml",
@@ -15,6 +15,5 @@
   "container_output_path": "/app/output",
   "container_prior_path": "/app/prior",
   "container_temp_path": "/app/temp",
-  "docker_image": "274616382064.dkr.ecr.ap-south-2.amazonaws.com/marina:annalise-xray-chest-fhir_sc-2.0.3",
-  "key": "/verification/output/28"
+  "docker_image": "274616382064.dkr.ecr.ap-south-2.amazonaws.com/marina:annalise-xray-chest-fhir_sc-2.0"
 }

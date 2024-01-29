@@ -5,7 +5,8 @@ import re
 import subprocess
 import time
 from .config_reader import Config
-
+from allurereport import AllureReport
+import allurereport
 
 class DockerUtils(object):
     container_name = Config.get_value_of_config_key("container_name")
@@ -21,19 +22,7 @@ class DockerUtils(object):
     #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
-        existing_container = None  # Initialize as None
-        try:
-            existing_container = self.client.containers.get(self.container_name)
-            
-        except docker.errors.NotFound:
-            print("aiservice container is not running")
-            print("launching aiservice container")
-        if existing_container:
-            print("aiservice container is already running")
-            existing_container.stop()
-            existing_container.remove()
-            print("Stopping the container and launching a new container")
-
+        AllureReport.log_to_allure("9898")
         volumes = {
             input_path: {'bind': '/app/input', 'mode': 'rw'},
             output_path: {'bind': '/app/output', 'mode': 'rw'},
@@ -47,15 +36,39 @@ class DockerUtils(object):
             'runMode': Config.get_value_of_config_key("runMode"),
             'requestPort': Config.get_value_of_config_key("requestPort")
         }
+        
+        existing_container = None  # Initialize as None
+        try:
+            existing_container = self.client.containers.get(self.container_name)
+            
+        except docker.errors.NotFound:
+            AllureReport.log_to_allure("aiservice container is not running")
+            AllureReport.log_to_allure("launching aiservice container")
+            
+            # print("aiservice container is not running")
+            # print("launching aiservice container")
+        if existing_container:
+            print("aiservice container is already running")
+            existing_container.stop()
+            existing_container.remove()
+            print("Stopping the container and launching a new container")
 
-        container = self.client.containers.run(
-            Config.get_value_of_config_key("docker_image"),
-            name=Config.get_value_of_config_key("container_name"),
-            detach=True,
-            volumes=volumes,
-            environment=environment
-        )
+        
+        try:
+            container = self.client.containers.run(
+                Config.get_value_of_config_key("docker_image"),
+                name=Config.get_value_of_config_key("container_name"),
+                detach=True,
+                volumes=volumes,
+                environment=environment
+            )
+        except docker.errors.ImageNotFound as e:
+            # Handle the case where the specified Docker image is not found
+            print(f"Error: Docker image not found - {e}")
 
+        except Exception as e:
+            # Handle other exceptions
+            print(f"An error occurred: {e}")
 
 
     #

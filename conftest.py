@@ -18,7 +18,7 @@ def setup(request):
     request.cls.generic_util = GenericUtils()
     request.cls.observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, observation_excel_sheet)
     request.cls.non_observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, non_observation_excel_sheet)
-    request.cls.fhir_json = read_fhir_json()
+    # request.cls.fhir_json = read_fhir_json()
     request.cls.docker_util = DockerUtils()
     request.cls.dicom_util = DicomUtils()
     request.cls.cxr_req = read_cxr_req()
@@ -41,9 +41,9 @@ def read_cxr_req():
 
 @pytest.fixture(scope="class", params = ["input_path_TC123"])
 def container_auto(request):
-    print("running aiservice container to fetch FHIR")
-    input_path_key = request.param
-    input_path = Config().get_value_of_test_input_key(input_path_key)
+
+    input_path_param = request.param
+    input_path = Config().get_value_of_test_input_key(input_path_param)
     output_path = GenericUtils().output_folder_generator()
     DockerUtils().container_autorun(input_path=input_path, output_path=output_path)
     DockerUtils().check_container_logs()

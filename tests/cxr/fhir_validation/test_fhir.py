@@ -4,14 +4,14 @@ import allure
 import re
 
 
-# @pytest.mark.usefixtures("container_auto")
+@pytest.mark.usefixtures("container_auto")
 class TestFHIR(BaseClass):
 
     '''
     The test_fhir_obs_code verifies the Observation code of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
     '''
     def test_fhir_obs_code(self):
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         with allure.step("FHIR contents"):
             self.allure_util.allure_attach_with_text("contents of FHIR report", str(fhir_contents))
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
@@ -103,7 +103,7 @@ class TestFHIR(BaseClass):
     The test_fhir_obs_display verifies the Observation's Display of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
     ''' 
     def test_fhir_obs_display(self):
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
         failures = {}
@@ -186,7 +186,7 @@ class TestFHIR(BaseClass):
     ''' 
     def test_obs_bodsite_code(self):
         print("testing observation Bodysite Code")
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
 
@@ -207,25 +207,24 @@ class TestFHIR(BaseClass):
                 
     
     
-    # def test_study_uid(self):
-    #     print("testing observation Study instance UID")
-    #     fhir_contents = self.fhir_json
-    #     assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
-    #     cxr_req = self.cxr_req
-    #     try:
-    #         study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
-    #         assert study_uid_presence, f"Study Instance UID is not present for one of the observation in FHIR"
-    #         dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
-    #         fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
-    #         assert dicom_study_uid == fhir_study_uid, "Study Instance UID not matching !!"
-    #     except Exception as e:
-    #         print(f"An exception occurred: {e}")
-    #         pytest.fail(f"Test failed: {e}")
+    def test_study_uid(self):
+        fhir_contents = self.fhir_contents
+        assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
+        cxr_req = self.cxr_req
+        try:
+            study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
+            assert study_uid_presence, f"Study Instance UID is not present for one of the observation in FHIR"
+            dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
+            fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
+            assert dicom_study_uid == fhir_study_uid, "Study Instance UID not matching !!"
+        except Exception as e:
+            print(f"An exception occurred: {e}")
+            pytest.fail(f"Test failed: {e}")
             
             
     def test_fhir_tracking_id(self):
         print("testing FHIR Tracking Identifier")
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
         try:
@@ -249,7 +248,7 @@ class TestFHIR(BaseClass):
     
     def test_fhir_tracking_uid(self):
         print("testing FHIR Tracking Unique Identifier")
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
         try:
