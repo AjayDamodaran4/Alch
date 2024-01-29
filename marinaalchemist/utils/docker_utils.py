@@ -21,7 +21,7 @@ class DockerUtils(object):
     #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
-        AllureReport.log_to_allure("9898")
+        AllureReport.allure_attach_with_text("9898")
         volumes = {
             input_path: {'bind': '/app/input', 'mode': 'rw'},
             output_path: {'bind': '/app/output', 'mode': 'rw'},
@@ -41,8 +41,7 @@ class DockerUtils(object):
             existing_container = self.client.containers.get(self.container_name)
             
         except docker.errors.NotFound:
-            AllureReport.log_to_allure("aiservice container is not running")
-            AllureReport.log_to_allure("launching aiservice container")
+            AllureReport.allure_attach_with_text("aiservice container is not running")
             
             # print("aiservice container is not running")
             # print("launching aiservice container")
@@ -63,12 +62,12 @@ class DockerUtils(object):
             )
         except docker.errors.ImageNotFound as e:
             # Handle the case where the specified Docker image is not found
-            AllureReport.log_to_allure(f"Error: Docker image not found - {e}")
+            AllureReport.allure_attach_with_text(f"Error: Docker image not found - {e}")
             print(f"Error: Docker image not found - {e}")
 
         except Exception as e:
             # Handle other exceptions
-            AllureReport.log_to_allure(f"An error occurred: {e}")
+            AllureReport.allure_attach_with_text(f"An error occurred: {e}")
             print(f"An error occurred: {e}")
 
 
