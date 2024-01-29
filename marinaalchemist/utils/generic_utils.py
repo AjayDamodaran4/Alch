@@ -1,4 +1,4 @@
-import os, json, allure, allurereport
+import os, json
 from .config_reader import Config
 import conftest
 
