@@ -38,8 +38,7 @@ class TestFHIR(BaseClass):
                         with allure.step(f"Fetching observation code for {target_obs} observation - ANNALISE coding system"):
                             self.allure_util.allure_attach_with_text(f"Annalise code as per requirement for {target_obs} observation", str(Annalise_code_as_per_req))
                             self.allure_util.allure_attach_with_text(f"Annalise code from FHIR report for {target_obs} observation", str(fhir_annalise_obs_code))
-                        check.equal(Annalise_code_as_per_req,fhir_annalise_obs_code)
-                        # assert Annalise_code_as_per_req == fhir_annalise_obs_code, f"{Annalise_code_as_per_req} from requrirement and {fhir_annalise_obs_code} from FHIR are not matching"
+                        assert Annalise_code_as_per_req == fhir_annalise_obs_code, f"{Annalise_code_as_per_req} from requrirement and {fhir_annalise_obs_code} from FHIR are not matching"
                         with allure.step(f"Verification of Observation code for {target_obs} observation - ANNALISE coding system"):
                             self.allure_util.allure_attach_with_text(f"Observation code from FHIR report matches with requirement for {target_obs} observation", str(f"{Annalise_code_as_per_req}, {fhir_annalise_obs_code}"))
                         # print(f"Annalise observation code {Annalise_code_as_per_req} from Requirements and {fhir_annalise_obs_code} from FHIR json is matching")
@@ -55,7 +54,7 @@ class TestFHIR(BaseClass):
                     except AssertionError as e:
                         print(f"Assertion error: {e}")
                         raise AssertionError(f"Test failed due to exception: {e}")
-                    continue 
+                        continue
                             
                 elif cxr_req[target_obs][0]["RadElement_coding_system"]:
                     assert len(fhir_contents["contained"][observation]["code"]["coding"])==1, f"More than one Coding systems are displayed in FHIR for {target_obs} observation. Only one coding system is expected as per requirement"
