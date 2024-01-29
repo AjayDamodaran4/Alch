@@ -52,7 +52,9 @@ class TestFHIR(BaseClass):
                         # print(f"Nuance observation code {Nuance_code_as_per_req} from Requirements and {fhir_nuance_obs_code} from FHIR json is matching")
                     except AssertionError as e:
                         print(f"Assertion error: {e}")
-                
+                        raise AssertionError(f"Test failed due to exception: {e}")
+                        continue 
+                            
                 elif cxr_req[target_obs][0]["RadElement_coding_system"]:
                     assert len(fhir_contents["contained"][observation]["code"]["coding"])==1, f"More than one Coding systems are displayed in FHIR for {target_obs} observation. Only one coding system is expected as per requirement"
                     assert cxr_req[target_obs][0]["RadElement_system"] in fhir_contents["contained"][observation]["code"]["coding"][0]["system"],"RadElement coding system text in FHIR does not match with requirement"
