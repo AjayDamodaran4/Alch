@@ -24,9 +24,8 @@ class DockerUtils(BaseClass):
     #     self.output_path = output_path
 
     def container_autorun(self, input_path, output_path):
-        allure.attach("This will be attached in Allure report", "Attachment Description", allure.attachment_type.TEXT)
-        # with allure.step("Failures"):
-        #     self.allure_util.allure_attach_with_text(f"98988", str(9898))
+        
+        
         volumes = {
             input_path: {'bind': '/app/input', 'mode': 'rw'},
             output_path: {'bind': '/app/output', 'mode': 'rw'},
@@ -46,16 +45,13 @@ class DockerUtils(BaseClass):
             existing_container = self.client.containers.get(self.container_name)
             
         except docker.errors.NotFound:
-            pass
-            # AllureReport.allure_attach_with_text("aiservice container is not running")
+            allure.attach("aiservice container is not running", "status of aiservice container", allure.attachment_type.TEXT)
             
-            # print("aiservice container is not running")
-            # print("launching aiservice container")
         if existing_container:
-            print("aiservice container is already running")
+            allure.attach("aiservice container is already running", "status of aiservice container", allure.attachment_type.TEXT)
             existing_container.stop()
             existing_container.remove()
-            print("Stopping the container and launching a new container")
+            allure.attach("Stopping the container and launching a new container", "Triggering a new container", allure.attachment_type.TEXT)
 
         
         try:
@@ -68,14 +64,12 @@ class DockerUtils(BaseClass):
             )
         except docker.errors.ImageNotFound as e:
             # Handle the case where the specified Docker image is not found
-            # AllureReport.allure_attach_with_text(f"Error: Docker image not found - {e}")
-            print(f"Error: Docker image not found - {e}")
+            allure.attach(f"Error: Docker image not found - {e}", "Docker Image not found", allure.attachment_type.TEXT)
 
         except Exception as e:
             # Handle other exceptions
             # AllureReport.allure_attach_with_text(f"An error occurred: {e}")
-            print(f"An error occurred: {e}")
-
+            allure.attach(f"An error occurred: {e}", "Error Occured!", allure.attachment_type.TEXT)
 
     #
     # def is_container_running(self):

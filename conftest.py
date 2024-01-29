@@ -1,5 +1,5 @@
 import pytest
-import json, os
+import json, os, allure
 from marinaalchemist import AllureReport, ExcelUtils, Config, DockerUtils, GenericUtils, DicomUtils
 import pandas as pd
 
