@@ -22,9 +22,9 @@ class AllureReport(object):
         allure.attach(name=name, body=body)
         
         
-    def log_to_allure(self, message):
+    def log_to_allure(self, name):
         timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
-        message = message + " Timestamp: " + str(timestamp)
-        allure.attach(message=message)
+        name = name + " Timestamp: " + str(timestamp)
+        allure.attach(name=name)
     # def log_to_allure(self,message):
     #     allure.attach(message, name="Log Message", attachment_type=allure.attachment_type.TEXT)
