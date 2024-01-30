@@ -178,7 +178,7 @@ class GenericUtils(object):
                           From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
         if failures:
             with allure.step("Failures"):
-                self.allure_util.allure_attach_with_text(f"Snomed bodySite code mismatches are observed in FHIR.json for following observations ", str(failures))
+                allure.attach(f"{failures}",f"Snomed bodySite code mismatches are observed in FHIR.json for following observations :", allure.attachment_type.TEXT)
             pytest.fail(f"Test failed")
         print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
 
@@ -204,7 +204,7 @@ class GenericUtils(object):
 
         if failures:
             with allure.step("Failures"):
-                self.allure_util.allure_attach_with_text(f"Radlex bodySite mismatches are observed in FHIR.json for following observations ", str(failures))
+                allure.attach(f"{failures}",f"Radlex bodySite code mismatches are observed in FHIR.json for following observations :", allure.attachment_type.TEXT)
             pytest.fail(f"Test failed")
         
         
@@ -281,7 +281,7 @@ class GenericUtils(object):
 
         if failures:
             with allure.step("Failures"):
-                self.allure_util.allure_attach_with_text(f"bodySite code mismatches are observed in FHIR.json for following observations ", str(failures))
+                allure.attach(f"{failures}",f"bodySite code mismatches are observed in FHIR.json for following observations :", allure.attachment_type.TEXT)
             pytest.fail(f"Test failed")
 
     # def verify_tracking_uid(self, fhir_contents):
