@@ -1,7 +1,7 @@
 {
     "abdominal_clips": [
         {
-            "Annalise_observation.code": "abdominal_clips",
+            "Annalise_observation.code": "abdominal_chips",
             "Annalise_observation.display": "Abdominal clips",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200000",
@@ -10,7 +10,7 @@
             "bodySite_Radlex.code": "RID56",
             "bodySite_Radlex.display": "abdomen",
             "radlex_system": "http://radlex.org",
-            "bodySite_Snomed.code": "818983003",
+            "bodySite_Snomed.code": "81898300",
             "bodySite_Snomed.display": "Abdomen",
             "snomed_system": "http://snomed.info/sct",
             "RadElement_coding_system": false,
@@ -21,13 +21,13 @@
     "acute_aortic_syndrome": [
         {
             "Annalise_observation.code": "acute_aortic_syndrome",
-            "Annalise_observation.display": "Widened aortic contour",
+            "Annalise_observation.display": "Widened aortc contour",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200002",
             "Nuance_observation.display": "Widened aortic contour",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
             "bodySite_Radlex.code": "RID480",
-            "bodySite_Radlex.display": "aorta",
+            "bodySite_Radlex.display": "orta",
             "radlex_system": "http://radlex.org",
             "bodySite_Snomed.code": "15825003",
             "bodySite_Snomed.display": "Aorta",
