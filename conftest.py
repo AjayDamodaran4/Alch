@@ -18,7 +18,7 @@ def setup(request):
     request.cls.generic_util = GenericUtils()
     request.cls.observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, observation_excel_sheet)
     request.cls.non_observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, non_observation_excel_sheet)
-    request.cls.fhir_json = read_fhir_json()
+    # request.cls.fhir_json = read_fhir_json()
     request.cls.docker_util = DockerUtils()
     request.cls.dicom_util = DicomUtils()
     request.cls.cxr_req = read_cxr_req()

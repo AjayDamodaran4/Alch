@@ -4,7 +4,7 @@ import allure
 import re
 
 
-# @pytest.mark.usefixtures("container_auto")
+@pytest.mark.usefixtures("container_auto")
 class TestFHIR(BaseClass):
 
     '''
@@ -274,7 +274,7 @@ class TestFHIR(BaseClass):
         allure.attach("This test verifies the Tracking Identifier of all the findings in FHIR.json - against the requirement", \
             "Test Scenario Description", allure.attachment_type.TEXT)
         
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         failures = []
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         tracking_identifier_presence = self.generic_util.is_tracking_identifier_present(fhir_contents)
@@ -326,7 +326,7 @@ class TestFHIR(BaseClass):
         print("testing FHIR Tracking Unique Identifier")
         allure.attach("This test verifies the Tracking Unique Identifier of all the findings in FHIR.json - against the requirement", \
             "Test Scenario Description", allure.attachment_type.TEXT)
-        fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         failures = []
         tracking_uid_presence = self.generic_util.is_tracking_uid_present(fhir_contents)
