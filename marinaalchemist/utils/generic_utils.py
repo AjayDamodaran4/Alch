@@ -1,4 +1,4 @@
-import os, json, allure
+import os, json, allure, pytest
 from .config_reader import Config
 import conftest
 
@@ -163,33 +163,49 @@ class GenericUtils(object):
         
     def verify_snomed_code(self,target,observation, fhir_contents):
         self.cxr_req = conftest.read_cxr_req()
+        failures = {}
         bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
         fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
         # with allure.step(f"Fetching Snomed bodySite code for {target} observation"):
         #     allure.attach(f"{bodySite_snomed_code_as_per_req}", "Snomed bodySite code for {target} observation as per requirement", allure.attachment_type.TEXT)
         #     allure.attach(f"{fhir_bodySite_snomed_code}", "Snomed bodySite code for {target} observation from FHIR.json", allure.attachment_type.TEXT)
-        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
+        try:
+            assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
+        except AssertionError as e:
+            failures["Snomed bodySite code not matching for : "] = f"{target}"
         with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
             allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
                           From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+        if failures:
+            with allure.step("Failures"):
+                self.allure_util.allure_attach_with_text(f"Snomed bodySite code mismatches are observed in FHIR.json for following observations ", str(failures))
+            pytest.fail(f"Test failed")
         print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
 
 
 
     def verify_radlex_code(self,target,observation, fhir_contents):
         self.cxr_req = conftest.read_cxr_req()
+        failures = {}
         bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
         if target == "RDES230":
         # Special case: Set fhir_bodySite_radlex_code from a different coding index
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
         else:
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
+        try:
+            assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
+        except AssertionError as e:
+            failures["Radlex bodySite code not matching for : "] = f"{target}"
         with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
             allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
                           From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
         print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
 
+        if failures:
+            with allure.step("Failures"):
+                self.allure_util.allure_attach_with_text(f"Radlex bodySite mismatches are observed in FHIR.json for following observations ", str(failures))
+            pytest.fail(f"Test failed")
         
         
     def verify_observation_225(self, observation, fhir_contents):
@@ -205,6 +221,7 @@ class GenericUtils(object):
 
         target = "RDES225"
         display_value = None
+        failures = {}
         if len(fhir_contents["contained"][observation]["component"]) == 4 :
             display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
         elif len(fhir_contents["contained"][observation]["component"]) == 5 :
@@ -237,10 +254,11 @@ class GenericUtils(object):
 
         bodySite_snomed_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Snomed.code"]
         fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-        
-        assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
-            f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
-
+        try: 
+            assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
+                f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
+        except AssertionError as e:
+            failures["Snomed bodySite code not matching for : "] = f"{target}"
         with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
             allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
                           From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
@@ -248,10 +266,12 @@ class GenericUtils(object):
         
         bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
         fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
+        try:
+            assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
+                f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
         
-        assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
-            f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
-        
+        except AssertionError as e:
+            failures["Radlex bodySite code not matching for : "] = f"{target}"
         with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
             allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
                           From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
@@ -259,7 +279,10 @@ class GenericUtils(object):
         print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
             f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
 
-
+        if failures:
+            with allure.step("Failures"):
+                self.allure_util.allure_attach_with_text(f"bodySite code mismatches are observed in FHIR.json for following observations ", str(failures))
+            pytest.fail(f"Test failed")
 
     # def verify_tracking_uid(self, fhir_contents):
     # # """
