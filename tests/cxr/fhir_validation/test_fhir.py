@@ -6,11 +6,13 @@ import re
 
 @pytest.mark.usefixtures("container_auto")
 class TestFHIR(BaseClass):
+    
 
     '''
     The test_fhir_obs_code verifies the Observation code of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
     '''
     def test_fhir_obs_code(self):
+        
         allure.attach("This test verifies the Observation code for all the findings in FHIR.json against the requirement", "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         with allure.step("FHIR contents"):
