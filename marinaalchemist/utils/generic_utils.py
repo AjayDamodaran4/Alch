@@ -166,9 +166,6 @@ class GenericUtils(object):
         self.cxr_req = conftest.read_cxr_req()
         bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
         fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-    # with allure.step(f"Fetching Snomed bodySite code for {target} observation"):
-    #     allure.attach(f"{bodySite_snomed_code_as_per_req}", "Snomed bodySite code for {target} observation as per requirement", allure.attachment_type.TEXT)
-    #     allure.attach(f"{fhir_bodySite_snomed_code}", "Snomed bodySite code for {target} observation from FHIR.json", allure.attachment_type.TEXT)
         try:
             assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
     
