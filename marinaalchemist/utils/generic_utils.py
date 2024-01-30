@@ -109,8 +109,8 @@ class GenericUtils(object):
 
     def is_study_uid_present(self,fhir_json_data):
         fhir_contents = fhir_json_data
-        tracking_identifier_presenence = True
-        tracking_id_absence = []
+        study_uid_presenence = True
+        study_uid_absence = []
         for observation in range(3, len(fhir_contents['contained'])):
             
             target = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
@@ -126,13 +126,13 @@ class GenericUtils(object):
                 if "Study Instance UID" in components_data:
                     components_data = []
                 else:
-                    tracking_identifier_presenence = False
-                    tracking_id_absence.append(target)
+                    study_uid_presenence = False
+                    study_uid_absence.append(target)
                     
-        if tracking_identifier_presenence:
+        if study_uid_presenence:
             return True
         else:
-            return False
+            return study_uid_absence
         
     def is_tracking_uid_present(self,fhir_json_data):
         fhir_contents = fhir_json_data

@@ -1,7 +1,7 @@
 {
     "abdominal_clips": [
         {
-            "Annalise_observation.code": "abdominal_chips",
+            "Annalise_observation.code": "abdominal_clips",
             "Annalise_observation.display": "Abdominal clips",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200000",
@@ -20,7 +20,7 @@
     ],
     "acute_aortic_syndrome": [
         {
-            "Annalise_observation.code": "acute_tic_syndrome",
+            "Annalise_observation.code": "acute_aortic_syndrome",
             "Annalise_observation.display": "Widened aortic contour",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200002",
@@ -40,10 +40,10 @@
     "unfolded_aorta": [
         {
             "Annalise_observation.code": "unfolded_aorta",
-            "Annalise_observation.display": "Unfoed aorta",
+            "Annalise_observation.display": "Unfolded aorta",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200003",
-            "Nuance_observation.display": "Unlded aorta",
+            "Nuance_observation.display": "Unfolded aorta",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
             "bodySite_Radlex.code": "RID879",
             "bodySite_Radlex.display": "thoracic aorta",

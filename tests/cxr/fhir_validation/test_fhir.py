@@ -232,15 +232,29 @@ class TestFHIR(BaseClass):
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
+
+        study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
         try:
-            study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
-            assert study_uid_presence, f"Study Instance UID is not present for one of the observation in FHIR"
-            dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
-            fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
+            assert study_uid_presence==True, f"Study Instance UID is not present for {study_uid_presence} observations in FHIR"
+            with allure.step(f"Verification of presence of Study Instance UID in all the Observations"):
+                self.allure_util.allure_attach_with_text(f"Study Instance UID is present for all the observation in FHIR.json", str(f"No issues found"))
+        except AssertionError as e:
+            with allure.step(f"Study Instance UID is absent for following observations"):
+                self.allure_util.allure_attach_with_text(f"Study Instance UID is absent for following observations", str(study_uid_presence))
+            pytest.fail(f"Test failed since Study Instance UID is absent for {study_uid_presence} observations in FHIR.json")
+        
+        dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
+        fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
+        try:
             assert dicom_study_uid == fhir_study_uid, "Study Instance UID not matching !!"
-        except Exception as e:
-            print(f"An exception occurred: {e}")
-            pytest.fail(f"Test failed: {e}")
+            with allure.step(f"Verification of Study Instance UID"):
+                self.allure_util.allure_attach_with_text(f"Study Instance UID from FHIR.json and DICOM metadata matches. No issues found.", \
+                    str(f"From DICOM metadata : {dicom_study_uid}, From FHIR.json : {fhir_study_uid}"))
+            
+        except AssertionError as e:
+            with allure.step(f"Study Instance UID does not match"):
+                self.allure_util.allure_attach_with_text(f"Study Instance UID does not match between DICOM metadata and FHIR.json", str("No attachments"))
+            pytest.fail(f"Test failed since Study Instance UID does not match between DICOM metadata and FHIR.json")
             
             
     def test_fhir_tracking_id(self):
