@@ -165,13 +165,13 @@ class GenericUtils(object):
         self.cxr_req = conftest.read_cxr_req()
         bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
         fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-        with allure.step(f"Fetching Snomed bodySite code for {target} observation"):
-            allure.attach(f"{bodySite_snomed_code_as_per_req}", "Snomed bodySite code for {target} observation as per requirement", allure.attachment_type.TEXT)
-            allure.attach(f"{fhir_bodySite_snomed_code}", "Snomed bodySite code for {target} observation from FHIR.json", allure.attachment_type.TEXT)
+        # with allure.step(f"Fetching Snomed bodySite code for {target} observation"):
+        #     allure.attach(f"{bodySite_snomed_code_as_per_req}", "Snomed bodySite code for {target} observation as per requirement", allure.attachment_type.TEXT)
+        #     allure.attach(f"{fhir_bodySite_snomed_code}", "Snomed bodySite code for {target} observation from FHIR.json", allure.attachment_type.TEXT)
         assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
         with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
-            allure.attach(f"Snomed bodySite code from FHIR mathces with the requirement for {target} observation \
-                          From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", "Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+            allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
+                          From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
         print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
 
 
@@ -185,6 +185,9 @@ class GenericUtils(object):
         else:
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
         assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
+        with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
+            allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
+                          From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
         print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching")
 
         
@@ -238,6 +241,9 @@ class GenericUtils(object):
         assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
             f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
 
+        with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
+            allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
+                          From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
         
         
         bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
@@ -245,7 +251,11 @@ class GenericUtils(object):
         
         assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
             f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
-
+        
+        with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
+            allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
+                          From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+            
         print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
             f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
 
