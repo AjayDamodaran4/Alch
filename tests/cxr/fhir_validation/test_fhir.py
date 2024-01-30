@@ -198,21 +198,33 @@ class TestFHIR(BaseClass):
 
         for observation in range(3,len(fhir_contents['contained'])):
             target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            failures = {}
             if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
                 pass
             
             elif target == "RDES230": # This block verifies the bodySite of Vertebral Compression Fracture Observation
-                self.generic_util.verify_radlex_code(target,observation,fhir_contents)
-            
+                try:
+                    self.generic_util.verify_radlex_code(target,observation,fhir_contents)
+                except AssertionError as e:
+                    failures["Radlex bodySite code not matching for : "] = f"{target}"
             elif target == "RDES225": # This block verifies the bodySite of Chest Radiograph Pulmonary Nodules observation
-                self.generic_util.verify_observation_225(observation,fhir_contents)
-                
+                try:    
+                    self.generic_util.verify_observation_225(observation,fhir_contents)
+                except AssertionError as e:
+                    failures["Radlex/Snomed bodySite code not matching for : "] = f"{target}"
             else: # This block verifies the bodySite of all observations other than Vertebral Compression Fracture and Chest Radiograph Pulmonary Nodules
-                self.generic_util.verify_snomed_code(target,observation,fhir_contents)
-                self.generic_util.verify_radlex_code(target,observation,fhir_contents)
-                
+                try:
+                    self.generic_util.verify_snomed_code(target,observation,fhir_contents)
+                    self.generic_util.verify_radlex_code(target,observation,fhir_contents)
+                except AssertionError as e:
+                    failures["Radlex/Snomed bodySite code not matching for : "] = f"{target}"
     
-    
+        if failures:
+            with allure.step("Failures"):
+                allure.attach(f"{failures}",f"Snomed/Radlex bodySite code mismatches are observed in FHIR.json for following observations :", allure.attachment_type.TEXT)
+            pytest.fail(f"Test failed due to bodySite code mismatches are observed in FHIR.json")
+            
+            
     def test_study_uid(self):
         allure.attach("This test verifies the study Instance UID of all the findings in FHIR.json - against the study UID from the input DICOM image's metadata", \
             "Test Scenario Description", allure.attachment_type.TEXT)
