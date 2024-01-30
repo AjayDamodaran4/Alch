@@ -188,7 +188,6 @@ class TestFHIR(BaseClass):
         print("testing observation Bodysite Code")
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
-        cxr_req = self.cxr_req
 
         for observation in range(3,len(fhir_contents['contained'])):
             target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])

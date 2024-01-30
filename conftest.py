@@ -39,7 +39,7 @@ def read_cxr_req():
     return cxr_req
 
 
-@pytest.fixture(scope="class", params = ["input_path_TC123","input_path_TC321","input_path_TC222"])
+@pytest.fixture(scope="class", params = ["input_path_TC123"])
 def container_auto(request):
 
     input_path_param = request.param

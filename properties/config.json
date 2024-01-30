@@ -15,5 +15,6 @@
   "container_output_path": "/app/output",
   "container_prior_path": "/app/prior",
   "container_temp_path": "/app/temp",
-  "docker_image": "274616382064.dkr.ecr.ap-south-2.amazonaws.com/marina:annalise-xray-chest-fhir_sc-2.0.3"
+  "docker_image": "274616382064.dkr.ecr.ap-south-2.amazonaws.com/marina:annalise-xray-chest-fhir_sc-2.0.3",
+  "Example" : "/verification/output/75/Annalise-cxr-FHIR.json"
 }

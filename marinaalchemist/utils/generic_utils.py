@@ -173,13 +173,9 @@ class GenericUtils(object):
     def verify_radlex_code(self,target,observation, fhir_contents):
         self.cxr_req = conftest.read_cxr_req()
         bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
-        # with allure.step(f"Fetching bodySite code for {target_obs} observation - ANNALISE coding system"):
-        #         self.allure_util.allure_attach_with_text(f"Annalise display as per requirement for {target_obs} observation", str(Annalise_display_as_per_req))
         if target == "RDES230":
         # Special case: Set fhir_bodySite_radlex_code from a different coding index
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-            # with allure.step(f"Fetching observation display for {target_obs} observation - ANNALISE coding system"):
-            #     self.allure_util.allure_attach_with_text(f"Annalise display as per requirement for {target_obs} observation", str(Annalise_display_as_per_req))
         else:
             fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
         assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
@@ -202,7 +198,7 @@ class GenericUtils(object):
         display_value = None
         if len(fhir_contents["contained"][observation]["component"]) == 4 :
             display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
-        elif len(fhir_contents["contained"][observation]["component"]) ==5 :
+        elif len(fhir_contents["contained"][observation]["component"]) == 5 :
             display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
         
         if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
@@ -234,16 +230,18 @@ class GenericUtils(object):
         fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
         
         assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
-            f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code}"
+            f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
 
+        
+        
         bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
         fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
         
         assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
-            f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code}"
+            f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
 
         print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
-            f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json")
+            f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
 
 
 
