@@ -1,7 +1,13 @@
 {
 
-  "input_path_TC321" : "/cxr_testdata/validstudy_1AP,1PA,1LA/",
-  "input_path_TC222" : "/cxr_testdata/only_lat",
-  "input_path_TC123" : "/cxr_testdata/study_cxr-generic/"
+  "input_path_TC_1" : "/cxr_testdata/validstudy_1AP,1PA,1LA/",
+  "input_path_TC_2" : "/cxr_testdata/only_lat",
+  "input_path_TC_3" : "/cxr_testdata/study_cxr-generic/",
+  "input_path_TC_4" : "/cxr_testdata/cxr/validstudy_1AP/",
+  "input_path_TC_5" : "/cxr_testdata/cxr/Studywithallfindings_enabled",
+  "input_path_TC_6" : "/cxr_testdata/cxr/groupfinding_allAbsent",
+  "input_path_TC_7" : "/cxr_testdata/cxr/groupfinding_present",
+  "input_path_TC_8" : "/cxr_testdata/cxr/cxr_ctb_mix"
+
 }
 
