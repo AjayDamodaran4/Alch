@@ -47,14 +47,15 @@ class DockerUtils(BaseClass):
             
         except docker.errors.NotFound:
             allure.attach("aiservice container is not running", "status of aiservice container", allure.attachment_type.TEXT)
-            
+            print("aiservice container is not running", "status of aiservice container")
         
         if existing_container:
+            print("aiservice container is already running", "status of aiservice container")
             allure.attach("aiservice container is already running", "status of aiservice container", allure.attachment_type.TEXT)
             existing_container.stop()
             existing_container.remove()
             allure.attach("Stopping the container and launching a new container", "Triggering a new container", allure.attachment_type.TEXT)
-
+            print("Stopping the container and launching a new container", "Triggering a new container")
         
         try:
             container = self.client.containers.run(

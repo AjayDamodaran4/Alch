@@ -39,7 +39,7 @@ def read_cxr_req():
     return cxr_req
 
 
-@pytest.fixture(scope="class", params = ["input_path_TC123"])
+@pytest.fixture(scope="class", params = ["input_path_TC123","input_path_TC321","input_path_TC222"])
 def container_auto(request):
 
     input_path_param = request.param
@@ -57,8 +57,10 @@ def container_auto(request):
 
     if os.path.exists(fhir_file_path):
         request.cls.fhir_contents = GenericUtils().parse_json_file(fhir_file_path)
+        
     else:
         # If the JSON file is not available, provide a message
-        print("Warning: Annalise-cxr-FHIR.json not available in the output_path")
+        raise FileNotFoundError(f"Annalise-cxr-FHIR.json not available in the output_path")
+        # print("Warning: Annalise-cxr-FHIR.json not available in the output_path")
     yield
     print(f"Shutting down the container! Output files are stored at {request.cls.fhir_output_path}")

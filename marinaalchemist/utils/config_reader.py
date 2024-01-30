@@ -32,6 +32,6 @@ class Config(object):
         """
         with open(cls.__path_config) as f:
             my_json = json.load(f)
-            my_json[key] = str(value) + "/Annalise-cxr-FHIR.json"
+            my_json[key] = str(value)
         with open(cls.__path_config, 'w') as f:
             json.dump(my_json, f, indent=2)
