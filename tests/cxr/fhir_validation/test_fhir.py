@@ -195,31 +195,33 @@ class TestFHIR(BaseClass):
             "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
-
+        failures = []
+        
         for observation in range(3,len(fhir_contents['contained'])):
             target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-            failures = {}
+            
             if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
                 pass
             
             elif target == "RDES230": # This block verifies the bodySite of Vertebral Compression Fracture Observation
                 try:
                     self.generic_util.verify_radlex_code(target,observation,fhir_contents)
-                except AssertionError as e:
-                    failures["Radlex bodySite code not matching for : "] = f"{target}"
+                except Exception as e:
+                    failures.append(target)
             elif target == "RDES225": # This block verifies the bodySite of Chest Radiograph Pulmonary Nodules observation
                 try:    
                     self.generic_util.verify_observation_225(observation,fhir_contents)
-                except AssertionError as e:
-                    failures["Radlex/Snomed bodySite code not matching for : "] = f"{target}"
+                except Exception as e:
+                    failures.append(target)
             else: # This block verifies the bodySite of all observations other than Vertebral Compression Fracture and Chest Radiograph Pulmonary Nodules
                 try:
                     self.generic_util.verify_snomed_code(target,observation,fhir_contents)
                     self.generic_util.verify_radlex_code(target,observation,fhir_contents)
-                except AssertionError as e:
-                    failures["Radlex/Snomed bodySite code not matching for : "] = f"{target}"
+                except Exception as e:
+                    failures.append(target)
     
         if failures:
+            print(f"few: {failures}")
             with allure.step("Failures"):
                 allure.attach(f"{failures}",f"Snomed/Radlex bodySite code mismatches are observed in FHIR.json for following observations :", allure.attachment_type.TEXT)
             pytest.fail(f"Test failed due to bodySite code mismatches are observed in FHIR.json")
