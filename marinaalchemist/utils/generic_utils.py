@@ -1,4 +1,4 @@
-import os, json
+import os, json, allure
 from .config_reader import Config
 import conftest
 
@@ -165,7 +165,13 @@ class GenericUtils(object):
         self.cxr_req = conftest.read_cxr_req()
         bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
         fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+        with allure.step(f"Fetching Snomed bodySite code for {target} observation"):
+            allure.attach(f"{bodySite_snomed_code_as_per_req}", "Snomed bodySite code for {target} observation as per requirement", allure.attachment_type.TEXT)
+            allure.attach(f"{fhir_bodySite_snomed_code}", "Snomed bodySite code for {target} observation from FHIR.json", allure.attachment_type.TEXT)
         assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
+        with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
+            allure.attach(f"Snomed bodySite code from FHIR mathces with the requirement for {target} observation \
+                          From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", "Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
         print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
 
 

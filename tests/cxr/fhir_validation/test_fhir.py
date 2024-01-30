@@ -11,6 +11,7 @@ class TestFHIR(BaseClass):
     The test_fhir_obs_code verifies the Observation code of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
     '''
     def test_fhir_obs_code(self):
+        allure.attach("This test verifies the Observation code for all the findings in FHIR.json against the requirement", "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         with allure.step("FHIR contents"):
             self.allure_util.allure_attach_with_text("contents of FHIR report", str(fhir_contents))
@@ -95,7 +96,7 @@ class TestFHIR(BaseClass):
         
         if failures:
             with allure.step("Failures"):
-                self.allure_util.allure_attach_with_text(f"FHIR report does not match with requirements for following observations ", str(failures))
+                self.allure_util.allure_attach_with_text(f"Observation code mismatches are observed in FHIR.json for following observations ", str(failures))
             pytest.fail(f"Test failed")
             
 
@@ -103,6 +104,7 @@ class TestFHIR(BaseClass):
     The test_fhir_obs_display verifies the Observation's Display of Annalise/Nuance/RadElement system displayed in FHIR by comparing it the CXR FHIR requirements
     ''' 
     def test_fhir_obs_display(self):
+        allure.attach("This test verifies the Observation display text for all the findings in FHIR.json against the requirement", "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
@@ -157,7 +159,7 @@ class TestFHIR(BaseClass):
                             self.allure_util.allure_attach_with_text(f"RadElement display as per requirement for {target_obs} observation", str(RadElement_display_as_per_req))
                             self.allure_util.allure_attach_with_text(f"RadElement display from FHIR report for {target_obs} observation", str(fhir_RadElement_obs_display))
                         assert RadElement_display_as_per_req == fhir_RadElement_obs_display, "radele code not match"
-                        with allure.step(f"Verification of Observation code for {target_obs} observation - NUANCE coding system"):
+                        with allure.step(f"Verification of Observation code for {target_obs} observation - RADELEMENT coding system"):
                             self.allure_util.allure_attach_with_text(f"Observation display from FHIR report matches with requirement for {target_obs} observation", str(f"{RadElement_display_as_per_req}, {fhir_RadElement_obs_display}"))
                         # print(f"RadElement observation display {RadElement_display_as_per_req} from Requirements and {fhir_RadElement_obs_display} from FHIR json is matching")
                     except AssertionError as e:
@@ -179,13 +181,18 @@ class TestFHIR(BaseClass):
                     except AssertionError as e:
                         failures["ANNALISE Observation display not matching for : "] = f"{target_obs}"
 
-        
+        if failures:
+            with allure.step("Failures"):
+                self.allure_util.allure_attach_with_text(f"Observation code mismatches are observed in FHIR.json for following observations ", str(failures))
+            pytest.fail(f"Test failed")
         
     '''
     The test_obs_bodsite_code verifies the Observation's bodySite of Snomed & Radlex systems displayed in FHIR by comparing it the CXR FHIR requirements
     ''' 
     def test_obs_bodsite_code(self):
         print("testing observation Bodysite Code")
+        allure.attach("This test verifies the bodySite code and display text for all the findings in FHIR.json against the requirement - for both Snomed and Radlex coding systems", \
+            "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
 
@@ -194,7 +201,7 @@ class TestFHIR(BaseClass):
             if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
                 pass
             
-            elif target == "RDES230": # This block verifies the bodySite of Vertebral Compression Fracture Observation observation
+            elif target == "RDES230": # This block verifies the bodySite of Vertebral Compression Fracture Observation
                 self.generic_util.verify_radlex_code(target,observation,fhir_contents)
             
             elif target == "RDES225": # This block verifies the bodySite of Chest Radiograph Pulmonary Nodules observation
@@ -207,6 +214,8 @@ class TestFHIR(BaseClass):
     
     
     def test_study_uid(self):
+        allure.attach("This test verifies the study Instance UID of all the findings in FHIR.json - against the study UID from the input DICOM image's metadata", \
+            "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
@@ -222,6 +231,8 @@ class TestFHIR(BaseClass):
             
             
     def test_fhir_tracking_id(self):
+        allure.attach("This test verifies the Tracking Identifier of all the findings in FHIR.json - against the requirement", \
+            "Test Scenario Description", allure.attachment_type.TEXT)
         print("testing FHIR Tracking Identifier")
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
@@ -247,6 +258,8 @@ class TestFHIR(BaseClass):
     
     def test_fhir_tracking_uid(self):
         print("testing FHIR Tracking Unique Identifier")
+        allure.attach("This test verifies the Tracking Unique Identifier of all the findings in FHIR.json - against the requirement", \
+            "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
