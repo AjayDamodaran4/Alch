@@ -63,6 +63,32 @@ class GenericUtils(object):
             return None
         
         
+    # def validate_fhir_tracking_id(self, fhir_contents):
+    #     fhir_contents = fhir_contents
+    #     for observation in range(3,len(fhir_contents['contained'])):
+    #         target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+    #         if target == '246501002':
+    #             pass
+    #         else:
+    #             for each in range(len(fhir_contents["contained"][observation]["component"])):
+    #                 if 'Tracking Identifier' in fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values():
+    #                     tracking_id_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
+    #                     tracking_id_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+    #                     try:
+    #                         assert tracking_id_code == "112039", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
+    #                         assert tracking_id_display == "Tracking Identifier", f"Tracking ID Display of {target} observation from FHIR report does not match the requirement"
+    #                         with allure.step(f"Verification of Tracking Identifier for {target} observation"):
+    #                             allure.attach(f"Tracking Identifier code from FHIR matches with the requirement for {target} observation \
+    #                                 From requirement Tracking ID code: 112039, From FHIR.json Tracking ID code: {tracking_id_code}", f"Verification of Tracking Identifier code for {target} observation against requirement", allure.attachment_type.TEXT)
+    #                             allure.attach(f"Tracking Identifier display from FHIR matches with the requirement for {target} observation \
+    #                                 From requirement Tracking ID display: Tracking Identifier, From FHIR.json Tracking ID display: {tracking_id_display}", f"Verification of Tracking Identifier display for {target} observation against requirement", allure.attachment_type.TEXT)
+    #                     except AssertionError :
+    #                         raise
+                        
+                        
+                        
+                        
+                        
     def extract_fhir_tracking_id(self,fhir_input):
         try:
             for observation in range(3,len(fhir_input['contained'])):
@@ -105,7 +131,7 @@ class GenericUtils(object):
         if tracking_identifier_presenence:
             return True
         else:
-            return False
+            return tracking_id_absence
 
     def is_study_uid_present(self,fhir_json_data):
         fhir_contents = fhir_json_data
@@ -136,8 +162,8 @@ class GenericUtils(object):
         
     def is_tracking_uid_present(self,fhir_json_data):
         fhir_contents = fhir_json_data
-        tracking_identifier_presenence = True
-        tracking_id_absence = []
+        tracking_uid_presenence = True
+        tracking_uid_absence = []
         for observation in range(3, len(fhir_contents['contained'])):
             
             target = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
@@ -153,13 +179,13 @@ class GenericUtils(object):
                 if "Tracking Unique Identifier" in components_data:
                     components_data = []
                 else:
-                    tracking_identifier_presenence = False
-                    tracking_id_absence.append(target)
+                    tracking_uid_presenence = False
+                    tracking_uid_absence.append(target)
                     
-        if tracking_identifier_presenence:
+        if tracking_uid_presenence:
             return True
         else:
-            return False
+            return tracking_uid_absence
         
         
     def verify_snomed_code(self,target,observation, fhir_contents):

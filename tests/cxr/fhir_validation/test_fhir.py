@@ -4,7 +4,7 @@ import allure
 import re
 
 
-@pytest.mark.usefixtures("container_auto")
+# @pytest.mark.usefixtures("container_auto")
 class TestFHIR(BaseClass):
 
     '''
@@ -185,6 +185,10 @@ class TestFHIR(BaseClass):
                 self.allure_util.allure_attach_with_text(f"Observation code mismatches are observed in FHIR.json for following observations ", str(failures))
             pytest.fail(f"Test failed")
         
+        
+        
+        
+        
     '''
     The test_obs_bodsite_code verifies the Observation's bodySite of Snomed & Radlex systems displayed in FHIR by comparing it the CXR FHIR requirements
     ''' 
@@ -226,12 +230,15 @@ class TestFHIR(BaseClass):
             pytest.fail(f"Test failed due to bodySite code mismatches are observed in FHIR.json")
             
             
+            
+            
+            
+            
     def test_study_uid(self):
         allure.attach("This test verifies the study Instance UID of all the findings in FHIR.json - against the study UID from the input DICOM image's metadata", \
             "Test Scenario Description", allure.attachment_type.TEXT)
         fhir_contents = self.fhir_contents
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
-        cxr_req = self.cxr_req
 
         study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
         try:
@@ -239,10 +246,11 @@ class TestFHIR(BaseClass):
             with allure.step(f"Verification of presence of Study Instance UID in all the Observations"):
                 self.allure_util.allure_attach_with_text(f"Study Instance UID is present for all the observation in FHIR.json", str(f"No issues found"))
         except AssertionError as e:
+            print(f"study UID absent for {study_uid_presence}")
             with allure.step(f"Study Instance UID is absent for following observations"):
                 self.allure_util.allure_attach_with_text(f"Study Instance UID is absent for following observations", str(study_uid_presence))
             pytest.fail(f"Test failed since Study Instance UID is absent for {study_uid_presence} observations in FHIR.json")
-        
+
         dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
         fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
         try:
@@ -252,68 +260,115 @@ class TestFHIR(BaseClass):
                     str(f"From DICOM metadata : {dicom_study_uid}, From FHIR.json : {fhir_study_uid}"))
             
         except AssertionError as e:
+            print(f"study UID does not match for one of the observation")
             with allure.step(f"Study Instance UID does not match"):
                 self.allure_util.allure_attach_with_text(f"Study Instance UID does not match between DICOM metadata and FHIR.json", str("No attachments"))
             pytest.fail(f"Test failed since Study Instance UID does not match between DICOM metadata and FHIR.json")
             
             
+            
+            
+            
+            
     def test_fhir_tracking_id(self):
         allure.attach("This test verifies the Tracking Identifier of all the findings in FHIR.json - against the requirement", \
             "Test Scenario Description", allure.attachment_type.TEXT)
-        print("testing FHIR Tracking Identifier")
-        fhir_contents = self.fhir_contents
+        
+        fhir_contents = self.fhir_json
+        failures = []
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
-        cxr_req = self.cxr_req
+        tracking_identifier_presence = self.generic_util.is_tracking_identifier_present(fhir_contents)
+        
         try:
-            for observation in range(3,len(fhir_contents['contained'])):
-                target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-                if target == '246501002':
-                    pass
-                else:
-                    tracking_identifier_presence = self.generic_util.is_tracking_identifier_present(fhir_contents)
-                    assert tracking_identifier_presence, f"Tracking Identifiier is not present for one of the observation in FHIR"
-                    for each in range(len(fhir_contents["contained"][observation]["component"])):
-                        if 'Tracking Identifier' in fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values():
-                            tracking_id_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
-                            tracking_id_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+            assert tracking_identifier_presence==True, f"Tracking Identifiier is not present for {tracking_identifier_presence} observation in FHIR"
+        except AssertionError as e:
+            print(f"Tracking Identifier is absent for {tracking_identifier_presence}")
+            with allure.step(f"Tracking Identifier is absent for following observations"):
+                self.allure_util.allure_attach_with_text(f"Tracking Identifier is absent for following observations", str(tracking_identifier_presence))
+            pytest.fail(f"Test failed since Tracking Identifier is absent for {tracking_identifier_presence} observations in FHIR.json")
+               
+                    
+        for observation in range(3,len(fhir_contents['contained'])):
+            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target == '246501002':
+                pass
+            else:
+                for each in range(len(fhir_contents["contained"][observation]["component"])):
+                    if 'Tracking Identifier' in fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values():
+                        tracking_id_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
+                        tracking_id_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+                        try:
                             assert tracking_id_code == "112039", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
                             assert tracking_id_display == "Tracking Identifier", f"Tracking ID Display of {target} observation from FHIR report does not match the requirement"
-
-        except Exception as e:
-            print(f"An exception occurred: {e}")
-            pytest.fail(f"Test failed: {e}")
+                            with allure.step(f"Verification of Tracking Identifier for {target} observation"):
+                                allure.attach(f"Tracking Identifier code from FHIR matches with the requirement for {target} observation \
+                                    From requirement Tracking ID code: 112039, From FHIR.json Tracking ID code: {tracking_id_code}", f"Verification of Tracking Identifier code for {target} observation against requirement", allure.attachment_type.TEXT)
+                                allure.attach(f"Tracking Identifier display from FHIR matches with the requirement for {target} observation \
+                                    From requirement Tracking ID display: Tracking Identifier, From FHIR.json Tracking ID display: {tracking_id_display}", f"Verification of Tracking Identifier display for {target} observation against requirement", allure.attachment_type.TEXT)
+                        except AssertionError :
+                            failures.append(target)
+                            
+            
+        if failures:
+            print(f"few : {failures}")
+            with allure.step(f"Failures"):
+                self.allure_util.allure_attach_with_text(f"Tracking Identifier from FHIR.json does not match with the requirements for following observations", str(failures))
+            pytest.fail(f"Test failed due to Tracking Identifier from FHIR.json does not match with requirement")
+    
+    
+    
+    
+    
+    
+    
     
     def test_fhir_tracking_uid(self):
         print("testing FHIR Tracking Unique Identifier")
         allure.attach("This test verifies the Tracking Unique Identifier of all the findings in FHIR.json - against the requirement", \
             "Test Scenario Description", allure.attachment_type.TEXT)
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
-        cxr_req = self.cxr_req
+        failures = []
+        tracking_uid_presence = self.generic_util.is_tracking_uid_present(fhir_contents)
+        
         try:
-            for observation in range(3,len(fhir_contents['contained'])):
-                target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-                if target == '246501002':
-                    pass
-                else:
-                    tracking_uid_presence = self.generic_util.is_tracking_uid_present(fhir_contents)
-                    assert tracking_uid_presence, f"Tracking Unique Identifiier is not present for one of the observation in FHIR"
-                    for each in range(len(fhir_contents["contained"][observation]["component"])):
-                        if 'Tracking Unique Identifier' in fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values():
-                            tracking_uid_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
-                            tracking_uid_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+            assert tracking_uid_presence==True, f"Tracking Unique Identifiier is not present for {tracking_uid_presence} observation in FHIR"
+        except AssertionError as e:
+            print(f"Tracking Unique Identifier is absent for {tracking_uid_presence}")
+            with allure.step(f"Tracking Unique Identifier is absent for following observations"):
+                self.allure_util.allure_attach_with_text(f"Tracking Unique Identifier is absent for following observations", str(tracking_uid_presence))
+            pytest.fail(f"Test failed since Tracking Unique Identifier is absent for {tracking_uid_presence} observations in FHIR.json")
+               
+                    
+        for observation in range(3,len(fhir_contents['contained'])):
+            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target == '246501002':
+                pass
+            else:
+                for each in range(len(fhir_contents["contained"][observation]["component"])):
+                    if 'Tracking Unique Identifier' in fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values():
+                        tracking_uid_code = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["code"]
+                        tracking_uid_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
+                        try:
                             assert tracking_uid_code == "112040", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
-                            assert tracking_uid_display == "Tracking Unique Identifier", f"Tracking ID Display of {target} observation from FHIR report does not match the requirement"
-
-    
-        except Exception as e:
-            print(f"An exception occurred: {e}")
-            pytest.fail(f"Test failed: {e}")
-
-
-
-
-
+                            assert tracking_uid_display == "Tracking Unique Identifier", f"Tracking Unique Identifier display text of {target} observation from FHIR report does not match the requirement"
+                            with allure.step(f"Verification of Tracking Unique Identifier for {target} observation"):
+                                allure.attach(f"Tracking Unique Identifier code from FHIR matches with the requirement for {target} observation \
+                                    From requirement Tracking ID code: 112040, From FHIR.json Tracking ID code: {tracking_uid_code}", f"Verification of Tracking Unique Identifier code for {target} observation against requirement", allure.attachment_type.TEXT)
+                                allure.attach(f"Tracking Unique Identifier display from FHIR matches with the requirement for {target} observation \
+                                    From requirement Tracking ID display: Tracking Unique Identifier, From FHIR.json Tracking ID display: {tracking_uid_display}", f"Verification of Tracking Identifier display for {target} observation against requirement", allure.attachment_type.TEXT)
+                        except AssertionError :
+                            failures.append(target)
+                            
+            
+        if failures:
+            with allure.step(f"Failures"):
+                self.allure_util.allure_attach_with_text(f"Tracking Unique Identifier from FHIR.json does not match with the requirements for following observations", str(failures))
+            pytest.fail(f"Test failed due to Tracking Unique Identifier from FHIR.json does not match with requirement")
+            
+            
+            
+            
 
 
 
