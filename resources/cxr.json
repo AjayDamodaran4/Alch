@@ -40,10 +40,10 @@
     "unfolded_aorta": [
         {
             "Annalise_observation.code": "unfolded_aorta",
-            "Annalise_observation.display": "Unfolded aorta",
+            "Annalise_observation.display": "Unfoed aorta",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200003",
-            "Nuance_observation.display": "Unfolded aorta",
+            "Nuance_observation.display": "Unlded aorta",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
             "bodySite_Radlex.code": "RID879",
             "bodySite_Radlex.display": "thoracic aorta",
