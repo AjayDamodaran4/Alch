@@ -63,6 +63,7 @@ def container_auto(request):
     else:
         # If the JSON file is not available, provide a message
         raise FileNotFoundError(f"Annalise-cxr-FHIR.json not available in the output_path")
-        # print("Warning: Annalise-cxr-FHIR.json not available in the output_path")
     yield
-    print(f"Shutting down the container! Output files are stored at {request.cls.fhir_output_path}")
+    with allure.step(f"Shutting down the container! Output files are stored at"):
+        allure.attach(f"Output manifests for the processed study is stored at path : {request.cls.fhir_output_path}",\
+                      f"Output manifests location path", allure.attachment_type.TEXT)
