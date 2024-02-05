@@ -58,7 +58,7 @@ try {
                script {
                        if (env.JOB_NAME == "test_jenkins"){
                            sh label: '', script: '''
-                           poetry run pytest tests/cxr/fhir_validation/test_fhir.py'''
+                           poetry run pytest tests/cxr/fhir_validation/test_keys.py'''
                        }
                }
        }
