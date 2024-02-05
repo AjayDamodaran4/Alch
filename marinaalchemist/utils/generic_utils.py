@@ -339,7 +339,7 @@ class GenericUtils(object):
                             count+=1
                             print(f"Observation code from FHIR report matches with requirement for {target_obs} observation")
                         except AssertionError as e:
-                            failures.append(f"Annalise Observation code not matching for : {target_obs}, ")
+                            failures.append(target_obs)
                             
 
                     
@@ -358,14 +358,14 @@ class GenericUtils(object):
                             count+=1
                             print(f"Observation code from FHIR report matches with requirement for {target_obs} observation")
                         except AssertionError as e:
-                            failures.append(f"Annalise Observation code not matching for : {target_obs}, ")
+                            failures.append(target_obs)
                             
                             
         print(count)
         if failures:
             print(f"Annalise Observation code mismatches are observed in FHIR.json for following observations :{failures}")
             with allure.step(f"Annalise Observation code mismatches are observed in FHIR.json"):
-                allure.attach(f"Annalise Observation code mismatches are observed in FHIR.json for {failures} ", f"Observation code mismatch found in FHIR.json", allure.attachment_type.TEXT)
+                allure.attach(f"Annalise Observation code mismatches are observed in FHIR.json for {failures} ", f"Observation code mismatch found in FHIR.json in Annalise coding system", allure.attachment_type.TEXT)
             return False
         else:
             return True
@@ -393,13 +393,13 @@ class GenericUtils(object):
                             allure.attach(f"Observation code as per requirement : {Nuance_code_as_per_req}, Observation code from FHIR.json : {Nuance_code_as_per_req}, ", f"Verifying Observation code for {target_obs} observation for Nuance coding system", allure.attachment_type.TEXT)
                         count+=1
                     except AssertionError as e:
-                        failures.append(f"Nuance Observation code not matching for : {target_obs}, ")
+                        failures.append(target_obs)
 
         print(count)
         if failures:
             print(f"Nuance Observation code mismatches are observed in FHIR.json for following observations :{failures}")
             with allure.step(f"Nuance Observation code mismatches are observed in FHIR.json"):
-                allure.attach(f"Nuance Observation code mismatches are observed in FHIR.json for {failures} ", f"Observation code mismatch found in FHIR.json", allure.attachment_type.TEXT)
+                allure.attach(f"Nuance Observation code mismatches are observed in FHIR.json for {failures} ", f"Observation code mismatch found in FHIR.json in Nuance coding system", allure.attachment_type.TEXT)
             return False
         else:
             return True
@@ -424,20 +424,163 @@ class GenericUtils(object):
                         print(f"RadElement code from FHIR report for {target_obs} observation : {fhir_RadElement_obs_code}")
                         assert RadElement_code_as_per_req == fhir_RadElement_obs_code, f"{RadElement_code_as_per_req} from requrirement and {fhir_RadElement_obs_code} from FHIR are not matching"
                         with allure.step(f"Verifying Observation code for {target_obs} observation for RadElement coding system"):
-                            allure.attach(f"Observation code as per requirement : {RadElement_code_as_per_req}, Observation code from FHIR.json : {fhir_RadElement_obs_code}, ", f"Verifying Observation code for {target_obs} observation for RadElement coding system", allure.attachment_type.TEXT)
+                            allure.attach(f"Observation code as per requirement : {RadElement_code_as_per_req}, Observation code from FHIR.json : {fhir_RadElement_obs_code}", f"Verifying Observation code for {target_obs} observation for RadElement coding system", allure.attachment_type.TEXT)
                         print(f"Observation code from FHIR report matches with requirement for {target_obs} observation")
                         count+=1
                     except AssertionError as e:
-                        failures.append(f"Nuance Observation code not matching for : {target_obs}, ")
+                        failures.append(target_obs)
                     
         print(count)
         if failures:
             print(f"RadElement Observation code mismatches are observed in FHIR.json for following observations :{failures}")
             with allure.step(f"RadElement Observation code mismatches are observed in FHIR.json"):
-                allure.attach(f"RadElement Observation code mismatches are observed in FHIR.json for {failures} ", f"Observation code mismatch found in FHIR.json", allure.attachment_type.TEXT)
+                allure.attach(f"RadElement Observation code mismatches are observed in FHIR.json for {failures} ", f"Observation code mismatch found in FHIR.json in RadElement coding system", allure.attachment_type.TEXT)
             return False
         else:
             return True
+
+
+    def verify_obs_display_annalise_system(self,fhir_contents):
+        failures = []
+        self.cxr_req = conftest.read_cxr_req()
+        count=0
+        non_nuance_findings = ["acute_humerus_fracture", "acute_rib_fracture", "acute_clavicle_fracture"]
+        for observation in range(3,len(fhir_contents['contained'])):
+            target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target_obs == "246501002":
+                pass
+            else:
+                if self.cxr_req[target_obs][0]["Annalise_coding_system"]==True:
+                    if target_obs in non_nuance_findings:
+                        try:
+                            assert len(fhir_contents["contained"][observation]["code"]["coding"])==1, f"More than one Coding systems are displayed in FHIR for {target_obs} observation. Only one coding system is expected as per requirement"
+                            assert self.cxr_req[target_obs][0]["Annalise_system"] in fhir_contents["contained"][observation]["code"]["coding"][0]["system"],"Annalise coding system text in FHIR does not match with requirement"
+                            Annalise_display_as_per_req = self.cxr_req[target_obs][0]["Annalise_observation.display"]
+                            fhir_annalise_obs_display = fhir_contents["contained"][observation]["code"]["coding"][0]["display"]
+                            assert Annalise_display_as_per_req == fhir_annalise_obs_display, f"{Annalise_display_as_per_req} from requrirement and {fhir_annalise_obs_display} from FHIR.json is not matching"
+                            with allure.step(f"Verifying Observation display text for {target_obs} observation for Annalise coding system"):
+                                allure.attach(f"Observation display text as per requirement : {Annalise_display_as_per_req}, Observation display text from FHIR.json : {fhir_annalise_obs_display}, ", f"Verifying Observation display text for {target_obs} observation - Annalise coding system", allure.attachment_type.TEXT)
+                            count+=1
+                            print(f"Observation display text from FHIR report matches with requirement for {target_obs} observation")
+                        except AssertionError as e:
+                            failures.append(target_obs)
+                            
+
+                    
+                    else:
+                        try:
+                            assert len(fhir_contents["contained"][observation]["code"]["coding"])==2, f"More than two Coding systems are displayed in FHIR for {target_obs} observation. Only TWO coding systems are expected as per requirement"
+                            assert self.cxr_req[target_obs][0]["Annalise_system"] in fhir_contents["contained"][observation]["code"]["coding"][0]["system"],"Annalise coding system text in FHIR does not match with requirement"
+                            Annalise_display_as_per_req = self.cxr_req[target_obs][0]["Annalise_observation.display"]
+                            fhir_annalise_obs_display = fhir_contents["contained"][observation]["code"]["coding"][0]["display"]
+                            assert Annalise_display_as_per_req == fhir_annalise_obs_display, f"{Annalise_display_as_per_req} from requrirement and {fhir_annalise_obs_display} from FHIR.json is not matching"
+                            with allure.step(f"Verifying Observation display text for {target_obs} observation for Annalise coding system"):
+                                allure.attach(f"Observation display text as per requirement : {Annalise_display_as_per_req}, Observation display text from FHIR.json : {fhir_annalise_obs_display}, ", f"Verifying Observation display text for {target_obs} observation - Annalise coding system", allure.attachment_type.TEXT)
+                            count+=1
+                            print(f"Observation display text from FHIR report matches with requirement for {target_obs} observation")
+                        except AssertionError as e:
+                            failures.append(target_obs)
+                            
+                            
+        print(count)
+        if failures:
+            print(f"Annalise Observation display text mismatches are observed in FHIR.json for following observations :{failures}")
+            with allure.step(f"Annalise Observation display text mismatches are observed in FHIR.json"):
+                allure.attach(f"Annalise Observation display text mismatches are observed in FHIR.json for {failures} ", f"Observation display text mismatch found in FHIR.json in Annalise coding system", allure.attachment_type.TEXT)
+            return False
+        else:
+            return True
+        
+        
+        
+    def verify_obs_display_nuance_system(self,fhir_contents):
+        self.cxr_req = conftest.read_cxr_req()
+        failures = []
+        count=0
+        for observation in range(3,len(fhir_contents['contained'])):
+            target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target_obs == "246501002":
+                pass
+            else:
+                if self.cxr_req[target_obs][0]["Nuance_coding_system"]==True:
+                    Nuance_display_as_per_req = self.cxr_req[target_obs][0]["Nuance_observation.display"]
+                    fhir_nuance_obs_display = fhir_contents["contained"][observation]["code"]["coding"][1]["display"]
+                    try:
+                        assert Nuance_display_as_per_req == fhir_nuance_obs_display, f"{Nuance_display_as_per_req} from requrirement and {fhir_nuance_obs_display} from FHIR are not matching"
+                        with allure.step(f"Verifying Observation display text for {target_obs} observation for Nuance coding system"):
+                            allure.attach(f"Observation display text as per requirement : {Nuance_display_as_per_req}, Observation display text from FHIR.json : {fhir_nuance_obs_display}, ", 
+                                            f"Verifying Observation display text for {target_obs} observation - Nuance coding system", allure.attachment_type.TEXT)
+                        
+                        print(f"Observation code from FHIR report matches with requirement for {target_obs} observation")
+                        count+=1
+                    except AssertionError as e:
+                        failures.append(target_obs)
+
+        print(count)
+        if failures:
+            print(f"Nuance Observation display text mismatches are observed in FHIR.json for following observations :{failures}")
+            with allure.step(f"Nuance Observation display text mismatches are observed in FHIR.json"):
+                allure.attach(f"Nuance Observation code mismatches are observed in FHIR.json for {failures} ", 
+                              f"Observation display text mismatch found in FHIR.json - Nuance coding system", allure.attachment_type.TEXT)
+            return False
+        else:
+            return True
+
+
+    def verify_obs_display_radelement(self,fhir_contents):
+        self.cxr_req = conftest.read_cxr_req()
+        failures = []
+        count=0
+        for observation in range(3,len(fhir_contents['contained'])):
+            target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target_obs == "246501002":
+                pass
+            else:
+                if self.cxr_req[target_obs][0]["RadElement_coding_system"]==True:
+                    assert len(fhir_contents["contained"][observation]["code"]["coding"])==1, f"More than one Coding systems are displayed in FHIR for {target_obs} observation. Only one coding system is expected as per requirement"
+                    try:
+                        assert self.cxr_req[target_obs][0]["RadElement_system"] in fhir_contents["contained"][observation]["code"]["coding"][0]["system"],"RadElement coding system text in FHIR does not match with requirement"
+                        RadElement_display_as_per_req = self.cxr_req[target_obs][0]["RadElement_observation.display"]
+                        fhir_RadElement_obs_display = (fhir_contents["contained"][observation]["code"]["coding"][0]["display"])
+                        assert RadElement_display_as_per_req == fhir_RadElement_obs_display, f"{RadElement_display_as_per_req} from requrirement and {fhir_RadElement_obs_display} from FHIR are not matching"
+                        with allure.step(f"Verifying Observation display text for {target_obs} observation for RadElement coding system"):
+                            allure.attach(f"Observation display text as per requirement : {RadElement_code_as_per_req}, Observation display text from FHIR.json : {fhir_RadElement_obs_code}", f"Verifying Observation display text for {target_obs} observation for RadElement coding system", allure.attachment_type.TEXT)
+                        print(f"Observation code from FHIR report matches with requirement for {target_obs} observation")
+                        count+=1
+                        
+                    except AssertionError as e:
+                        failures.append(target_obs)
+                    
+        print(count)
+        if failures:
+            print(f"RadElement Observation display text mismatches are observed in FHIR.json for following observations :{failures}")
+            with allure.step(f"RadElement Observation display text mismatches are observed in FHIR.json"):
+                allure.attach(f"RadElement Observation display text mismatches are observed in FHIR.json for {failures} ", 
+                              f"Observation display text mismatch found in FHIR.json in RadElement coding system", allure.attachment_type.TEXT)
+            return False
+        else:
+            return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # def verify_tracking_uid(self, fhir_contents):
     # # """
