@@ -55,3 +55,22 @@ class TestKeys(BaseClass):
         dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
         
         self.generic_util.verify_study_uid(dicom_study_uid,fhir_contents)
+        
+        
+    
+    def test_fhir_track_id(self):
+        
+        fhir_contents = self.fhir_contents
+        
+        self.generic_util.is_tracking_identifier_present(fhir_contents)
+        
+        self.generic_util.verify_fhir_tracking_id(fhir_contents)
+        
+        
+    def test_fhir_track_uid(self):
+        
+        fhir_contents = self.fhir_contents
+        
+        self.generic_util.is_tracking_uid_present(fhir_contents)
+        
+        self.generic_util.verify_fhir_tracking_uid(fhir_contents)
