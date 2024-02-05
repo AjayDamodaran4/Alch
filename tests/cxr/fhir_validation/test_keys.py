@@ -30,3 +30,11 @@ class TestKeys(BaseClass):
         
         if annalise_obs_display_status is False or nuance_obs_display_status is False or radelement_obs_display_status is False:
             pytest.fail("Test Failed due to observation display text mismatch is found in FHIR.json")
+
+
+    def test_bodySite_code(self):
+        fhir_contents = self.fhir_contents
+        radlex_code_status = self.generic_util.verify_radlex_code(fhir_contents)
+        
+        if radlex_code_status is False:
+            pytest.fail("Test Failed due to Radlex bodySite code mismatch is found in FHIR.json")

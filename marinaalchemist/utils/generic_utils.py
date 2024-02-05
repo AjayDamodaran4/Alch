@@ -213,25 +213,88 @@ class GenericUtils(object):
             
             
             
-    def verify_radlex_code(self,target,observation, fhir_contents):
+    def verify_radlex_code(self, fhir_contents):
         self.cxr_req = conftest.read_cxr_req()
+        failures = []
+        for observation in range(3,len(fhir_contents['contained'])):
+            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
+            
+            if target == "RDES230":
+                fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+            
+            
+            elif target == "RDES225":
+                display_value = None
 
-        bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
-        if target == "RDES230":
-        # Special case: Set fhir_bodySite_radlex_code from a different coding index
-            fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+                if len(fhir_contents["contained"][observation]["component"]) == 4 :
+                    display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+                elif len(fhir_contents["contained"][observation]["component"]) == 5 :
+                    display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
+                
+                if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
+                    raise ValueError(f"Unexpected display value: {display_value}")
+
+                key = None
+                sub_key = None
+
+                if display_value in ['absent', 'focal']:
+                    key = 1
+                    sub_key = "focal_airspace_opacity"
+                    # Additional condition for 'absent' case
+                    if display_value == 'absent':
+                        display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+                elif display_value == 'multifocal':
+                    key = 2
+                    sub_key = "multifocal_airspace_opacity"
+                elif display_value == 'diffuse lower':
+                    key = 3
+                    sub_key = "diffuse_lower_airspace_opacity"
+                elif display_value == 'diffuse upper':
+                    key = 4
+                    sub_key = "diffuse_upper_airspace_opacity"
+
+                if key is None or sub_key is None:
+                    raise ValueError(f"Unexpected key or sub_key values: {key}, {sub_key}")
+
+                bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
+                fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
+                try:
+                    assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
+                        f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
+                    with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
+                        allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
+                            From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+                    print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching, for {target} observation")            
+                except AssertionError:
+                    failures.append(target)
+                    
+                print(f"BodySite Radlex code {bodySite_radlex_code_as_per_req} from Requirements match with\
+                    {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
+
+                continue
+            
+            
+            else:
+                fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
+                
+            try:
+                assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
+                with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
+                    allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
+                        From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+                print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching, for {target} observation")            
+            except AssertionError:
+                failures.append(target)
+        
+        if failures:
+            print(f"Radlex bodySite code mismatches are observed in FHIR.json for following observations :{failures}")
+            with allure.step(f"Radlex bodySite code mismatches are observed in FHIR.json"):
+                allure.attach(f"Radlex bodySite code mismatches are observed in FHIR.json for {failures} ", 
+                              f"BodySite code mismatch found in FHIR.json - Radlex coding system", allure.attachment_type.TEXT)
+            return False
         else:
-            fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-        try:
-            assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, f"{bodySite_radlex_code_as_per_req} from requirement and {fhir_bodySite_radlex_code} from FHIR are not matching"
-            with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
-                allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
-                    From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
-            print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching, for {target} observation")            
-        except AssertionError:
-            raise
-        
-        
+            return True
         
 
     def verify_observation_225(self, observation, fhir_contents):
