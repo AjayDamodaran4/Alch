@@ -1,7 +1,7 @@
 {
     "abdominal_clips": [
         {
-            "Annalise_observation.code": "abdominal_clips",
+            "Annalise_observation.code": "abdominal_cips",
             "Annalise_observation.display": "Abdominal clips",
             "Annalise_system": "https://www.annalise.ai/guides",
             "Nuance_observation.code": "90200000",
@@ -23,7 +23,7 @@
             "Annalise_observation.code": "acute_aortic_syndrome",
             "Annalise_observation.display": "Widened aortic contour",
             "Annalise_system": "https://www.annalise.ai/guides",
-            "Nuance_observation.code": "90200002",
+            "Nuance_observation.code": "902002",
             "Nuance_observation.display": "Widened aortic contour",
             "Nuance_system": "http://nuancepowerscribe.com/ai",
             "bodySite_Radlex.code": "RID480",
@@ -2191,7 +2191,7 @@
             "bodySite_Snomed.code": "39607008",
             "bodySite_Snomed.display": "Lung",
             "snomed_system": "http://snomed.info/sct",
-            "RadElement_observation.code": "RDES227",
+            "RadElement_observation.code": "RDES2",
             "RadElement_observation.display": "Chest Radiograph Pulmonary Nodules",
             "RadElement_system": "http://radelement.org",
             "RadElement_coding_system": true,
