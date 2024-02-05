@@ -19236,7 +19236,7 @@
               {
                 "system": "http://dicom.nema.org/resources/ontology/DCM",
                 "code": "110180",
-                "display": "Study Instance UID"
+                "display": "Study InstanID"
               }
             ]
           },

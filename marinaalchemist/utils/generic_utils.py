@@ -1,7 +1,7 @@
 import os, json, allure, pytest
 from .config_reader import Config
 import conftest
-from .exception_utils import ExceptionUtils
+from .dicom_utils import DicomUtils
 
 
 class GenericUtils(object):
@@ -49,20 +49,41 @@ class GenericUtils(object):
         print(f"{folder_path} parsed successfully.")
         return file_contents
     
-    def extract_fhir_study_uid(self, fhir_input):
-        try:
-            for observation in range(3,len(fhir_input['contained'])):
-                target = (fhir_input["contained"][observation]["code"]["coding"][0]["code"])
-                if target == '246501002':
-                    pass
-                else:
-                    for each in range(len(fhir_input["contained"][observation]["component"])):
-                        if 'Study Instance UID' in fhir_input["contained"][observation]["component"][each]["code"]["coding"][0].values():
-                            study_uid = fhir_input["contained"][observation]["component"][each]["valueString"]
-                            return study_uid
-        except Exception as e:
-            print(f"Error extracting Study UID: {e}")
-            return None
+    
+    
+    def verify_study_uid(self, dicom_study_uid, fhir_contents):
+        
+        failures = []
+        for observation in range(3,len(fhir_contents['contained'])):
+            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if target == '246501002':
+                pass
+            else:
+                for each in range(len(fhir_contents["contained"][observation]["component"])):
+                    if 'Study Instance UID' in fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0].values():
+                        study_uid = fhir_contents["contained"][observation]["component"][each]["valueString"]
+                        if dicom_study_uid == study_uid:
+                            pass
+                        else:
+                            failures.append(target)
+                            
+                        
+        if failures:
+            print("Study UID from DICOM metadata does not match with Study UID from FHIR.json")
+            with allure.step(f"Verification of Study Instance UID match with Study Instance UID from DICOM metadata"):
+                allure.attach(f"Study Instance UID displayed in following observations of FHIR.json does not match \
+                    match with Study Instance UID from DICOM metadatav : {failures}", 
+                    f"Study Instance UID displayed in following observations of FHIR.json does not match for following observations", allure.attachment_type.TEXT)
+
+        else:
+            print("Study UID from DICOM metadata matches match with Study UID from FHIR.json")
+            with allure.step(f"Verification of Study Instance UID matches with Study Instance UID from DICOM metadata"):
+                allure.attach(f"Study Instance UID displayed in all the observations of FHIR.json matches with Study Instance UID from DICOM metadata", 
+                    f"Verification of Study Instance UID matches with Study Instance UID from DICOM metadata", allure.attachment_type.TEXT)
+
+            
+        
+        
         
         
     # def validate_fhir_tracking_id(self, fhir_contents):
@@ -159,10 +180,16 @@ class GenericUtils(object):
                     study_uid_absence.append(target)
                     
         if study_uid_presenence:
-            return True
+            print("Study Instance UID is present for all the observations in FHIR.json")
+            with allure.step(f"Verification of presence of Study Instance UID component for all the observations in FHIR.json"):
+                allure.attach(f"Study Instance UID component is present for all the observations in FHIR.json", 
+                    f"Study Instance UID component is present for all the observations in FHIR.json", allure.attachment_type.TEXT)
         else:
-            return study_uid_absence
-        
+            print(f"Study Instance UID is not present for following observations : {study_uid_absence}")
+            with allure.step(f"Verification of presence of Study Instance UID component for all the observations in FHIR.json"):
+                allure.attach(f"Study Instance UID component is absent for following observations in FHIR.json : {study_uid_absence}", 
+                    f"Study Instance UID component is absent for following observations in FHIR.json", allure.attachment_type.TEXT)
+            pytest.fail(f"Test Failed since Study Instance UID is not present for following observations in FHIR.json : {study_uid_absence}")
         
         
     def is_tracking_uid_present(self,fhir_json_data):
@@ -194,22 +221,95 @@ class GenericUtils(object):
         
         
         
-    def verify_snomed_code(self,target,observation, fhir_contents):
+    def verify_snomed_code(self, fhir_contents):
         self.cxr_req = conftest.read_cxr_req()
-        bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
-        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-        try:
-            assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
-    
-            with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
-                allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
-                            From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+        failures = []
+        for observation in range(3,len(fhir_contents['contained'])):
+            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            # bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
+            
+            if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
+                pass
+            
+            elif target == "RDES230": # This is ignored from verifying as snomed is not applicable for RDES230 observation
+                pass
+            
+            elif target == "RDES225": # This block verifies the bodySite of Chest Radiograph Pulmonary Nodules observation
+                display_value = None
+                
+                if len(fhir_contents["contained"][observation]["component"]) == 4 :
+                    display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+                elif len(fhir_contents["contained"][observation]["component"]) == 5 :
+                    display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
+                
+                if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
+                    raise ValueError(f"Unexpected display value: {display_value}")
 
-        
-            print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
+                key = None
+                sub_key = None
 
-        except AssertionError:
-            raise
+                if display_value in ['absent', 'focal']:
+                    key = 1
+                    sub_key = "focal_airspace_opacity"
+                    # Additional condition for 'absent' case
+                    if display_value == 'absent':
+                        display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+                elif display_value == 'multifocal':
+                    key = 2
+                    sub_key = "multifocal_airspace_opacity"
+                elif display_value == 'diffuse lower':
+                    key = 3
+                    sub_key = "diffuse_lower_airspace_opacity"
+                elif display_value == 'diffuse upper':
+                    key = 4
+                    sub_key = "diffuse_upper_airspace_opacity"
+
+                if key is None or sub_key is None:
+                    raise ValueError(f"Unexpected key or sub_key values: {key}, {sub_key}")
+
+                bodySite_snomed_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Snomed.code"]
+                fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+                try:
+                    assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
+                        f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
+                    with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
+                        allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
+                            From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+                    
+                except AssertionError:
+                    failures.append(target)
+                    
+                print(f"BodySite Snomed code {bodySite_snomed_code_as_per_req} from Requirements match with {fhir_bodySite_snomed_code} from FHIR json for {target} observation, {sub_key}")
+
+                continue
+                
+                
+            else:
+                bodySite_snomed_code_as_per_req = self.cxr_req[target][0]["bodySite_Snomed.code"]
+                fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+            
+                try:
+                    assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, f"{bodySite_snomed_code_as_per_req} from requirement and {fhir_bodySite_snomed_code} from FHIR are not matching"
+            
+                    with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
+                        allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
+                                    From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Snomed bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+
+                
+                    print(f"bodySite snomed code {bodySite_snomed_code_as_per_req} from Requirements and {fhir_bodySite_snomed_code} from FHIR json is matching")
+
+                except AssertionError:
+                    failures.append(target)
+                
+        if failures:
+            print(f"Snomed bodySite code mismatches are observed in FHIR.json for following observations :{failures}")
+            with allure.step(f"Snomed bodySite code mismatches are observed in FHIR.json"):
+                allure.attach(f"Snomed bodySite code mismatches are observed in FHIR.json for {failures} ", 
+                            f"BodySite code mismatch found in FHIR.json - Snomed coding system", allure.attachment_type.TEXT)
+            return False
+        else:
+            return True   
+                
             
             
             
@@ -218,9 +318,13 @@ class GenericUtils(object):
         failures = []
         for observation in range(3,len(fhir_contents['contained'])):
             target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-            bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
+            # bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
             
-            if target == "RDES230":
+            if target == "246501002": # This is ignored from verifying as its not an observation. Shall be verified in a dedicated test case.
+                pass
+            
+            elif target == "RDES230":
+                bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
                 fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
             
             
@@ -269,13 +373,12 @@ class GenericUtils(object):
                 except AssertionError:
                     failures.append(target)
                     
-                print(f"BodySite Radlex code {bodySite_radlex_code_as_per_req} from Requirements match with\
-                    {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
-
+                print(f"BodySite Radlex code {bodySite_radlex_code_as_per_req} from Requirements match with {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
                 continue
             
             
             else:
+                bodySite_radlex_code_as_per_req = self.cxr_req[target][0]["bodySite_Radlex.code"]
                 fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
                 
             try:
@@ -283,7 +386,7 @@ class GenericUtils(object):
                 with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
                     allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
                         From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
-                print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching, for {target} observation")            
+                print(f"bodySite radlex code {bodySite_radlex_code_as_per_req} from Requirements and {fhir_bodySite_radlex_code} from FHIR json is matching for {target} observation")            
             except AssertionError:
                 failures.append(target)
         
@@ -297,75 +400,75 @@ class GenericUtils(object):
             return True
         
 
-    def verify_observation_225(self, observation, fhir_contents):
+    # def verify_observation_225(self, observation, fhir_contents):
 
-    # Verify the bodySite for the Chest Radiograph Pulmonary Nodules observation (RDES225).
+    # # Verify the bodySite for the Chest Radiograph Pulmonary Nodules observation (RDES225).
 
-    # Parameters:
-    # - observation: Index of the observation.
-    # - fhir_contents: Contents of the FHIR report.
+    # # Parameters:
+    # # - observation: Index of the observation.
+    # # - fhir_contents: Contents of the FHIR report.
 
-    # Raises:
-    # - AssertionError: If the bodySite codes do not match.
+    # # Raises:
+    # # - AssertionError: If the bodySite codes do not match.
 
-        target = "RDES225"
-        display_value = None
+    #     target = "RDES225"
+    #     display_value = None
 
-        if len(fhir_contents["contained"][observation]["component"]) == 4 :
-            display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
-        elif len(fhir_contents["contained"][observation]["component"]) == 5 :
-            display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
+    #     if len(fhir_contents["contained"][observation]["component"]) == 4 :
+    #         display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+    #     elif len(fhir_contents["contained"][observation]["component"]) == 5 :
+    #         display_value = fhir_contents["contained"][observation]["component"][1]["valueCodeableConcept"]["coding"][0]["display"]
         
-        if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
-            raise ValueError(f"Unexpected display value: {display_value}")
+    #     if display_value is not None and display_value not in ['absent', 'focal', 'multifocal', 'diffuse lower', 'diffuse upper']:
+    #         raise ValueError(f"Unexpected display value: {display_value}")
 
-        key = None
-        sub_key = None
+    #     key = None
+    #     sub_key = None
 
-        if display_value in ['absent', 'focal']:
-            key = 1
-            sub_key = "focal_airspace_opacity"
-            # Additional condition for 'absent' case
-            if display_value == 'absent':
-                display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
-        elif display_value == 'multifocal':
-            key = 2
-            sub_key = "multifocal_airspace_opacity"
-        elif display_value == 'diffuse lower':
-            key = 3
-            sub_key = "diffuse_lower_airspace_opacity"
-        elif display_value == 'diffuse upper':
-            key = 4
-            sub_key = "diffuse_upper_airspace_opacity"
+    #     if display_value in ['absent', 'focal']:
+    #         key = 1
+    #         sub_key = "focal_airspace_opacity"
+    #         # Additional condition for 'absent' case
+    #         if display_value == 'absent':
+    #             display_value = fhir_contents["contained"][observation]["component"][0]["valueCodeableConcept"]["coding"][0]["display"]
+    #     elif display_value == 'multifocal':
+    #         key = 2
+    #         sub_key = "multifocal_airspace_opacity"
+    #     elif display_value == 'diffuse lower':
+    #         key = 3
+    #         sub_key = "diffuse_lower_airspace_opacity"
+    #     elif display_value == 'diffuse upper':
+    #         key = 4
+    #         sub_key = "diffuse_upper_airspace_opacity"
 
-        if key is None or sub_key is None:
-            raise ValueError(f"Unexpected key or sub_key values: {key}, {sub_key}")
+    #     if key is None or sub_key is None:
+    #         raise ValueError(f"Unexpected key or sub_key values: {key}, {sub_key}")
 
-        bodySite_snomed_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Snomed.code"]
-        fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
-        try:
-            assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
-                f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
-            with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
-                allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
-                    From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+    #     bodySite_snomed_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Snomed.code"]
+    #     fhir_bodySite_snomed_code = fhir_contents["contained"][observation]["bodySite"]["coding"][0]["code"]
+    #     try:
+    #         assert bodySite_snomed_code_as_per_req == fhir_bodySite_snomed_code, \
+    #             f"SNOMED code mismatch: Expected {bodySite_snomed_code_as_per_req}, but got {fhir_bodySite_snomed_code} for {target} observation, {sub_key}"
+    #         with allure.step(f"Verification of Snomed bodySite code for {target} observation"):
+    #             allure.attach(f"Snomed bodySite code from FHIR matches with the requirement for {target} observation \
+    #                 From requirement : {bodySite_snomed_code_as_per_req}, From FHIR.json : {fhir_bodySite_snomed_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
             
-        except AssertionError:
-            raise
+    #     except AssertionError:
+    #         raise
 
-        bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
-        fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
-        try:
-            assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
-                f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
-            with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
-                allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
-                    From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
+    #     bodySite_radlex_code_as_per_req = self.cxr_req[target][key][sub_key][0]["bodySite_Radlex.code"]
+    #     fhir_bodySite_radlex_code = fhir_contents["contained"][observation]["bodySite"]["coding"][1]["code"]
+    #     try:
+    #         assert bodySite_radlex_code_as_per_req == fhir_bodySite_radlex_code, \
+    #             f"Radlex code mismatch: Expected {bodySite_radlex_code_as_per_req}, but got {fhir_bodySite_radlex_code} for {target} observation"
+    #         with allure.step(f"Verification of Radlex bodySite code for {target} observation"):
+    #             allure.attach(f"Radlex bodySite code from FHIR matches with the requirement for {target} observation \
+    #                 From requirement : {bodySite_radlex_code_as_per_req}, From FHIR.json : {fhir_bodySite_radlex_code}", f"Verification of Radlex bodySite code for {target} observation against requirement", allure.attachment_type.TEXT)
        
-        except AssertionError:
-            raise    
-        print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
-            f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
+    #     except AssertionError:
+    #         raise    
+    #     print(f"BodySite SNOMED code {bodySite_snomed_code_as_per_req} and Radlex code {bodySite_radlex_code_as_per_req} "
+    #         f"from Requirements match with {fhir_bodySite_snomed_code} and {fhir_bodySite_radlex_code} from FHIR json for {target} observation, {sub_key}")
 
 
 
@@ -607,7 +710,7 @@ class GenericUtils(object):
                         fhir_RadElement_obs_display = (fhir_contents["contained"][observation]["code"]["coding"][0]["display"])
                         assert RadElement_display_as_per_req == fhir_RadElement_obs_display, f"{RadElement_display_as_per_req} from requrirement and {fhir_RadElement_obs_display} from FHIR are not matching"
                         with allure.step(f"Verifying Observation display text for {target_obs} observation for RadElement coding system"):
-                            allure.attach(f"Observation display text as per requirement : {RadElement_code_as_per_req}, Observation display text from FHIR.json : {fhir_RadElement_obs_code}", f"Verifying Observation display text for {target_obs} observation for RadElement coding system", allure.attachment_type.TEXT)
+                            allure.attach(f"Observation display text as per requirement : {RadElement_display_as_per_req}, Observation display text from FHIR.json : {fhir_RadElement_obs_display}", f"Verifying Observation display text for {target_obs} observation for RadElement coding system", allure.attachment_type.TEXT)
                         print(f"Observation code from FHIR report matches with requirement for {target_obs} observation")
                         count+=1
                         
