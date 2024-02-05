@@ -18,4 +18,5 @@ class BaseClass(object):
     fhir_input_path = None
     fhir_output_path = None
     fhir_contents = None
+    exception_utils = None
     

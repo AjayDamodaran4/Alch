@@ -6,6 +6,7 @@ from .docker_utils import DockerUtils
 from .url_parser import URLConstant
 from .generic_utils import GenericUtils
 from .dicom_utils import DicomUtils
+from .exception_utils import ExceptionUtils
 
 __all__ = [
     'AllureReport',
@@ -15,7 +16,8 @@ __all__ = [
     'DockerUtils',
     'URLConstant',
     'GenericUtils',
-    'DicomUtils'
+    'DicomUtils',
+    'ExceptionUtils'
 ]
 
 

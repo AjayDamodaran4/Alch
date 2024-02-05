@@ -1,6 +1,6 @@
 import pytest
 import json, os, allure
-from marinaalchemist import AllureReport, ExcelUtils, Config, DockerUtils, GenericUtils, DicomUtils
+from marinaalchemist import AllureReport, ExcelUtils, Config, DockerUtils, GenericUtils, DicomUtils, ExceptionUtils
 import pandas as pd
 
 
@@ -22,6 +22,7 @@ def setup(request):
     request.cls.docker_util = DockerUtils()
     request.cls.dicom_util = DicomUtils()
     request.cls.cxr_req = read_cxr_req()
+    request.cls.exception_utils = ExceptionUtils()
     yield
     print("test closed!!!")
 

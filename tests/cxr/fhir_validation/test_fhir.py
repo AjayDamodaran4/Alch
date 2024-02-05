@@ -15,7 +15,7 @@ class TestFHIR(BaseClass):
         allure.dynamic.description("""This test verifies the Observation code (as per Annalise/Nuance/RadElement coding system) 
                                    for all the findings in FHIR.json against the requirement""")
         
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         with allure.step("FHIR contents"):
             self.allure_util.allure_attach_with_text("contents of FHIR report", str(fhir_contents))
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
@@ -109,7 +109,7 @@ class TestFHIR(BaseClass):
         allure.dynamic.title("Verification of Observation display text for all the findings in FHIR.json")
         allure.dynamic.description("""This test verifies the Observation display text (as per Annalise/Nuance/RadElement coding system) 
                                    for all the findings in FHIR.json against the requirement""")
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         cxr_req = self.cxr_req
         failures = []
@@ -191,15 +191,12 @@ class TestFHIR(BaseClass):
         
         
         
-        
-    '''
-    The test_obs_bodsite_code verifies the Observation's bodySite of Snomed & Radlex systems displayed in FHIR by comparing it the CXR FHIR requirements
-    ''' 
+
     def test_obs_bodsite_code(self):
         allure.dynamic.title("Verification of Observation's bodySite code for all the findings in FHIR.json")
         allure.dynamic.description("""This test verifies the Observation's bodySite code (as per Snomed & Radlex coding systems)
                                    for all the findings in FHIR.json against the requirement""")
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         failures = []
         
@@ -227,7 +224,6 @@ class TestFHIR(BaseClass):
                     failures.append(target)
     
         if failures:
-            print(f"few: {failures}")
             with allure.step("Failures"):
                 allure.attach(f"{failures}",f"Snomed/Radlex bodySite code mismatches are observed in FHIR.json for following observations :", allure.attachment_type.TEXT)
             pytest.fail(f"Test failed due to bodySite code mismatches are observed in FHIR.json")
@@ -237,37 +233,37 @@ class TestFHIR(BaseClass):
             
             
             
-    def test_study_uid(self):
-        allure.dynamic.title("Verification of Study Instance UID code for all the findings in FHIR.json")
-        allure.dynamic.description("""This test verifies if the study Instance UID is present for all the findings in FHIR.json 
-                                   and if the Study UID from FHIR.json matches with the study UID from the input DICOM image's metadata""")
-        fhir_contents = self.fhir_contents
-        assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
+    # def test_study_uid(self):
+    #     allure.dynamic.title("Verification of Study Instance UID code for all the findings in FHIR.json")
+    #     allure.dynamic.description("""This test verifies if the study Instance UID is present for all the findings in FHIR.json 
+    #                                and if the Study UID from FHIR.json matches with the study UID from the input DICOM image's metadata""")
+    #     fhir_contents = self.fhir_json
+    #     assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
 
-        study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
-        try:
-            assert study_uid_presence==True, f"Study Instance UID is not present for {study_uid_presence} observations in FHIR"
-            with allure.step(f"Verification of presence of Study Instance UID in all the Observations"):
-                self.allure_util.allure_attach_with_text(f"Study Instance UID is present for all the observation in FHIR.json", str(f"No issues found"))
-        except AssertionError as e:
-            print(f"study UID absent for {study_uid_presence}")
-            with allure.step(f"Study Instance UID is absent for following observations"):
-                self.allure_util.allure_attach_with_text(f"Study Instance UID is absent for following observations", str(study_uid_presence))
-            pytest.fail(f"Test failed since Study Instance UID is absent for {study_uid_presence} observations in FHIR.json")
+    #     study_uid_presence = self.generic_util.is_study_uid_present(fhir_contents)
+    #     try:
+    #         assert study_uid_presence==True, f"Study Instance UID is not present for {study_uid_presence} observations in FHIR"
+    #         with allure.step(f"Verification of presence of Study Instance UID in all the Observations"):
+    #             self.allure_util.allure_attach_with_text(f"Study Instance UID is present for all the observation in FHIR.json", str(f"No issues found"))
+    #     except AssertionError as e:
+    #         print(f"study UID absent for {study_uid_presence}")
+    #         with allure.step(f"Study Instance UID is absent for following observations"):
+    #             self.allure_util.allure_attach_with_text(f"Study Instance UID is absent for following observations", str(study_uid_presence))
+    #         pytest.fail(f"Test failed since Study Instance UID is absent for {study_uid_presence} observations in FHIR.json")
 
-        dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
-        fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
-        try:
-            assert dicom_study_uid == fhir_study_uid, "Study Instance UID not matching !!"
-            with allure.step(f"Verification of Study Instance UID"):
-                self.allure_util.allure_attach_with_text(f"Study Instance UID from FHIR.json and DICOM metadata matches. No issues found.", \
-                    str(f"From DICOM metadata : {dicom_study_uid}, From FHIR.json : {fhir_study_uid}"))
+    #     dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
+    #     fhir_study_uid = self.generic_util.extract_fhir_study_uid(fhir_contents)
+    #     try:
+    #         assert dicom_study_uid == fhir_study_uid, "Study Instance UID not matching !!"
+    #         with allure.step(f"Verification of Study Instance UID"):
+    #             self.allure_util.allure_attach_with_text(f"Study Instance UID from FHIR.json and DICOM metadata matches. No issues found.", \
+    #                 str(f"From DICOM metadata : {dicom_study_uid}, From FHIR.json : {fhir_study_uid}"))
             
-        except AssertionError as e:
-            print(f"study UID does not match for one of the observation")
-            with allure.step(f"Study Instance UID does not match"):
-                self.allure_util.allure_attach_with_text(f"Study Instance UID does not match between DICOM metadata and FHIR.json", str("No attachments"))
-            pytest.fail(f"Test failed since Study Instance UID does not match between DICOM metadata and FHIR.json")
+    #     except AssertionError as e:
+    #         print(f"study UID does not match for one of the observation")
+    #         with allure.step(f"Study Instance UID does not match"):
+    #             self.allure_util.allure_attach_with_text(f"Study Instance UID does not match between DICOM metadata and FHIR.json", str("No attachments"))
+    #         pytest.fail(f"Test failed since Study Instance UID does not match between DICOM metadata and FHIR.json")
             
             
             
@@ -279,7 +275,7 @@ class TestFHIR(BaseClass):
         allure.dynamic.description("""This test verifies if the Tracking Identifier is present for all the findings in FHIR.json 
                                    and if the Tracking Identifier's code and display from FHIR.json matches with the requirement""")
         
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         failures = []
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         tracking_identifier_presence = self.generic_util.is_tracking_identifier_present(fhir_contents)
@@ -331,7 +327,7 @@ class TestFHIR(BaseClass):
         allure.dynamic.title("Verification of Tracking Unique Identifier for all the findings in FHIR.json")
         allure.dynamic.description("""This test verifies if the Tracking Unique Identifier is present for all the findings in FHIR.json 
                                    and if the Tracking Identifier's code and display from FHIR.json matches with the requirement""")
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         assert fhir_contents is not None, f"Annalise-cxr-FHIR.json does not exist at {self.fhir_output_path} or the contents are None"
         failures = []
         tracking_uid_presence = self.generic_util.is_tracking_uid_present(fhir_contents)

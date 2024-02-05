@@ -1,12 +1,16 @@
+class CustomException(Exception):
+    pass
+
+
 class ExceptionUtils(object):
-    def __init__(self, log):
-        self.log = log
+    
+    # def __init__(self, log):
+    #     self.log = log
         # def no_such_element_exception(self, log, element, ):
 
     #     log.exception("")
-    #
-    # def no_such_element_exception(self, log, element, message):
-    #     log.exception("")
+  
+    
     def generic_exception(self, message, exception):
         """
         Method to log an unknown exception
@@ -16,9 +20,9 @@ class ExceptionUtils(object):
         exception: Exception that has been captured
         """
         error_message = message + ". Exception raised : " + type(exception).__name__
-        self.log.error(error_message)
-        self.log.error("Exception raised due to : " + exception.__doc__)
-        self.log.exception("Exception raised")
+        # self.log.error(error_message)
+        # self.log.error("Exception raised due to : " + exception.__doc__)
+        # self.log.exception("Exception raised")
 
     def no_such_element_exception(self, message, exception):
         """
