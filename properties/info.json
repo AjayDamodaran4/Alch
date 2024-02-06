@@ -1,10 +1,23 @@
 {
     "title_test_verify_observation_code" : "Verification of Observation code for all the findings in FHIR.json",
-    "description_test_verify_observation_code" : "This test verifies the Observation code (as per Annalise/Nuance/RadElement coding system) for all the findings in FHIR.json against the requirement"
+    "description_test_verify_observation_code" : "This test verifies the Observation code (as per Annalise/Nuance/RadElement coding system) for all the findings in FHIR.json against the requirement",
 
 
+    "title_test_verify_observation_display" : "Verification of Observation display text for all the findings in FHIR.json",
+    "description_test_verify_observation_display" : "This test verifies the Observation display text (as per Annalise/Nuance/RadElement coding system) for all the findings in FHIR.json against the requirement",
 
 
+    "title_test_bodySite_code" : "Verification of Observation's bodySite code for all the findings in FHIR.json",
+    "description_test_bodySite_code" : "This test verifies the Observation's bodySite code (as per Snomed & Radlex coding systems) for all the findings in FHIR.json against the requirement",
+
+    "title_test_st_uid" : "Verification of Study Instance UID code for all the findings in FHIR.json",
+    "description_test_st_uid" : "This test verifies if the study Instance UID is present for all the findings in FHIR.json and if the Study UID from FHIR.json matches with the study UID from the input DICOM image's metadata",
+
+    "title_test_fhir_track_id" : "Verification of Tracking Identifier for all the findings in FHIR.json",
+    "description_test_fhir_track_id" : "This test verifies if the Tracking Identifier is present for all the findings in FHIR.json and if the Tracking Identifier's code and display from FHIR.json matches with the requirement",
+
+    "title_test_fhir_track_uid" : "Verification of Tracking Unique Identifier for all the findings in FHIR.json",
+    "description_test_fhir_track_uid" : "This test verifies if the Tracking Unique Identifier is present for all the findings in FHIR.json and if the Tracking Identifier's code and display from FHIR.json matches with the requirement",
 
 
 

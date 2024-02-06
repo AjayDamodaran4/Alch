@@ -12,6 +12,7 @@ class TestKeys(BaseClass):
         fhir_contents = self.fhir_contents
         self.allure_util.allure_test_title("title_test_verify_observation_code")
         self.allure_util.allure_test_description("description_test_verify_observation_code")
+        
         annalise_obs_code_status = self.generic_util.verify_obs_code_annalise_system(fhir_contents)
         nuance_obs_code_status = self.generic_util.verify_obs_code_nuance_system(fhir_contents)
         radelement_obs_code_status = self.generic_util.verify_obs_code_radelement(fhir_contents)
@@ -28,6 +29,9 @@ class TestKeys(BaseClass):
     
     def test_verify_observation_display(self):
         fhir_contents = self.fhir_contents
+        self.allure_util.allure_test_title("title_test_verify_observation_display")
+        self.allure_util.allure_test_description("description_test_verify_observation_display")
+        
         annalise_obs_display_status = self.generic_util.verify_obs_display_annalise_system(fhir_contents)
         nuance_obs_display_status = self.generic_util.verify_obs_display_nuance_system(fhir_contents)
         radelement_obs_display_status = self.generic_util.verify_obs_display_radelement(fhir_contents)
@@ -40,6 +44,9 @@ class TestKeys(BaseClass):
 
     def test_bodySite_code(self):
         fhir_contents = self.fhir_contents
+        self.allure_util.allure_test_title("title_test_bodySite_code")
+        self.allure_util.allure_test_description("description_test_bodySite_code")
+        
         radlex_code_status = self.generic_util.verify_radlex_code(fhir_contents)
         snomed_code_status = self.generic_util.verify_snomed_code(fhir_contents)
         
@@ -51,6 +58,9 @@ class TestKeys(BaseClass):
             
     def test_st_uid(self):
         fhir_contents = self.fhir_contents
+        self.allure_util.allure_test_title("title_test_st_uid")
+        self.allure_util.allure_test_description("description_test_st_uid")
+        
         
         self.generic_util.is_study_uid_present(fhir_contents)
         
@@ -63,6 +73,9 @@ class TestKeys(BaseClass):
     def test_fhir_track_id(self):
         
         fhir_contents = self.fhir_contents
+        self.allure_util.allure_test_title("title_test_fhir_track_id")
+        self.allure_util.allure_test_description("description_test_fhir_track_id")
+        
         
         self.generic_util.is_tracking_identifier_present(fhir_contents)
         
@@ -73,6 +86,9 @@ class TestKeys(BaseClass):
     def test_fhir_track_uid(self):
         
         fhir_contents = self.fhir_contents
+        self.allure_util.allure_test_title("title_test_fhir_track_uid")
+        self.allure_util.allure_test_description("description_test_fhir_track_uid")
+        
         
         self.generic_util.is_tracking_uid_present(fhir_contents)
         
