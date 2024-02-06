@@ -10,8 +10,8 @@ class TestKeys(BaseClass):
     
     def test_verify_observation_code(self):
         fhir_contents = self.fhir_contents
-        self.allure_util.allure_test_title("test_verify_observation_code")
-        self.allure_util.allure_test_description("test_verify_observation_code")
+        self.allure_util.allure_test_title("title_test_verify_observation_code")
+        self.allure_util.allure_test_description("description_test_verify_observation_code")
         annalise_obs_code_status = self.generic_util.verify_obs_code_annalise_system(fhir_contents)
         nuance_obs_code_status = self.generic_util.verify_obs_code_nuance_system(fhir_contents)
         radelement_obs_code_status = self.generic_util.verify_obs_code_radelement(fhir_contents)
