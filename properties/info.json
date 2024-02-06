@@ -17,7 +17,7 @@
     "description_test_fhir_track_id" : "This test verifies if the Tracking Identifier is present for all the findings in FHIR.json and if the Tracking Identifier's code and display from FHIR.json matches with the requirement",
 
     "title_test_fhir_track_uid" : "Verification of Tracking Unique Identifier for all the findings in FHIR.json",
-    "description_test_fhir_track_uid" : "This test verifies if the Tracking Unique Identifier is present for all the findings in FHIR.json and if the Tracking Identifier's code and display from FHIR.json matches with the requirement",
+    "description_test_fhir_track_uid" : "This test verifies if the Tracking Unique Identifier is present for all the findings in FHIR.json and if the Tracking Identifier's code and display from FHIR.json matches with the requirement"
 
 
 
