@@ -8,8 +8,10 @@ import re
 class TestKeys(BaseClass):
 
     
-    def test_verify_observation_code_1(self):
+    def test_verify_observation_code(self):
         fhir_contents = self.fhir_contents
+        self.allure_util.allure_test_title("test_verify_observation_code")
+        self.allure_util.allure_test_description("test_verify_observation_code")
         annalise_obs_code_status = self.generic_util.verify_obs_code_annalise_system(fhir_contents)
         nuance_obs_code_status = self.generic_util.verify_obs_code_nuance_system(fhir_contents)
         radelement_obs_code_status = self.generic_util.verify_obs_code_radelement(fhir_contents)
@@ -24,7 +26,7 @@ class TestKeys(BaseClass):
     
     
     
-    def test_verify_observation_display_1(self):
+    def test_verify_observation_display(self):
         fhir_contents = self.fhir_contents
         annalise_obs_display_status = self.generic_util.verify_obs_display_annalise_system(fhir_contents)
         nuance_obs_display_status = self.generic_util.verify_obs_display_nuance_system(fhir_contents)
@@ -36,7 +38,7 @@ class TestKeys(BaseClass):
 
 
 
-    def test_bodySite_code_1(self):
+    def test_bodySite_code(self):
         fhir_contents = self.fhir_contents
         radlex_code_status = self.generic_util.verify_radlex_code(fhir_contents)
         snomed_code_status = self.generic_util.verify_snomed_code(fhir_contents)
@@ -65,6 +67,7 @@ class TestKeys(BaseClass):
         self.generic_util.is_tracking_identifier_present(fhir_contents)
         
         self.generic_util.verify_fhir_tracking_id(fhir_contents)
+        
         
         
     def test_fhir_track_uid(self):

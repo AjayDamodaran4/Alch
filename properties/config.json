@@ -1,5 +1,5 @@
 {
-  "fhir_json_path": "",
+  "fhir_json_path": "resources/Annalise-cxr-FHIR.json",
   "cxr_req": "resources/cxr.json",
   "excel_file_path": "resources/CXR-FHIR_Latest.xlsx",
   "compose_file_path": "/nuance/doc_compose/docker-compose.yaml",

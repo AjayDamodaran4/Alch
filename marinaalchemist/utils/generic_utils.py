@@ -99,7 +99,9 @@ class GenericUtils(object):
                         tracking_id_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
                         try:
                             assert tracking_id_code == "112039", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
+                            print(f"Tracking Identifier code matches with requirement for {target} observation")
                             assert tracking_id_display == "Tracking Identifier", f"Tracking ID Display of {target} observation from FHIR report does not match the requirement"
+                            print(f"Tracking Identifier code matches with requirement for {target} observation")
                             with allure.step(f"Verification of Tracking Identifier for {target} observation"):
                                 allure.attach(f"Tracking Identifier code from FHIR matches with the requirement for {target} observation \
                                     From requirement Tracking ID code: 112039, From FHIR.json Tracking ID code: {tracking_id_code}", f"Verification of Tracking Identifier code for {target} observation against requirement", allure.attachment_type.TEXT)
@@ -133,7 +135,9 @@ class GenericUtils(object):
                         tracking_uid_display = fhir_contents["contained"][observation]["component"][each]["code"]["coding"][0]["display"]
                         try:
                             assert tracking_uid_code == "112040", f"Tracking ID code of {target} observation from FHIR report does not match the requirement"
+                            print(f"Tracking Unique Identifier code matches with requirement for {target} observation")
                             assert tracking_uid_display == "Tracking Unique Identifier", f"Tracking Unique Identifier display text of {target} observation from FHIR report does not match the requirement"
+                            print(f"Tracking Unique Identifier display text matches with requirement for {target} observation")
                             with allure.step(f"Verification of Tracking Unique Identifier for {target} observation"):
                                 allure.attach(f"Tracking Unique Identifier code from FHIR matches with the requirement for {target} observation \
                                     From requirement Tracking ID code: 112040, From FHIR.json Tracking ID code: {tracking_uid_code}", f"Verification of Tracking Unique Identifier code for {target} observation against requirement", allure.attachment_type.TEXT)
