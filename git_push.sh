@@ -13,5 +13,5 @@ git add .
 git commit -m "m"
 
 # Push changes to the remote repository using HTTPS with personal access token
-git push https://$USERNAME:$TOKEN@github.com/your_username/your_repository.git main
+git push https://$USERNAME:$TOKEN@github.com/AjayDamodaran4/Alch.git main
 
