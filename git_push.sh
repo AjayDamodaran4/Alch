@@ -10,7 +10,7 @@ TOKEN="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"
 git add .
 
 # Commit with a message provided as an argument
-git commit -m "m"
+git commit -m "me"
 
 # Push changes to the remote repository using HTTPS with personal access token
 git push https://$USERNAME:$TOKEN@github.com/AjayDamodaran4/Alch.git main
