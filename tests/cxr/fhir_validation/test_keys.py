@@ -7,11 +7,16 @@ import re
 @pytest.mark.usefixtures("container_auto")
 class TestKeys(BaseClass):
 
+    # def __init__(self):
+        
+
     
     def test_verify_observation_code(self):
         fhir_contents = self.fhir_contents
         self.allure_util.allure_test_title("title_test_verify_observation_code")
         self.allure_util.allure_test_description("description_test_verify_observation_code")
+        
+        # annalise_obs_code_status = self.fhir_keyword.VERIFY_OBSERVATION_CODE_FOR_ANNALISE_CODING_SYSTEM(fhir_contents)
         
         annalise_obs_code_status = self.generic_util.verify_obs_code_annalise_system(fhir_contents)
         nuance_obs_code_status = self.generic_util.verify_obs_code_nuance_system(fhir_contents)
@@ -19,11 +24,12 @@ class TestKeys(BaseClass):
         
         if annalise_obs_code_status is False or nuance_obs_code_status is False or radelement_obs_code_status is False:
             pytest.fail("Test Failed due to observation code mismatch is found in FHIR.json")
-
+        
+        
 
         
         # self.generic_util.VERIFY_OBSERVATION_CODE_FOR_ANNALISE_CODING_SYSTEM(fhir_contents)
-    
+    # fhir_keyword
     
     
     
@@ -61,7 +67,6 @@ class TestKeys(BaseClass):
         self.allure_util.allure_test_title("title_test_st_uid")
         self.allure_util.allure_test_description("description_test_st_uid")
         
-        
         self.generic_util.is_study_uid_present(fhir_contents)
         
         dicom_study_uid = self.dicom_util.extract_study_uid(self.fhir_input_path)
@@ -76,7 +81,6 @@ class TestKeys(BaseClass):
         self.allure_util.allure_test_title("title_test_fhir_track_id")
         self.allure_util.allure_test_description("description_test_fhir_track_id")
         
-        
         self.generic_util.is_tracking_identifier_present(fhir_contents)
         
         self.generic_util.verify_fhir_tracking_id(fhir_contents)
@@ -88,7 +92,6 @@ class TestKeys(BaseClass):
         fhir_contents = self.fhir_contents
         self.allure_util.allure_test_title("title_test_fhir_track_uid")
         self.allure_util.allure_test_description("description_test_fhir_track_uid")
-        
         
         self.generic_util.is_tracking_uid_present(fhir_contents)
         
