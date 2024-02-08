@@ -25,7 +25,7 @@ jobs:
           poetry show
 
       - name: Run tests
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'test_jenkins')
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: poetry run pytest tests/cxr/fhir_validation/test_keys.py
 
       - name: Publish Allure report
