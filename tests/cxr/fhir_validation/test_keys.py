@@ -7,12 +7,10 @@ import re
 @pytest.mark.usefixtures("container_auto")
 class TestKeys(BaseClass):
 
-    # def __init__(self):
-        
-
     
     def test_verify_observation_code(self):
         fhir_contents = self.fhir_contents
+        
         self.allure_util.allure_test_title("title_test_verify_observation_code")
         self.allure_util.allure_test_description("description_test_verify_observation_code")
         
