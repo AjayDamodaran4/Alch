@@ -4,7 +4,7 @@ import allure
 import re
 
 
-@pytest.mark.usefixtures("container_auto")
+# @pytest.mark.usefixtures("container_auto")
 class TestKeys(BaseClass):
 
     
@@ -94,3 +94,12 @@ class TestKeys(BaseClass):
         self.generic_util.is_tracking_uid_present(fhir_contents)
         
         self.generic_util.verify_fhir_tracking_uid(fhir_contents)
+        
+        
+    def test_sample(self):
+        
+        fhir_contents = self.fhir_json
+        
+        self.generic_util.verify_coding_system_presences(fhir_contents,"annalise","nuance","radelement")
+        
+        

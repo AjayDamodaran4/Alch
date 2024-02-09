@@ -544,6 +544,240 @@ class GenericUtils(object):
             yield target_obs
     
     
+    
+    def verify_coding_system_presence(self, fhir_contents, annalise=None, nuance=None, radelement=None):
+        non_nuance_findings = ["acute_humerus_fracture", "acute_rib_fracture", "acute_clavicle_fracture","pleural_effusion", 
+                               "pneumomediastinum", "pneumothorax", "single_pulmonary_nodule", "spine_wedge_fracture", 
+                               "subdiaphragmatic_gas", "tension_pneumothorax"]
+        radelement_findings = ["RDES225", "RDES254", "RDES76", "RDES44", "RDES227", "RDES230", "RDES228", "RDES44"]
+        
+        if annalise.lower() == "annalise" and nuance is None and radelement is None:
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    print(f"only annalise is present for {target_obs} observation.")
+        
+        elif nuance.lower() == "nuance" and annalise is None and radelement is None:
+            print("sup")
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+                    print(f"only nuance is present for {target_obs} observation.")
+                    
+                    
+                    
+        elif annalise.lower() == "annalise" and nuance.lower() == "nuance" and radelement is None:
+             for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 2, f"More than two coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    assert fhir_contents['contained'][observation]['code']['coding'][1]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+                    print(f"annalise and nuance is present for {target_obs} observation.")
+                    
+                    
+                    
+        elif annalise.lower() == "annalise" and radelement.lower() == "radelement" and nuance is None:
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+        
+        
+        elif annalise is None and nuance is None and radelement.lower() == "radelement":
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+        
+        
+        elif annalise is None and nuance.lower() == "nuance" and radelement.lower() == "radelement":
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+        
+        elif annalise.lower() == "annalise" and nuance.lower() == "nuance" and radelement.lower() == "radelement":
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 2, f"More than two coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    assert fhir_contents['contained'][observation]['code']['coding'][1]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+
+    
+
+
+    def verify_coding_system_presences(self, fhir_contents, *args):
+        args_lower = [arg.lower() for arg in args]
+        annalise_present = "annalise" in args_lower
+        nuance_present = "nuance" in args_lower
+        radelement_present = "radelement" in args_lower
+        non_nuance_findings = ["acute_humerus_fracture", "acute_rib_fracture", "acute_clavicle_fracture","pleural_effusion", 
+                               "pneumomediastinum", "pneumothorax", "single_pulmonary_nodule", "spine_wedge_fracture", 
+                               "subdiaphragmatic_gas", "tension_pneumothorax"]
+        radelement_findings = ["RDES225", "RDES254", "RDES76", "RDES44", "RDES227", "RDES230", "RDES228", "RDES44"]
+        
+        if annalise_present and not (nuance_present or radelement_present):
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    print(f"only annalise is present for {target_obs} observation.")
+        
+        elif nuance_present and not (annalise_present or radelement_present):
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+                    print(f"only nuance is present for {target_obs} observation.")
+                    
+                    
+        elif annalise_present and nuance_present and not (radelement_present):
+             for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 2, f"More than two coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    assert fhir_contents['contained'][observation]['code']['coding'][1]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+                    print(f"annalise and nuance is present for {target_obs} observation.")
+                    
+                    
+                    
+        elif annalise_present and radelement_present and not (nuance_present):
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+        
+        
+        elif radelement_present and not (annalise_present or nuance_present):
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+        
+        
+        elif nuance_present and radelement_present and not (annalise_present):
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+        
+        elif annalise_present and nuance_present and radelement_present:
+            for observation in range(3,len(fhir_contents['contained'])):
+                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+                if target_obs == "246501002":
+                    pass
+                elif target_obs in radelement_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == "http://radelement.org", f"Coding system displayed in FHIR.json for {target_obs} observation is not RadElement. Exepcted is RadElement Coding system"
+                
+                elif target_obs in non_nuance_findings:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 1, f"More than one coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                
+                else:
+                    assert len(fhir_contents['contained'][observation]['code']['coding']) == 2, f"More than two coding system is available in FHIR.json for {target_obs} observation"
+                    assert fhir_contents['contained'][observation]['code']['coding'][0]['system'] == 'https://www.annalise.ai/guides', f"Coding system displayed in FHIR.json for {target_obs} observation is not Annalise. Exepcted is Annalise Coding system"
+                    assert fhir_contents['contained'][observation]['code']['coding'][1]['system'] == 'http://nuancepowerscribe.com/ai', f"Coding system displayed in FHIR.json for {target_obs} observation is not Nuance. Exepcted is Nuance Coding system."
+
+    
+
+
+    
+    
+    
     def verify_obs_code_annalise_system(self,fhir_contents):
         failures = []
         self.cxr_req = conftest.read_cxr_req()
