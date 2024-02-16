@@ -8,6 +8,7 @@ class BaseClass(object):
     logger = None
     allure_util = None
     fhir_json = None
+    model_output_json = None
     fhir_excel = None
     url_util = None
     docker_util = None

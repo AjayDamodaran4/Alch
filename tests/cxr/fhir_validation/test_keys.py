@@ -47,7 +47,7 @@ class TestKeys(BaseClass):
 
 
     def test_bodySite_code(self):
-        fhir_contents = self.fhir_contents
+        fhir_contents = self.fhir_json
         self.allure_util.allure_test_title("title_test_bodySite_code")
         self.allure_util.allure_test_description("description_test_bodySite_code")
         
@@ -80,7 +80,6 @@ class TestKeys(BaseClass):
         self.allure_util.allure_test_description("description_test_fhir_track_id")
         
         self.generic_util.is_tracking_identifier_present(fhir_contents)
-        
         self.generic_util.verify_fhir_tracking_id(fhir_contents)
         
         
@@ -98,8 +97,28 @@ class TestKeys(BaseClass):
         
     def test_sample(self):
         
-        fhir_contents = self.fhir_json
+        # fhir_contents = self.fhir_json
+        # status = self.generic_util.verify_observation_code(fhir_contents,"uS","AnnaliSE","NUance","radelement")
+        # # self.generic_util.verify_observation_display(fhir_contents,"uS","AnnaliSE","NUance")
         
-        self.generic_util.verify_coding_system_presences(fhir_contents,"annalise","nuance","radelement")
+        # if not status:
+        #     pytest.fail("failed")
+        op = (self.model_output_json['cxr_value']['study_laterality']['findings']['abdominal_clips']['values'])
+        
+        key_of_max_value = max(op, key=op.get)
+        print(key_of_max_value)
+        
+        # max_value = max(self.model_output_json['cxr_value']['study_laterality']['findings']['abdominal_clips']['values'].values())
+        # print(max_value)
+        
+        # print(op)
+        
+        # for i in op : 
+            
         
         
+        
+        
+        
+        
+    

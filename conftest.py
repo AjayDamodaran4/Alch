@@ -19,6 +19,7 @@ def setup(request):
     request.cls.observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, observation_excel_sheet)
     request.cls.non_observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, non_observation_excel_sheet)
     request.cls.fhir_json = read_fhir_json()
+    request.cls.model_output_json = read_model_output_json()
     request.cls.docker_util = DockerUtils()
     request.cls.dicom_util = DicomUtils()
     request.cls.cxr_req = read_cxr_req()
@@ -39,6 +40,11 @@ def read_cxr_req():
         cxr_req = json.load(file)
     return cxr_req
 
+def read_model_output_json():
+    model_output_json_path = Config().get_value_of_config_key("model_output_json_path")
+    with open(model_output_json_path, 'r') as file: 
+        model_output_contents = json.load(file)
+    return model_output_contents
 
 # @pytest.fixture(scope="class", params = ["input_path_TC_1","input_path_TC_2","input_path_TC_3","input_path_TC_4","input_path_TC_5",
 #                                          "input_path_TC_6","input_path_TC_7","input_path_TC_8"])
