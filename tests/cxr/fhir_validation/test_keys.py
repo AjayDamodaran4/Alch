@@ -97,16 +97,22 @@ class TestKeys(BaseClass):
         
     def test_sample(self):
         
-        # fhir_contents = self.fhir_json
+        fhir_contents = self.fhir_json
+        model_output_contents = self.model_output_json
+        
+        
+        status = self.fhir_util.verify_probability(fhir_contents,'row',"nuance")
+        print(status)
+            
         # status = self.generic_util.verify_observation_code(fhir_contents,"uS","AnnaliSE","NUance","radelement")
         # # self.generic_util.verify_observation_display(fhir_contents,"uS","AnnaliSE","NUance")
         
-        # if not status:
-        #     pytest.fail("failed")
-        op = (self.model_output_json['cxr_value']['study_laterality']['findings']['abdominal_clips']['values'])
+        if not status:
+            pytest.fail("failed")
+
         
-        key_of_max_value = max(op, key=op.get)
-        print(key_of_max_value)
+        
+        
         
         # max_value = max(self.model_output_json['cxr_value']['study_laterality']['findings']['abdominal_clips']['values'].values())
         # print(max_value)
@@ -114,6 +120,19 @@ class TestKeys(BaseClass):
         # print(op)
         
         # for i in op : 
+        
+        '''
+        parse fhir json
+        parse model output
+        if obs.code of finding from fhir.json matches in model output, 
+            - get key of max value of model output for that code
+            - In component of finding of fhir.json, verify above and value of 'display' is same
+            - then, the value of code should match as per req
+            - then value of valueQuantity should match with the max value %
+            - 
+            
+        code should match for nuance and radele as well
+        '''
             
         
         

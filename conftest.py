@@ -1,6 +1,6 @@
 import pytest
 import json, os, allure
-from marinaalchemist import AllureReport, ExcelUtils, Config, DockerUtils, GenericUtils, DicomUtils, ExceptionUtils
+from marinaalchemist import AllureReport, ExcelUtils, Config, DockerUtils, GenericUtils, DicomUtils, ExceptionUtils, FhirUtils
 import pandas as pd
 
 
@@ -23,7 +23,9 @@ def setup(request):
     request.cls.docker_util = DockerUtils()
     request.cls.dicom_util = DicomUtils()
     request.cls.cxr_req = read_cxr_req()
+    request.cls.cxr_mappings = read_mappings_json()
     request.cls.exception_utils = ExceptionUtils()
+    request.cls.fhir_util = FhirUtils()
     yield
     print("test closed!!!")
 
@@ -45,6 +47,13 @@ def read_model_output_json():
     with open(model_output_json_path, 'r') as file: 
         model_output_contents = json.load(file)
     return model_output_contents
+
+
+def read_mappings_json():
+    mappings_json_path = Config().get_value_of_config_key("mappings_json_path")
+    with open(mappings_json_path, 'r') as file: 
+        mappings_json_contents = json.load(file)
+    return mappings_json_contents
 
 # @pytest.fixture(scope="class", params = ["input_path_TC_1","input_path_TC_2","input_path_TC_3","input_path_TC_4","input_path_TC_5",
 #                                          "input_path_TC_6","input_path_TC_7","input_path_TC_8"])

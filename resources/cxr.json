@@ -1,4 +1,13 @@
-{
+{   
+    "RIGHT" : "Right lateral",
+    "LEFT" : "Left lateral",
+    "BILATERAL" : "Bilateral",
+    "laterality_codes" : {
+        "system" : "http://snomed.info/sct",
+        "Right lateral" : "24028007",
+        "Left lateral" :  "7771000",
+        "Bilateral" : "51440002"
+    },
     "ROW": {
         "abdominal_clips": [
             {

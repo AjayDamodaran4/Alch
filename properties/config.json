@@ -1,7 +1,9 @@
 {
   "fhir_json_path": "resources/Annalise-cxr-FHIR.json",
   "model_output_json_path" : "resources/model-output.json",
+  "mappings_json_path" : "resources/mappings.json",
   "cxr_req": "resources/cxr.json",
+  "OPT-CLI-002" : "resources/OPT-CLI-002.xlsx",
   "excel_file_path": "resources/CXR-FHIR_Latest.xlsx",
   "compose_file_path": "/nuance/doc_compose/docker-compose.yaml",
   "base_url": "http://{host}:{port}",

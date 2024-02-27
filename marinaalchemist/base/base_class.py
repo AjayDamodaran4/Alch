@@ -13,6 +13,7 @@ class BaseClass(object):
     url_util = None
     docker_util = None
     generic_util = None
+    fhir_util = None
     dicom_util = None
     observation_df = None
     non_observation_df = None
