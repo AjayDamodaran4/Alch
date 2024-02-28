@@ -101,9 +101,8 @@ class TestKeys(BaseClass):
         model_output_contents = self.model_output_json
         
         
-        status = self.fhir_util.verify_probability(fhir_contents,'row',"nuance")
+        status = self.fhir_util.verify_probability(fhir_contents,'RoW',"radlex")
         print(status)
-            
         # status = self.generic_util.verify_observation_code(fhir_contents,"uS","AnnaliSE","NUance","radelement")
         # # self.generic_util.verify_observation_display(fhir_contents,"uS","AnnaliSE","NUance")
         

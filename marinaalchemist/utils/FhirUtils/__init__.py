@@ -19,4 +19,12 @@ __all__ = [
 
 
 class FhirUtils(bodySite,Laterality, Probability_Qualifier, ObservationCode,ObservationDisplay,Study_Identifier,Tracking_Identifier):
-    pass
+    def __init__(self):
+        # Call the __init__ method of each parent class explicitly
+        bodySite.__init__(self)
+        Laterality.__init__(self)
+        Probability_Qualifier.__init__(self)
+        ObservationCode.__init__(self)
+        ObservationDisplay.__init__(self)
+        Study_Identifier.__init__(self)
+        Tracking_Identifier.__init__(self)
