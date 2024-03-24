@@ -4,7 +4,6 @@ import conftest
 from ..dicom_utils import DicomUtils
 from ..excelutils import ExcelUtils
 
-# __all__ = ['verify_fhir_tracking_id','verify_fhir_tracking_uid','extract_fhir_tracking_uid','extract_fhir_tracking_id','is_tracking_uid_present']
 class Tracking_Identifier(object):
     
     def __init__(self):

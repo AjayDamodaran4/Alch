@@ -18,8 +18,8 @@ class Study_Identifier(object):
         
         failures = []
         for observation in range(3,len(fhir_contents['contained'])):
-            target = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-            if target == '246501002':
+            observation_name = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if observation_name == '246501002':
                 pass
             else:
                 for each in range(len(fhir_contents["contained"][observation]["component"])):
@@ -28,7 +28,7 @@ class Study_Identifier(object):
                         if dicom_study_uid == study_uid:
                             pass
                         else:
-                            failures.append(target)
+                            failures.append(observation_name)
                             
                         
         if failures:
@@ -47,14 +47,13 @@ class Study_Identifier(object):
 
             
     
-    def is_study_uid_present(self,fhir_json_data):
-        fhir_contents = fhir_json_data
+    def is_study_uid_present(self,fhir_contents):
         study_uid_presenence = True
         study_uid_absence = []
         for observation in range(3, len(fhir_contents['contained'])):
             
-            target = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
-            if target == '246501002':
+            observation_name = fhir_contents["contained"][observation]["code"]["coding"][0]["code"]
+            if observation_name == '246501002':
                 pass
             else:
                 components_data = []
@@ -67,7 +66,7 @@ class Study_Identifier(object):
                     components_data = []
                 else:
                     study_uid_presenence = False
-                    study_uid_absence.append(target)
+                    study_uid_absence.append(observation_name)
                     
         if study_uid_presenence:
             print("Study Instance UID is present for all the observations in FHIR.json")
@@ -80,4 +79,3 @@ class Study_Identifier(object):
                 allure.attach(f"Study Instance UID component is absent for following observations in FHIR.json : {study_uid_absence}", 
                     f"Study Instance UID component is absent for following observations in FHIR.json", allure.attachment_type.TEXT)
             pytest.fail(f"Test Failed since Study Instance UID is not present for following observations in FHIR.json : {study_uid_absence}")
-        

@@ -66,6 +66,8 @@ class Observation_Code_Display(object):
                             systems_mismatch.append(observation_name)
 
         if systems_mismatch:
+            with allure.step(f"Test Failure Details"):
+                allure.attach(f"{systems_mismatch}", f"Observation's coding systems present in FHIR.json does not match with requirement or with coding systems that's passed as argument for test case for following observations: ", allure.attachment_type.TEXT)
             print(f"Observation's coding systems present in FHIR.json does not match with requirement or with coding systems that's passed as argument for test case for following observations: {systems_mismatch}")
             return False
         else:
@@ -120,6 +122,9 @@ class Observation_Code_Display(object):
         if len(args_lower) != len(set(args_lower)):
             raise ValueError("Duplicate arguments detected. Please provide each argument only once.")
         
+        with allure.step(f"Verification of Observation code and display details in Annalise-cxr-FHIR.json"):
+            allure.attach(f"{fhir_contents}", f"Annalise-cxr-FHIR.json contents", allure.attachment_type.TEXT)
+        
         if not self.check_for_systems(fhir_contents=fhir_contents, system=system):
             return False
         
@@ -127,7 +132,7 @@ class Observation_Code_Display(object):
             observation_name = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
             if observation_name == "246501002" :
                 continue
-                
+            
             if region_ROW and not region_US:
                 obs_annalise_code = self.cxr_req["ROW"][observation_name][0]["Annalise_observation.code"]
                 obs_annalise_display = self.cxr_req["ROW"][observation_name][0]["Annalise_observation.display"]
@@ -167,20 +172,24 @@ class Observation_Code_Display(object):
                     for i in range(0, len(expected_obs_details), 4)]
 
                 fhir_observation_detail_block = fhir_contents["contained"][observation]["code"]["coding"]
-            
+            with allure.step(f"Verification of code and display of {observation_name} observation as per applicable coding systems"):
+                allure.attach(f"Expected details as per requirement : {expected_obs_code_display}, Details from FHIR : {fhir_observation_detail_block}",
+                            f"Observation code and display details of {observation_name} observation", allure.attachment_type.TEXT)
+                
             try:
-                print(f"qq:{expected_obs_code_display},ee:{fhir_observation_detail_block}")
                 assert expected_obs_code_display == fhir_observation_detail_block
+                allure.attach(f"Validation complete for {observation_name} observation",
+                                f"Observation code and display matches as per requirement for {observation_name} observation", allure.attachment_type.TEXT)
                 print(f"observation code and display match as per requirement for {observation_name}")
-                print("*"*100)
             except AssertionError:
                 observation_details_mismatch.append(observation_name)
                 
             try:
                 text_req = expected_obs_details[3]
                 if observation_name!="RDES225": # text field should be added to RDES225 in FHIR.json
-                    print(text_req,fhir_contents["contained"][observation]["code"]["text"])
                     assert text_req == fhir_contents["contained"][observation]["code"]["text"]
+                    allure.attach(f"Text matches as per requirement. Text from requirement : {text_req} , Text from Annalise-cxr-FHIR.json : {fhir_contents["contained"][observation]["code"]["text"]}",
+                                f"Validation results of Observation text for {observation_name} observation", allure.attachment_type.TEXT)
             except AssertionError:
                 observation_text_mismatch.append(observation_name)
                     
@@ -193,14 +202,12 @@ class Observation_Code_Display(object):
                 error_messages.append(f"Observation's text in FHIR.json does not match with requirement for following observations : {observation_text_mismatch}")
             
             if error_messages:
+                with allure.step(f"Test Failure Details :"):
+                    
+                    allure.attach(f"{error_messages}",
+                                f"Test Failure Details", allure.attachment_type.TEXT)
                 print("\n".join(error_messages))
                 return False
         
         else:
             return True
-        
-    
-    
-    
-    
-    

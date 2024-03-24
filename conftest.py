@@ -18,7 +18,7 @@ def setup(request):
     request.cls.generic_util = GenericUtils()
     request.cls.observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, observation_excel_sheet)
     request.cls.non_observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, non_observation_excel_sheet)
-    request.cls.fhir_json = read_fhir_json()
+    # request.cls.fhir_json = read_fhir_json()
     request.cls.model_output_json = read_model_output_json()
     request.cls.cxr_default_threshold = read_cxr_default_threshold()
     request.cls.docker_util = DockerUtils()

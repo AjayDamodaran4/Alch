@@ -1,48 +1,48 @@
-name: Automated Testing
+# name: Automated Testing
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build:
-    runs-on: self-hosted
+# jobs:
+#   build:
+#     runs-on: self-hosted
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+#       - name: Set up Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          pip install poetry
-          poetry install
-          poetry show
+#       - name: Install dependencies
+#         run: |
+#           pip install poetry
+#           poetry install
+#           poetry show
 
-      - name: Run tests
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: poetry run pytest tests/cxr/fhir_validation/test_keys.py
+#       - name: Run tests
+#         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+#         run: poetry run pytest tests/cxr/fhir_validation/test_keys.py
 
-      - name: Publish Allure report
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
-          path: results/reports
+#       - name: Publish Allure report
+#         if: always()
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: allure-report
+#           path: results/reports
 
-      - name: Serve Allure Reports
-        if: always()
-        run: |
-          cd results/reports
-          python -m http.server 8000 & # Run HTTP server in the background to allow further steps
+#       - name: Serve Allure Reports
+#         if: always()
+#         run: |
+#           cd results/reports
+#           python -m http.server 8000 & # Run HTTP server in the background to allow further steps
 
-      - name: View Allure Reports
-        if: always()
-        run: |
-          public_ip=$(tailscale ip) # Get public IP address through Tailscale
-          echo "View Allure Reports at: http://$public_ip:8000" # Print URL to access Allure reports
+#       - name: View Allure Reports
+#         if: always()
+#         run: |
+#           public_ip=$(tailscale ip) # Get public IP address through Tailscale
+#           echo "View Allure Reports at: http://$public_ip:8000" # Print URL to access Allure reports

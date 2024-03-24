@@ -7,7 +7,7 @@ from .obs_display import ObservationDisplay
 from .study_UID import Study_Identifier
 from .Tracking_ID_UID import Tracking_Identifier
 from .observation_code import Observation_Code_Display
-
+from .Tracking import Tracking_ID
 
 __all__ = [
     'bodySite',
@@ -18,11 +18,12 @@ __all__ = [
     'ObservationDisplay',
     'Study_Identifier',
     'Tracking_Identifier',
-    'Observation_Code_Display'
+    'Observation_Code_Display',
+    'Tracking_ID'
 ]
 
 
-class FhirUtils(bodySite,Laterality, Probability_Qualifier, Presence_Qualifier, ObservationCode,ObservationDisplay,Study_Identifier,Tracking_Identifier, Observation_Code_Display):
+class FhirUtils(bodySite,Laterality, Probability_Qualifier, Presence_Qualifier, ObservationCode,ObservationDisplay,Study_Identifier,Tracking_Identifier, Observation_Code_Display,Tracking_ID):
     def __init__(self):
         # Call the __init__ method of each parent class explicitly
         bodySite.__init__(self)
@@ -34,3 +35,4 @@ class FhirUtils(bodySite,Laterality, Probability_Qualifier, Presence_Qualifier, 
         Study_Identifier.__init__(self)
         Tracking_Identifier.__init__(self)
         Observation_Code_Display.__init__(self)
+        Tracking_ID.__init__(self)
