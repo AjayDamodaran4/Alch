@@ -143,6 +143,7 @@ class Observation_Code_Display(object):
                                         }]
                 
                 fhir_observation_detail_block = fhir_contents["contained"][observation]["code"]["coding"]
+                text_req = self.cxr_req["ROW"][observation_name][0]["Annalise_observation.text"]
                     
             elif region_US and not region_ROW:
                 
@@ -166,7 +167,7 @@ class Observation_Code_Display(object):
                 expected_system = expected_systems.get((annalise_present, nuance_present, radelement_present))
                 
                 expected_obs_details = self.get_observation_details(observation_name, expected_system)
-
+                text_req = expected_obs_details[3]
                 expected_obs_code_display = [
                     {"system": expected_obs_details[i], "code": expected_obs_details[i+1], "display": expected_obs_details[i+2]}
                     for i in range(0, len(expected_obs_details), 4)]
@@ -185,10 +186,9 @@ class Observation_Code_Display(object):
                 observation_details_mismatch.append(observation_name)
                 
             try:
-                text_req = expected_obs_details[3]
                 if observation_name!="RDES225": # text field should be added to RDES225 in FHIR.json
                     assert text_req == fhir_contents["contained"][observation]["code"]["text"]
-                    allure.attach(f"Text matches as per requirement. Text from requirement : {text_req} , Text from Annalise-cxr-FHIR.json : {fhir_contents["contained"][observation]["code"]["text"]}",
+                    allure.attach(f"Text matches as per requirement. Text from requirement : {text_req} , Text from Annalise-cxr-FHIR.json : {fhir_contents['contained'][observation]['code']['text']}",
                                 f"Validation results of Observation text for {observation_name} observation", allure.attachment_type.TEXT)
             except AssertionError:
                 observation_text_mismatch.append(observation_name)
