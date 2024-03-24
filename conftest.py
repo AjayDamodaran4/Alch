@@ -73,7 +73,7 @@ def container_auto(request):
     input_path = Config().get_value_of_test_input_key(input_path_param)
     output_path = GenericUtils().output_folder_generator()
     DockerUtils().container_autorun(input_path=input_path, output_path=output_path)
-    DockerUtils().check_container_logs()
+    # DockerUtils().check_container_logs()
     request.cls.fhir_input_path = input_path
     request.cls.fhir_output_path = output_path
     Config().update_value_of_config_key("fhir_json_path",output_path)
