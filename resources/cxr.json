@@ -19,7 +19,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "818983003",
                 "bodySite_Snomed.display": "Abdomen",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Abdominal clips"
             }
         ],
         "acute_aortic_syndrome": [
@@ -32,7 +33,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "15825003",
                 "bodySite_Snomed.display": "Aorta",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Widened aortic contour"
             }
         ],
         "unfolded_aorta": [
@@ -45,7 +47,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113262008",
                 "bodySite_Snomed.display": "Thoracic aorta",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Unfolded aorta"
             }
         ],
         "aortic_arch_calcification": [
@@ -58,7 +61,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "57034009",
                 "bodySite_Snomed.display": "Aortic Arch",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Aortic arch calcification"
             }
         ],
         "aortic_stent": [
@@ -71,7 +75,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "15825003",
                 "bodySite_Snomed.display": "Aorta",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Aortic stent"
             }
         ],
         "focal_airspace_opacity": [
@@ -84,7 +89,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Focal airspace opacity"
             }
         ],
         "multifocal_airspace_opacity": [
@@ -97,7 +103,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Multifocal airspace opacity"
             }
         ],
         "diffuse_airspace_opacity": [
@@ -110,7 +117,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse airspace opacity"
             }
         ],
         "diffuse_lower_airspace_opacity": [
@@ -123,7 +131,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "281394001",
                 "bodySite_Snomed.display": "Lower zone of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse lower airspace opacity"
             }
         ],
         "diffuse_upper_airspace_opacity": [
@@ -136,7 +145,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "281392002",
                 "bodySite_Snomed.display": "Upper zone of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse upper airspace opacity"
             }
         ],
         "diffuse_perihilar_airspace_opacity": [
@@ -149,7 +159,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "63907008",
                 "bodySite_Snomed.display": "Perihilar region of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Perihilar airspace opacity"
             }
         ],
         "acute_humerus_fracture": [
@@ -162,7 +173,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "85050009",
                 "bodySite_Snomed.display": "Humerus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Acute humerus fracture"
             }
         ],
         "acute_rib_fracture": [
@@ -175,7 +187,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "78904004",
                 "bodySite_Snomed.display": "Chest wall",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Acute rib fracture"
             }
         ],
         "acute_clavicle_fracture": [
@@ -188,7 +201,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Acute clavicle fracture"
             }
         ],
         "shoulder_arthritis": [
@@ -201,7 +215,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Shoulder arthritis"
             }
         ],
         "shoulder_dislocation": [
@@ -214,7 +229,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Shoulder dislocation"
             }
         ],
         "shoulder_fixation": [
@@ -227,7 +243,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Shoulder fixation"
             }
         ],
         "shoulder_replacement": [
@@ -240,7 +257,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Shoulder replacement"
             }
         ],
         "airway_stent": [
@@ -253,7 +271,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "89187006",
                 "bodySite_Snomed.display": "Airway",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Airway stent"
             }
         ],
         "axillary_clips": [
@@ -266,7 +285,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91470000",
                 "bodySite_Snomed.display": "Axilla",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Axillary clips"
             }
         ],
         "biliary_stent": [
@@ -279,7 +299,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "34707002",
                 "bodySite_Snomed.display": "Biliary tract structure",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Biliary stent"
             }
         ],
         "breast_implant": [
@@ -292,7 +313,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "76752008",
                 "bodySite_Snomed.display": "Breast",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Breast implant"
             }
         ],
         "bronchiectasis": [
@@ -305,7 +327,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "955009",
                 "bodySite_Snomed.display": "Bronchus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Bronchiectasis"
             }
         ],
         "bullae_diffuse": [
@@ -318,7 +341,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse bullae"
             }
         ],
         "bullae_lower": [
@@ -331,7 +355,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "281394001",
                 "bodySite_Snomed.display": "Lower zone of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Lower zone bullae"
             }
         ],
         "bullae_upper": [
@@ -344,7 +369,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "281392002",
                 "bodySite_Snomed.display": "Upper zone of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Upper zone bullae"
             }
         ],
         "calcified_axillary_nodes": [
@@ -357,7 +383,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91470000",
                 "bodySite_Snomed.display": "Axilla",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Calcified axillary nodes"
             }
         ],
         "calcified_granuloma": [
@@ -370,7 +397,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Calcified granuloma (< 5mm)"
             }
         ],
         "calcified_hilar_lymphadenopathy": [
@@ -383,7 +411,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "46750007",
                 "bodySite_Snomed.display": "Hilum of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Calcified hilar lymphadenopathy"
             }
         ],
         "calcified_neck_nodes": [
@@ -396,7 +425,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "45048000",
                 "bodySite_Snomed.display": "Neck",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Calcified neck nodes"
             }
         ],
         "calcified_pleural_plaque": [
@@ -409,7 +439,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "3120008",
                 "bodySite_Snomed.display": "Pleura",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Calcified pleural plaques"
             }
         ],
         "calcified_pulmonary_mass": [
@@ -422,7 +453,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Calcified mass (> 5mm)"
             }
         ],
         "cardiac_valve_prosthesis": [
@@ -435,7 +467,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "17401000",
                 "bodySite_Snomed.display": "Cardiac valve",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Cardiac valve prosthesis"
             }
         ],
         "cardiomegaly": [
@@ -448,7 +481,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "302509004",
                 "bodySite_Snomed.display": "Entire heart",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Widened cardiac silhouette"
             }
         ],
         "cavitating_mass": [
@@ -461,7 +495,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Cavitating mass(es)"
             }
         ],
         "cavitating_mass_internal_content": [
@@ -474,7 +509,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Cavitating mass with content"
             }
         ],
         "cervical_flexion": [
@@ -487,7 +523,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Cervical flexion"
             }
         ],
         "chronic_clavicle_fracture": [
@@ -500,7 +537,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Chronic clavicle fracture"
             }
         ],
         "chronic_humerus_fracture": [
@@ -513,7 +551,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "85050009",
                 "bodySite_Snomed.display": "Humerus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Chronic humerus fracture"
             }
         ],
         "chronic_rib_fracture": [
@@ -526,7 +565,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "78904004",
                 "bodySite_Snomed.display": "Chest wall",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Chronic rib fracture"
             }
         ],
         "clavicle_fixation": [
@@ -539,7 +579,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Clavicle fixation"
             }
         ],
         "clavicle_lesion": [
@@ -552,7 +593,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Clavicle lesion"
             }
         ],
         "coronary_stent": [
@@ -565,7 +607,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "41801008",
                 "bodySite_Snomed.display": "Coronary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Coronary stent"
             }
         ],
         "diaphragmatic_elevation": [
@@ -578,7 +621,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "5798000",
                 "bodySite_Snomed.display": "Diaphragm",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diaphragmatic elevation"
             }
         ],
         "diaphragmatic_eventration": [
@@ -591,7 +635,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "5798000",
                 "bodySite_Snomed.display": "Diaphragm",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diaphragmatic eventration"
             }
         ],
         "diffuse_pleural_thickening": [
@@ -604,7 +649,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "3120008",
                 "bodySite_Snomed.display": "Pleura",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse pleural thickening"
             }
         ],
         "dish": [
@@ -617,7 +663,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "420345000",
                 "bodySite_Snomed.display": "Vertebra",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse spinal osteophytes"
             }
         ],
         "distended_bowel": [
@@ -630,7 +677,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113276009",
                 "bodySite_Snomed.display": "Bowel",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Distended bowel"
             }
         ],
         "electronic_cardiac_devices": [
@@ -643,7 +691,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Electronic cardiac devices"
             }
         ],
         "gallstones": [
@@ -656,7 +705,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "50519007",
                 "bodySite_Snomed.display": "Right upper quadrant of abdomen",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Gallstones"
             }
         ],
         "gastric_band": [
@@ -669,7 +719,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "25271004",
                 "bodySite_Snomed.display": "Gastroesophageal junction",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Gastric band"
             }
         ],
         "hiatus_hernia": [
@@ -682,7 +733,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "280062008",
                 "bodySite_Snomed.display": "Esophageal hiatus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Hiatus hernia"
             }
         ],
         "hilar_lymphadenopathy": [
@@ -695,7 +747,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "53074004",
                 "bodySite_Snomed.display": "Bronchial lymph node",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Hilar lymphadenopathy"
             }
         ],
         "humeral_lesion": [
@@ -708,7 +761,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "85050009",
                 "bodySite_Snomed.display": "Humerus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Humeral lesion"
             }
         ],
         "hyperinflation": [
@@ -721,7 +775,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Hyperinflation"
             }
         ],
         "hyperlucency": [
@@ -734,7 +789,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Reduced lung markings"
             }
         ],
         "image_obscured": [
@@ -747,7 +803,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Image obscured"
             }
         ],
         "in_position_cvc": [
@@ -760,7 +817,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "244390008",
                 "bodySite_Snomed.display": "Head and neck vein",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "In position CVC"
             }
         ],
         "in_position_ett": [
@@ -773,7 +831,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "44567001",
                 "bodySite_Snomed.display": "Trachea",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "In position ETT"
             }
         ],
         "in_position_ngt": [
@@ -786,7 +845,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "32849002",
                 "bodySite_Snomed.display": "Esophagus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "In position NGT"
             }
         ],
         "in_position_pac": [
@@ -799,7 +859,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "81040000",
                 "bodySite_Snomed.display": "Pulmonary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "In position PAC"
             }
         ],
         "incompletely_imaged": [
@@ -812,7 +873,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Incompletely imaged chest"
             }
         ],
         "inferior_mediastinal_mass": [
@@ -825,7 +887,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "72410000",
                 "bodySite_Snomed.display": "Mediastinum",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Inferior mediastinal mass"
             }
         ],
         "intercostal_drain": [
@@ -838,7 +901,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "47495005",
                 "bodySite_Snomed.display": "Intercostal space",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Intercostal drain"
             }
         ],
         "internal_foreign_body": [
@@ -851,7 +915,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Internal foreign body"
             }
         ],
         "interstitial_thickening_diffuse": [
@@ -864,7 +929,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse interstitial thickening"
             }
         ],
         "interstitial_thickening_lower": [
@@ -877,7 +943,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Basal interstitial thickening"
             }
         ],
         "interstitial_thickening_upper": [
@@ -890,7 +957,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Upper interstitial thickening"
             }
         ],
         "interstitial_thickening_volloss_diffuse": [
@@ -903,7 +971,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse fibrotic volume loss"
             }
         ],
         "interstitial_thickening_volloss_lower": [
@@ -916,7 +985,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Lower zone fibrotic volume loss"
             }
         ],
         "interstitial_thickening_volloss_upper": [
@@ -929,7 +999,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Upper zone fibrotic volume loss"
             }
         ],
         "kyphosis": [
@@ -942,7 +1013,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "297167000",
                 "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Kyphosis"
             }
         ],
         "linear_atelectasis": [
@@ -955,7 +1027,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Atelectasis"
             }
         ],
         "loculated_effusion": [
@@ -968,7 +1041,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Loculated effusion"
             }
         ],
         "lung_collapse": [
@@ -981,7 +1055,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Lung collapse"
             }
         ],
         "lung_resection_volloss": [
@@ -994,7 +1069,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Post resection volume loss"
             }
         ],
         "lung_sutures": [
@@ -1007,7 +1083,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Lung sutures"
             }
         ],
         "malpositioned_cvc": [
@@ -1020,7 +1097,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "244390008",
                 "bodySite_Snomed.display": "Head and neck vein",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Suboptimal CVC"
             }
         ],
         "malpositioned_ett": [
@@ -1033,7 +1111,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "44567001",
                 "bodySite_Snomed.display": "Trachea",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Suboptimal ETT"
             }
         ],
         "malpositioned_gastric_band": [
@@ -1046,7 +1125,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "25271004",
                 "bodySite_Snomed.display": "Gastroesophageal junction",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Suboptimal gastric band"
             }
         ],
         "malpositioned_ngt": [
@@ -1059,7 +1139,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "32849002",
                 "bodySite_Snomed.display": "Esophagus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Suboptimal NGT"
             }
         ],
         "malpositioned_pac": [
@@ -1072,7 +1153,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "81040000",
                 "bodySite_Snomed.display": "Pulmonary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Suboptimal PAC"
             }
         ],
         "mastectomy": [
@@ -1085,7 +1167,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "76752008",
                 "bodySite_Snomed.display": "Breast",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Mastectomy"
             }
         ],
         "mediastinal_clips": [
@@ -1098,20 +1181,22 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "72410000",
                 "bodySite_Snomed.display": "Mediastinum",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Mediastinal clips"
             }
         ],
         "miliary": [
             {
                 "Annalise_observation.code": "miliary",
-                "Annalise_observation.display": "Diffuse nodular / miliary lesions",
+                "Annalise_observation.display": "Diffuse nodular or miliary lesions",
                 "Annalise_system": "https://www.annalise.ai/guides",
                 "bodySite_Radlex.code": "RID1301",
                 "bodySite_Radlex.display": "lung",
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Diffuse nodular or miliary lesions"
             }
         ],
         "multiple_pulmonary_masses": [
@@ -1124,7 +1209,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Multiple masses or nodules"
             }
         ],
         "neck_clips": [
@@ -1137,7 +1223,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "45048000",
                 "bodySite_Snomed.display": "Neck",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Neck clips"
             }
         ],
         "nipple_shadow": [
@@ -1150,7 +1237,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Nipple shadow"
             }
         ],
         "oesophageal_stent": [
@@ -1163,7 +1251,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "32849002",
                 "bodySite_Snomed.display": "Esophagus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Oesophageal stent"
             }
         ],
         "osteopaenia": [
@@ -1176,7 +1265,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "84667006",
                 "bodySite_Snomed.display": "Cervical vertebra",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Osteopaenia"
             }
         ],
         "overexposed": [
@@ -1189,7 +1279,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Overexposed"
             }
         ],
         "patient_rotated": [
@@ -1202,7 +1293,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "55678000",
                 "bodySite_Snomed.display": "Spinous process of vertebra",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Patient rotation"
             }
         ],
         "pectus_carinatum": [
@@ -1215,7 +1307,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "56873002",
                 "bodySite_Snomed.display": "Breast bone",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pectus carinatum"
             }
         ],
         "pectus_excavatum": [
@@ -1228,7 +1321,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "56873002",
                 "bodySite_Snomed.display": "Breast bone",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pectus excavatum"
             }
         ],
         "peribronchial_cuffing": [
@@ -1241,7 +1335,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "54233001",
                 "bodySite_Snomed.display": "Peribronchial tissue",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Peribronchial cuffing"
             }
         ],
         "pericardial_fat_pad": [
@@ -1254,7 +1349,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "42267001",
                 "bodySite_Snomed.display": "Pericardial fat",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pericardial fat pad"
             }
         ],
         "pleural_effusion": [
@@ -1267,7 +1363,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "3120008",
                 "bodySite_Snomed.display": "Pleura",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pleural effusion"
             }
         ],
         "pleural_mass": [
@@ -1280,7 +1377,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pleural mass"
             }
         ],
         "pneumomediastinum": [
@@ -1293,8 +1391,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
-                
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pneumomediastinum"
             }
         ],
         "pneumothorax": [
@@ -1307,7 +1405,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pneumothorax"
             }
         ],
         "pulmonary_artery_enlargement": [
@@ -1320,7 +1419,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "81040000",
                 "bodySite_Snomed.display": "Pulmonary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pulmonary artery enlargement"
             }
         ],
         "pulmonary_congestion": [
@@ -1333,7 +1433,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Pulmonary congestion"
             }
         ],
         "rib_fixation": [
@@ -1346,7 +1447,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113197003",
                 "bodySite_Snomed.display": "Bone structure of rib",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Rib fixation"
             }
         ],
         "rib_lesion": [
@@ -1359,7 +1461,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113197003",
                 "bodySite_Snomed.display": "Bone structure of rib",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Rib lesion"
             }
         ],
         "rib_resection": [
@@ -1372,7 +1475,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113197003",
                 "bodySite_Snomed.display": "Bone structure of rib",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Rib resection"
             }
         ],
         "rotator_cuff_anchor": [
@@ -1385,7 +1489,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "7885001",
                 "bodySite_Snomed.display": "Rotator cuff",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Rotator cuff anchor"
             }
         ],
         "scapular_fracture": [
@@ -1398,7 +1503,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "79601000",
                 "bodySite_Snomed.display": "Scapula",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Scapular fracture"
             }
         ],
         "scapular_lesion": [
@@ -1411,7 +1517,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "79601000",
                 "bodySite_Snomed.display": "Scapula",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Scapular lesion"
             }
         ],
         "scoliosis": [
@@ -1424,7 +1531,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "297167000",
                 "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Scoliosis"
             }
         ],
         "segmental_collapse": [
@@ -1437,7 +1545,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Segmental collapse"
             }
         ],
         "simple_effusion": [
@@ -1450,7 +1559,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Simple effusion"
             }
         ],
         "simple_pneumothorax": [
@@ -1463,7 +1573,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Simple pneumothorax"
             }
         ],
         "single_pulmonary_mass": [
@@ -1476,7 +1587,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Solitary lung mass"
             }
         ],
         "single_pulmonary_nodule": [
@@ -1489,7 +1601,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Solitary lung nodule"
             }
         ],
         "spinal_fixation": [
@@ -1502,7 +1615,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51282000",
                 "bodySite_Snomed.display": "Bone structure of spine",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Spinal fixation"
             }
         ],
         "spine_arthritis": [
@@ -1515,7 +1629,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "8983005",
                 "bodySite_Snomed.display": "Intervertebral joint",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Spinal arthritis"
             }
         ],
         "spine_lesion": [
@@ -1528,7 +1643,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "1141986006",
                 "bodySite_Snomed.display": "Thoracic spinal column region",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Spinal lesion"
             }
         ],
         "spine_wedge_fracture": [
@@ -1538,7 +1654,8 @@
                 "Annalise_system": "https://www.annalise.ai/guides",
                 "bodySite_Radlex.code": "RID7741",
                 "bodySite_Radlex.display": "spine",
-                "radlex_system": "http://radlex.org"
+                "radlex_system": "http://radlex.org",
+                "Annalise_observation.text": "Spinal wedge fracture"
             }
         ],
         "sternotomy_wires": [
@@ -1551,7 +1668,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "56873002",
                 "bodySite_Snomed.display": "Breast bone",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Sternotomy wires"
             }
         ],
         "subcutaneous_emphysema": [
@@ -1564,7 +1682,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "71966008",
                 "bodySite_Snomed.display": "Subcutaneous tissue",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Subcutaneous emphysema"
             }
         ],
         "subdiaphragmatic_gas": [
@@ -1577,7 +1696,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "818983003",
                 "bodySite_Snomed.display": "Abdomen",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Subdiaphragmatic gas"
             }
         ],
         "superior_mediastinal_mass": [
@@ -1590,7 +1710,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "72410000",
                 "bodySite_Snomed.display": "Mediastinum",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Superior mediastinal mass"
             }
         ],
         "tension_pneumothorax": [
@@ -1603,7 +1724,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Tension pneumothorax"
             }
         ],
         "tracheal_deviation": [
@@ -1616,7 +1738,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "44567001",
                 "bodySite_Snomed.display": "Trachea",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Tracheal deviation"
             }
         ],
         "underexposed": [
@@ -1629,7 +1752,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Underexposed"
             }
         ],
         "underinflation": [
@@ -1642,7 +1766,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Annalise_observation.text": "Underinflation"
             }
         ]
     },
@@ -1661,7 +1786,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "818983003",
                     "bodySite_Snomed.display": "Abdomen",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Abdominal clips"
                 }
             ],
             "acute_aortic_syndrome": [
@@ -1674,7 +1800,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "15825003",
                     "bodySite_Snomed.display": "Aorta",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Widened aortic contour"
                 }
             ],
             "unfolded_aorta": [
@@ -1687,7 +1814,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113262008",
                     "bodySite_Snomed.display": "Thoracic aorta",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Unfolded aorta"
                 }
             ],
             "aortic_arch_calcification": [
@@ -1700,7 +1828,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "57034009",
                     "bodySite_Snomed.display": "Aortic Arch",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Aortic arch calcification"
                 }
             ],
             "aortic_stent": [
@@ -1713,7 +1842,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "15825003",
                     "bodySite_Snomed.display": "Aorta",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Aortic stent"
                 }
             ],
             "focal_airspace_opacity": [
@@ -1726,7 +1856,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Focal airspace opacity"
                 }
             ],
             "multifocal_airspace_opacity": [
@@ -1739,7 +1870,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Multifocal airspace opacity"
                 }
             ],
             "diffuse_airspace_opacity": [
@@ -1752,7 +1884,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse airspace opacity"
                 }
             ],
             "diffuse_lower_airspace_opacity": [
@@ -1765,7 +1898,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "281394001",
                     "bodySite_Snomed.display": "Lower zone of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse lower airspace opacity"
                 }
             ],
             "diffuse_upper_airspace_opacity": [
@@ -1778,7 +1912,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "281392002",
                     "bodySite_Snomed.display": "Upper zone of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse upper airspace opacity"
                 }
             ],
             "diffuse_perihilar_airspace_opacity": [
@@ -1791,7 +1926,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "63907008",
                     "bodySite_Snomed.display": "Perihilar region of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Perihilar airspace opacity"
                 }
             ],
             "acute_humerus_fracture": [
@@ -1804,7 +1940,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "85050009",
                     "bodySite_Snomed.display": "Humerus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Acute humerus fracture"
                 }
             ],
             "acute_rib_fracture": [
@@ -1817,7 +1954,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "78904004",
                     "bodySite_Snomed.display": "Chest wall",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Acute rib fracture"
                 }
             ],
             "acute_clavicle_fracture": [
@@ -1830,7 +1968,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51299004",
                     "bodySite_Snomed.display": "Clavicle",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Acute clavicle fracture"
                 }
             ],
             "shoulder_arthritis": [
@@ -1843,7 +1982,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "16982005",
                     "bodySite_Snomed.display": "Shoulder",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Shoulder arthritis"
                 }
             ],
             "shoulder_dislocation": [
@@ -1856,7 +1996,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "16982005",
                     "bodySite_Snomed.display": "Shoulder",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Shoulder dislocation"
                 }
             ],
             "shoulder_fixation": [
@@ -1869,7 +2010,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "16982005",
                     "bodySite_Snomed.display": "Shoulder",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Shoulder fixation"
                 }
             ],
             "shoulder_replacement": [
@@ -1882,7 +2024,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "16982005",
                     "bodySite_Snomed.display": "Shoulder",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Shoulder replacement"
                 }
             ],
             "airway_stent": [
@@ -1895,7 +2038,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "89187006",
                     "bodySite_Snomed.display": "Airway",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Airway stent"
                 }
             ],
             "axillary_clips": [
@@ -1908,7 +2052,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "91470000",
                     "bodySite_Snomed.display": "Axilla",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Axillary clips"
                 }
             ],
             "biliary_stent": [
@@ -1921,7 +2066,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "34707002",
                     "bodySite_Snomed.display": "Biliary tract structure",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Biliary stent"
                 }
             ],
             "breast_implant": [
@@ -1934,7 +2080,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "76752008",
                     "bodySite_Snomed.display": "Breast",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Breast implant"
                 }
             ],
             "bronchiectasis": [
@@ -1947,7 +2094,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "955009",
                     "bodySite_Snomed.display": "Bronchus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Bronchiectasis"
                 }
             ],
             "bullae_diffuse": [
@@ -1960,7 +2108,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse bullae"
                 }
             ],
             "bullae_lower": [
@@ -1973,7 +2122,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "281394001",
                     "bodySite_Snomed.display": "Lower zone of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Lower zone bullae"
                 }
             ],
             "bullae_upper": [
@@ -1986,7 +2136,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "281392002",
                     "bodySite_Snomed.display": "Upper zone of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Upper zone bullae"
                 }
             ],
             "calcified_axillary_nodes": [
@@ -1999,7 +2150,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "91470000",
                     "bodySite_Snomed.display": "Axilla",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Calcified axillary nodes"
                 }
             ],
             "calcified_granuloma": [
@@ -2012,7 +2164,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Calcified granuloma (< 5mm)"
                 }
             ],
             "calcified_hilar_lymphadenopathy": [
@@ -2025,7 +2178,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "46750007",
                     "bodySite_Snomed.display": "Hilum of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Calcified hilar lymphadenopathy"
                 }
             ],
             "calcified_neck_nodes": [
@@ -2038,7 +2192,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "45048000",
                     "bodySite_Snomed.display": "Neck",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Calcified neck nodes"
                 }
             ],
             "calcified_pleural_plaque": [
@@ -2051,7 +2206,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "3120008",
                     "bodySite_Snomed.display": "Pleura",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Calcified pleural plaques"
                 }
             ],
             "calcified_pulmonary_mass": [
@@ -2064,7 +2220,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Calcified mass (> 5mm)"
                 }
             ],
             "cardiac_valve_prosthesis": [
@@ -2077,7 +2234,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "17401000",
                     "bodySite_Snomed.display": "Cardiac valve",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Cardiac valve prosthesis"
                 }
             ],
             "cardiomegaly": [
@@ -2090,7 +2248,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "302509004",
                     "bodySite_Snomed.display": "Entire heart",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Widened cardiac silhouette"
                 }
             ],
             "cavitating_mass": [
@@ -2103,7 +2262,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Cavitating mass(es)"
                 }
             ],
             "cavitating_mass_internal_content": [
@@ -2116,7 +2276,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Cavitating mass with content"
                 }
             ],
             "cervical_flexion": [
@@ -2129,7 +2290,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Cervical flexion"
                 }
             ],
             "chronic_clavicle_fracture": [
@@ -2142,7 +2304,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51299004",
                     "bodySite_Snomed.display": "Clavicle",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Chronic clavicle fracture"
                 }
             ],
             "chronic_humerus_fracture": [
@@ -2155,7 +2318,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "85050009",
                     "bodySite_Snomed.display": "Humerus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Chronic humerus fracture"
                 }
             ],
             "chronic_rib_fracture": [
@@ -2168,7 +2332,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "78904004",
                     "bodySite_Snomed.display": "Chest wall",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Chronic rib fracture"
                 }
             ],
             "clavicle_fixation": [
@@ -2181,7 +2346,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51299004",
                     "bodySite_Snomed.display": "Clavicle",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Clavicle fixation"
                 }
             ],
             "clavicle_lesion": [
@@ -2194,7 +2360,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51299004",
                     "bodySite_Snomed.display": "Clavicle",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Clavicle lesion"
                 }
             ],
             "coronary_stent": [
@@ -2207,7 +2374,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "41801008",
                     "bodySite_Snomed.display": "Coronary artery",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Coronary stent"
                 }
             ],
             "diaphragmatic_elevation": [
@@ -2220,7 +2388,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "5798000",
                     "bodySite_Snomed.display": "Diaphragm",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diaphragmatic elevation"
                 }
             ],
             "diaphragmatic_eventration": [
@@ -2233,7 +2402,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "5798000",
                     "bodySite_Snomed.display": "Diaphragm",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diaphragmatic eventration"
                 }
             ],
             "diffuse_pleural_thickening": [
@@ -2246,7 +2416,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "3120008",
                     "bodySite_Snomed.display": "Pleura",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse pleural thickening"
                 }
             ],
             "dish": [
@@ -2259,7 +2430,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "420345000",
                     "bodySite_Snomed.display": "Vertebra",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse spinal osteophytes"
                 }
             ],
             "distended_bowel": [
@@ -2272,7 +2444,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113276009",
                     "bodySite_Snomed.display": "Bowel",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Distended bowel"
                 }
             ],
             "electronic_cardiac_devices": [
@@ -2285,7 +2458,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Electronic cardiac devices"
                 }
             ],
             "gallstones": [
@@ -2298,7 +2472,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "50519007",
                     "bodySite_Snomed.display": "Right upper quadrant of abdomen",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Gallstones"
                 }
             ],
             "gastric_band": [
@@ -2311,7 +2486,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "25271004",
                     "bodySite_Snomed.display": "Gastroesophageal junction",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Gastric band"
                 }
             ],
             "hiatus_hernia": [
@@ -2324,7 +2500,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "280062008",
                     "bodySite_Snomed.display": "Esophageal hiatus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Hiatus hernia"
                 }
             ],
             "hilar_lymphadenopathy": [
@@ -2337,7 +2514,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "53074004",
                     "bodySite_Snomed.display": "Bronchial lymph node",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Hilar lymphadenopathy"
                 }
             ],
             "humeral_lesion": [
@@ -2350,7 +2528,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "85050009",
                     "bodySite_Snomed.display": "Humerus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Humeral lesion"
                 }
             ],
             "hyperinflation": [
@@ -2363,7 +2542,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Hyperinflation"
                 }
             ],
             "hyperlucency": [
@@ -2376,7 +2556,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Reduced lung markings"
                 }
             ],
             "image_obscured": [
@@ -2389,7 +2570,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Image obscured"
                 }
             ],
             "in_position_cvc": [
@@ -2402,7 +2584,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "244390008",
                     "bodySite_Snomed.display": "Head and neck vein",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "In position CVC"
                 }
             ],
             "in_position_ett": [
@@ -2415,7 +2598,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "44567001",
                     "bodySite_Snomed.display": "Trachea",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "In position ETT"
                 }
             ],
             "in_position_ngt": [
@@ -2428,7 +2612,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "32849002",
                     "bodySite_Snomed.display": "Esophagus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "In position NGT"
                 }
             ],
             "in_position_pac": [
@@ -2441,7 +2626,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "81040000",
                     "bodySite_Snomed.display": "Pulmonary artery",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "In position PAC"
                 }
             ],
             "incompletely_imaged": [
@@ -2454,7 +2640,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Incompletely imaged chest"
                 }
             ],
             "inferior_mediastinal_mass": [
@@ -2467,7 +2654,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "72410000",
                     "bodySite_Snomed.display": "Mediastinum",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Inferior mediastinal mass"
                 }
             ],
             "intercostal_drain": [
@@ -2480,7 +2668,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "47495005",
                     "bodySite_Snomed.display": "Intercostal space",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Intercostal drain"
                 }
             ],
             "internal_foreign_body": [
@@ -2493,7 +2682,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Internal foreign body"
                 }
             ],
             "interstitial_thickening_diffuse": [
@@ -2506,7 +2696,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113254000",
                     "bodySite_Snomed.display": "Interstitial tissue of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse interstitial thickening"
                 }
             ],
             "interstitial_thickening_lower": [
@@ -2519,7 +2710,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113254000",
                     "bodySite_Snomed.display": "Interstitial tissue of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Basal interstitial thickening"
                 }
             ],
             "interstitial_thickening_upper": [
@@ -2532,7 +2724,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113254000",
                     "bodySite_Snomed.display": "Interstitial tissue of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Upper interstitial thickening"
                 }
             ],
             "interstitial_thickening_volloss_diffuse": [
@@ -2545,7 +2738,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113254000",
                     "bodySite_Snomed.display": "Interstitial tissue of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse fibrotic volume loss"
                 }
             ],
             "interstitial_thickening_volloss_lower": [
@@ -2558,7 +2752,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113254000",
                     "bodySite_Snomed.display": "Interstitial tissue of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Lower zone fibrotic volume loss"
                 }
             ],
             "interstitial_thickening_volloss_upper": [
@@ -2571,7 +2766,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113254000",
                     "bodySite_Snomed.display": "Interstitial tissue of lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Upper zone fibrotic volume loss"
                 }
             ],
             "kyphosis": [
@@ -2584,7 +2780,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "297167000",
                     "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Kyphosis"
                 }
             ],
             "linear_atelectasis": [
@@ -2597,7 +2794,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Atelectasis"
                 }
             ],
             "loculated_effusion": [
@@ -2610,7 +2808,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "91381003",
                     "bodySite_Snomed.display": "Pleural cavity",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Loculated effusion"
                 }
             ],
             "lung_collapse": [
@@ -2623,7 +2822,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Lung collapse"
                 }
             ],
             "lung_resection_volloss": [
@@ -2636,7 +2836,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Post resection volume loss"
                 }
             ],
             "lung_sutures": [
@@ -2649,7 +2850,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Lung sutures"
                 }
             ],
             "malpositioned_cvc": [
@@ -2662,7 +2864,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "244390008",
                     "bodySite_Snomed.display": "Head and neck vein",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Suboptimal CVC"
                 }
             ],
             "malpositioned_ett": [
@@ -2675,7 +2878,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "44567001",
                     "bodySite_Snomed.display": "Trachea",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Suboptimal ETT"
                 }
             ],
             "malpositioned_gastric_band": [
@@ -2688,7 +2892,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "25271004",
                     "bodySite_Snomed.display": "Gastroesophageal junction",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Suboptimal gastric band"
                 }
             ],
             "malpositioned_ngt": [
@@ -2701,7 +2906,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "32849002",
                     "bodySite_Snomed.display": "Esophagus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Suboptimal NGT"
                 }
             ],
             "malpositioned_pac": [
@@ -2714,7 +2920,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "81040000",
                     "bodySite_Snomed.display": "Pulmonary artery",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Suboptimal PAC"
                 }
             ],
             "mastectomy": [
@@ -2727,7 +2934,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "76752008",
                     "bodySite_Snomed.display": "Breast",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Mastectomy"
                 }
             ],
             "mediastinal_clips": [
@@ -2740,20 +2948,22 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "72410000",
                     "bodySite_Snomed.display": "Mediastinum",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Mediastinal clips"
                 }
             ],
             "miliary": [
                 {
                     "Annalise_observation.code": "miliary",
-                    "Annalise_observation.display": "Diffuse nodular / miliary lesions",
+                    "Annalise_observation.display": "Diffuse nodular or miliary lesions",
                     "Annalise_system": "https://www.annalise.ai/guides",
                     "bodySite_Radlex.code": "RID1301",
                     "bodySite_Radlex.display": "lung",
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Diffuse nodular or miliary lesions"
                 }
             ],
             "multiple_pulmonary_masses": [
@@ -2766,7 +2976,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Multiple masses or nodules"
                 }
             ],
             "neck_clips": [
@@ -2779,7 +2990,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "45048000",
                     "bodySite_Snomed.display": "Neck",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Neck clips"
                 }
             ],
             "nipple_shadow": [
@@ -2792,7 +3004,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Nipple shadow"
                 }
             ],
             "oesophageal_stent": [
@@ -2805,7 +3018,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "32849002",
                     "bodySite_Snomed.display": "Esophagus",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Oesophageal stent"
                 }
             ],
             "osteopaenia": [
@@ -2818,7 +3032,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "84667006",
                     "bodySite_Snomed.display": "Cervical vertebra",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Osteopaenia"
                 }
             ],
             "overexposed": [
@@ -2831,7 +3046,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Overexposed"
                 }
             ],
             "patient_rotated": [
@@ -2844,7 +3060,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "55678000",
                     "bodySite_Snomed.display": "Spinous process of vertebra",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Patient rotation"
                 }
             ],
             "pectus_carinatum": [
@@ -2857,7 +3074,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "56873002",
                     "bodySite_Snomed.display": "Breast bone",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pectus carinatum"
                 }
             ],
             "pectus_excavatum": [
@@ -2870,7 +3088,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "56873002",
                     "bodySite_Snomed.display": "Breast bone",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pectus excavatum"
                 }
             ],
             "peribronchial_cuffing": [
@@ -2883,7 +3102,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "54233001",
                     "bodySite_Snomed.display": "Peribronchial tissue",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Peribronchial cuffing"
                 }
             ],
             "pericardial_fat_pad": [
@@ -2896,7 +3116,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "42267001",
                     "bodySite_Snomed.display": "Pericardial fat",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pericardial fat pad"
                 }
             ],
             "pleural_effusion": [
@@ -2909,7 +3130,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "3120008",
                     "bodySite_Snomed.display": "Pleura",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pleural effusion"
                 }
             ],
             "pleural_mass": [
@@ -2922,7 +3144,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "91381003",
                     "bodySite_Snomed.display": "Pleural cavity",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pleural mass"
                 }
             ],
             "pneumomediastinum": [
@@ -2935,8 +3158,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
-                    
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pneumomediastinum"
                 }
             ],
             "pneumothorax": [
@@ -2949,7 +3172,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pneumothorax"
                 }
             ],
             "pulmonary_artery_enlargement": [
@@ -2962,7 +3186,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "81040000",
                     "bodySite_Snomed.display": "Pulmonary artery",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pulmonary artery enlargement"
                 }
             ],
             "pulmonary_congestion": [
@@ -2975,7 +3200,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pulmonary congestion"
                 }
             ],
             "rib_fixation": [
@@ -2988,7 +3214,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113197003",
                     "bodySite_Snomed.display": "Bone structure of rib",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Rib fixation"
                 }
             ],
             "rib_lesion": [
@@ -3001,7 +3228,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113197003",
                     "bodySite_Snomed.display": "Bone structure of rib",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Rib lesion"
                 }
             ],
             "rib_resection": [
@@ -3014,7 +3242,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "113197003",
                     "bodySite_Snomed.display": "Bone structure of rib",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Rib resection"
                 }
             ],
             "rotator_cuff_anchor": [
@@ -3027,7 +3256,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "7885001",
                     "bodySite_Snomed.display": "Rotator cuff",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Rotator cuff anchor"
                 }
             ],
             "scapular_fracture": [
@@ -3040,7 +3270,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "79601000",
                     "bodySite_Snomed.display": "Scapula",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Scapular fracture"
                 }
             ],
             "scapular_lesion": [
@@ -3053,7 +3284,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "79601000",
                     "bodySite_Snomed.display": "Scapula",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Scapular lesion"
                 }
             ],
             "scoliosis": [
@@ -3066,7 +3298,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "297167000",
                     "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Scoliosis"
                 }
             ],
             "segmental_collapse": [
@@ -3079,7 +3312,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Segmental collapse"
                 }
             ],
             "simple_effusion": [
@@ -3092,7 +3326,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "91381003",
                     "bodySite_Snomed.display": "Pleural cavity",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Simple effusion"
                 }
             ],
             "simple_pneumothorax": [
@@ -3105,7 +3340,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "91381003",
                     "bodySite_Snomed.display": "Pleural cavity",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Simple pneumothorax"
                 }
             ],
             "single_pulmonary_mass": [
@@ -3118,7 +3354,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Solitary lung mass"
                 }
             ],
             "single_pulmonary_nodule": [
@@ -3131,7 +3368,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Solitary lung nodule"
                 }
             ],
             "spinal_fixation": [
@@ -3144,7 +3382,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51282000",
                     "bodySite_Snomed.display": "Bone structure of spine",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Spinal fixation"
                 }
             ],
             "spine_arthritis": [
@@ -3157,7 +3396,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "8983005",
                     "bodySite_Snomed.display": "Intervertebral joint",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Spinal arthritis"
                 }
             ],
             "spine_lesion": [
@@ -3170,7 +3410,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "1141986006",
                     "bodySite_Snomed.display": "Thoracic spinal column region",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Spinal lesion"
                 }
             ],
             "spine_wedge_fracture": [
@@ -3180,7 +3421,8 @@
                     "Annalise_system": "https://www.annalise.ai/guides",
                     "bodySite_Radlex.code": "RID7741",
                     "bodySite_Radlex.display": "spine",
-                    "radlex_system": "http://radlex.org"
+                    "radlex_system": "http://radlex.org",
+                    "Annalise_observation.text": "Spinal wedge fracture"
                 }
             ],
             "sternotomy_wires": [
@@ -3193,7 +3435,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "56873002",
                     "bodySite_Snomed.display": "Breast bone",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Sternotomy wires"
                 }
             ],
             "subcutaneous_emphysema": [
@@ -3206,7 +3449,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "71966008",
                     "bodySite_Snomed.display": "Subcutaneous tissue",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Subcutaneous emphysema"
                 }
             ],
             "subdiaphragmatic_gas": [
@@ -3219,7 +3463,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "818983003",
                     "bodySite_Snomed.display": "Abdomen",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Pneumoperitoneum"
                 }
             ],
             "superior_mediastinal_mass": [
@@ -3232,7 +3477,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "72410000",
                     "bodySite_Snomed.display": "Mediastinum",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Superior mediastinal mass"
                 }
             ],
             "tension_pneumothorax": [
@@ -3245,7 +3491,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "39607008",
                     "bodySite_Snomed.display": "Lung",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Tension pneumothorax"
                 }
             ],
             "tracheal_deviation": [
@@ -3258,7 +3505,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "44567001",
                     "bodySite_Snomed.display": "Trachea",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Tracheal deviation"
                 }
             ],
             "underexposed": [
@@ -3271,7 +3519,8 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Underexposed"
                 }
             ],
             "underinflation": [
@@ -3284,14 +3533,13 @@
                     "radlex_system": "http://radlex.org",
                     "bodySite_Snomed.code": "51185008",
                     "bodySite_Snomed.display": "Chest",
-                    "snomed_system": "http://snomed.info/sct"
+                    "snomed_system": "http://snomed.info/sct",
+                    "Annalise_observation.text": "Underinflation"
                 }
             ]
         },
 
-
     "nuance_coding_system" : {
-
         "90200000": [
             {
                 "Nuance_observation.code": "90200000",
@@ -3302,7 +3550,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "818983003",
                 "bodySite_Snomed.display": "Abdomen",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Abdominal clips"
             }
         ],
         "90200002": [
@@ -3315,7 +3564,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "15825003",
                 "bodySite_Snomed.display": "Aorta",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Widened aortic contour"
             }
         ],
         "90200003": [
@@ -3328,7 +3578,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113262008",
                 "bodySite_Snomed.display": "Thoracic aorta",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Unfolded aorta"
             }
         ],
         "90200004": [
@@ -3341,7 +3592,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "57034009",
                 "bodySite_Snomed.display": "Aortic Arch",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Aortic arch calcification"
             }
         ],
         "90200005": [
@@ -3354,63 +3606,66 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "15825003",
                 "bodySite_Snomed.display": "Aorta",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Aortic stent"
             }
         ],
-        
         "90200015": [
-                    {
-                        "Nuance_observation.code": "90200015",
-                        "Nuance_observation.display": "Focal airspace opacity",
-                        "Nuance_system": "http://nuancepowerscribe.com/ai",
-                        "bodySite_Radlex.code": "RID1301",
-                        "bodySite_Radlex.display": "lung",
-                        "radlex_system": "http://radlex.org",
-                        "bodySite_Snomed.code": "39607008",
-                        "bodySite_Snomed.display": "Lung",
-                        "snomed_system": "http://snomed.info/sct"
-                    }
-                ],
-        
+            {
+                "Nuance_observation.code": "90200015",
+                "Nuance_observation.display": "Focal airspace opacity",
+                "Nuance_system": "http://nuancepowerscribe.com/ai",
+                "bodySite_Radlex.code": "RID1301",
+                "bodySite_Radlex.display": "lung",
+                "radlex_system": "http://radlex.org",
+                "bodySite_Snomed.code": "39607008",
+                "bodySite_Snomed.display": "Lung",
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Focal airspace opacity"
+            }
+        ],
         "90200016": [
-                    {
-                        "Nuance_observation.code": "90200016",
-                        "Nuance_observation.display": "Multifocal airspace opacity",
-                        "Nuance_system": "http://nuancepowerscribe.com/ai",
-                        "bodySite_Radlex.code": "RID1301",
-                        "bodySite_Radlex.display": "lung",
-                        "radlex_system": "http://radlex.org",
-                        "bodySite_Snomed.code": "39607008",
-                        "bodySite_Snomed.display": "Lung",
-                        "snomed_system": "http://snomed.info/sct"
-                    }
-                ],
+            {
+                "Nuance_observation.code": "90200016",
+                "Nuance_observation.display": "Multifocal airspace opacity",
+                "Nuance_system": "http://nuancepowerscribe.com/ai",
+                "bodySite_Radlex.code": "RID1301",
+                "bodySite_Radlex.display": "lung",
+                "radlex_system": "http://radlex.org",
+                "bodySite_Snomed.code": "39607008",
+                "bodySite_Snomed.display": "Lung",
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Multifocal airspace opacity"
+            }
+        ],
         "90200018": [
-                    {
-                        "Nuance_observation.code": "90200018",
-                        "Nuance_observation.display": "Diffuse lower airspace opacity",
-                        "Nuance_system": "http://nuancepowerscribe.com/ai",
-                        "bodySite_Radlex.code": "RID1354",
-                        "bodySite_Radlex.display": "lower lung zone",
-                        "radlex_system": "http://radlex.org",
-                        "bodySite_Snomed.code": "281394001",
-                        "bodySite_Snomed.display": "Lower zone of lung",
-                        "snomed_system": "http://snomed.info/sct"
-                    }
-                ],
+            {
+                "Nuance_observation.code": "90200018",
+                "Nuance_observation.display": "Diffuse lower airspace opacity",
+                "Nuance_system": "http://nuancepowerscribe.com/ai",
+                "bodySite_Radlex.code": "RID1354",
+                "bodySite_Radlex.display": "lower lung zone",
+                "radlex_system": "http://radlex.org",
+                "bodySite_Snomed.code": "281394001",
+                "bodySite_Snomed.display": "Lower zone of lung",
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse lower airspace opacity"
+            }
+        ],
         "90200020": [
-                    {
-                        "Nuance_observation.code": "90200020",
-                        "Nuance_observation.display": "Diffuse upper airspace opacity",
-                        "Nuance_system": "http://nuancepowerscribe.com/ai",
-                        "bodySite_Radlex.code": "RID1348",
-                        "bodySite_Radlex.display": "upper lung zone",
-                        "radlex_system": "http://radlex.org",
-                        "bodySite_Snomed.code": "281392002",
-                        "bodySite_Snomed.display": "Upper zone of lung",
-                        "snomed_system": "http://snomed.info/sct"
-                    }
-                ],
+            {
+                "Nuance_observation.code": "90200020",
+                "Nuance_observation.display": "Diffuse upper airspace opacity",
+                "Nuance_system": "http://nuancepowerscribe.com/ai",
+                "bodySite_Radlex.code": "RID1348",
+                "bodySite_Radlex.display": "upper lung zone",
+                "radlex_system": "http://radlex.org",
+                "bodySite_Snomed.code": "281392002",
+                "bodySite_Snomed.display": "Upper zone of lung",
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse upper airspace opacity"
+            }
+        ],
         "90200017": [
             {
                 "Nuance_observation.code": "90200017",
@@ -3421,7 +3676,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse airspace opacity"
             }
         ],
         "90200019": [
@@ -3434,7 +3690,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "63907008",
                 "bodySite_Snomed.display": "Perihilar region of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Perihilar airspace opacity"
             }
         ],
         "90200028": [
@@ -3447,7 +3704,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Shoulder arthritis"
             }
         ],
         "90200029": [
@@ -3460,7 +3718,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Shoulder dislocation"
             }
         ],
         "90200033": [
@@ -3473,7 +3732,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Shoulder fixation"
             }
         ],
         "90200035": [
@@ -3486,7 +3746,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "16982005",
                 "bodySite_Snomed.display": "Shoulder",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Shoulder replacement"
             }
         ],
         "90200038": [
@@ -3499,7 +3760,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "89187006",
                 "bodySite_Snomed.display": "Airway",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Airway stent"
             }
         ],
         "90200039": [
@@ -3512,7 +3774,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91470000",
                 "bodySite_Snomed.display": "Axilla",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Axillary clips"
             }
         ],
         "90200041": [
@@ -3525,7 +3788,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "34707002",
                 "bodySite_Snomed.display": "Biliary tract structure",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Biliary stent"
             }
         ],
         "90200045": [
@@ -3538,7 +3802,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "76752008",
                 "bodySite_Snomed.display": "Breast",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Breast implant"
             }
         ],
         "90200046": [
@@ -3551,7 +3816,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "955009",
                 "bodySite_Snomed.display": "Bronchus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Bronchiectasis"
             }
         ],
         "90200048": [
@@ -3564,7 +3830,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse bullae"
             }
         ],
         "90200049": [
@@ -3577,7 +3844,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "281394001",
                 "bodySite_Snomed.display": "Lower zone of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Lower zone bullae"
             }
         ],
         "90200050": [
@@ -3590,7 +3858,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "281392002",
                 "bodySite_Snomed.display": "Upper zone of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Upper zone bullae"
             }
         ],
         "90200051": [
@@ -3603,7 +3872,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91470000",
                 "bodySite_Snomed.display": "Axilla",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Calcified axillary nodes"
             }
         ],
         "90200052": [
@@ -3616,7 +3886,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Calcified granuloma (< 5mm)"
             }
         ],
         "90200053": [
@@ -3629,7 +3900,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "46750007",
                 "bodySite_Snomed.display": "Hilum of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Calcified hilar lymphadenopathy"
             }
         ],
         "90200055": [
@@ -3642,7 +3914,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "45048000",
                 "bodySite_Snomed.display": "Neck",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Calcified neck nodes"
             }
         ],
         "90200057": [
@@ -3655,7 +3928,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "3120008",
                 "bodySite_Snomed.display": "Pleura",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Calcified pleural plaques"
             }
         ],
         "90200058": [
@@ -3668,7 +3942,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Calcified mass (> 5mm)"
             }
         ],
         "90200059": [
@@ -3681,7 +3956,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "17401000",
                 "bodySite_Snomed.display": "Cardiac valve",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Cardiac valve prosthesis"
             }
         ],
         "90200060": [
@@ -3694,7 +3970,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "302509004",
                 "bodySite_Snomed.display": "Entire heart",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Widened cardiac silhouette"
             }
         ],
         "90200067": [
@@ -3707,7 +3984,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Cavitating mass(es)"
             }
         ],
         "90200068": [
@@ -3720,7 +3998,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Cavitating mass with content"
             }
         ],
         "90200070": [
@@ -3733,7 +4012,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Cervical flexion"
             }
         ],
         "90200072": [
@@ -3746,7 +4026,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Chronic clavicle fracture"
             }
         ],
         "90200073": [
@@ -3759,7 +4040,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "85050009",
                 "bodySite_Snomed.display": "Humerus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Chronic humerus fracture"
             }
         ],
         "90200074": [
@@ -3772,7 +4054,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "78904004",
                 "bodySite_Snomed.display": "Chest wall",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Chronic rib fracture"
             }
         ],
         "90200075": [
@@ -3785,7 +4068,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Clavicle fixation"
             }
         ],
         "90200076": [
@@ -3798,7 +4082,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51299004",
                 "bodySite_Snomed.display": "Clavicle",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Clavicle lesion"
             }
         ],
         "90200082": [
@@ -3811,7 +4096,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "41801008",
                 "bodySite_Snomed.display": "Coronary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Coronary stent"
             }
         ],
         "90200086": [
@@ -3824,7 +4110,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "5798000",
                 "bodySite_Snomed.display": "Diaphragm",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diaphragmatic elevation"
             }
         ],
         "90200087": [
@@ -3837,7 +4124,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "5798000",
                 "bodySite_Snomed.display": "Diaphragm",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diaphragmatic eventration"
             }
         ],
         "90200089": [
@@ -3850,7 +4138,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "3120008",
                 "bodySite_Snomed.display": "Pleura",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse pleural thickening"
             }
         ],
         "90200090": [
@@ -3863,7 +4152,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "420345000",
                 "bodySite_Snomed.display": "Vertebra",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse spinal osteophytes"
             }
         ],
         "90200091": [
@@ -3876,7 +4166,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113276009",
                 "bodySite_Snomed.display": "Bowel",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Distended bowel"
             }
         ],
         "90200093": [
@@ -3889,7 +4180,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Electronic cardiac devices"
             }
         ],
         "90200097": [
@@ -3902,7 +4194,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "50519007",
                 "bodySite_Snomed.display": "Right upper quadrant of abdomen",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Gallstones"
             }
         ],
         "90200098": [
@@ -3915,7 +4208,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "25271004",
                 "bodySite_Snomed.display": "Gastroesophageal junction",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Gastric band"
             }
         ],
         "90200101": [
@@ -3928,7 +4222,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "280062008",
                 "bodySite_Snomed.display": "Esophageal hiatus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Hiatus hernia"
             }
         ],
         "90200102": [
@@ -3941,7 +4236,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "53074004",
                 "bodySite_Snomed.display": "Bronchial lymph node",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Hilar lymphadenopathy"
             }
         ],
         "90200104": [
@@ -3954,7 +4250,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "85050009",
                 "bodySite_Snomed.display": "Humerus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Humeral lesion"
             }
         ],
         "90200108": [
@@ -3967,7 +4264,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Hyperinflation"
             }
         ],
         "90200109": [
@@ -3980,7 +4278,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Reduced lung markings"
             }
         ],
         "90200110": [
@@ -3993,7 +4292,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Image obscured"
             }
         ],
         "90200111": [
@@ -4006,7 +4306,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "244390008",
                 "bodySite_Snomed.display": "Head and neck vein",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "In position CVC"
             }
         ],
         "90200112": [
@@ -4019,7 +4320,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "44567001",
                 "bodySite_Snomed.display": "Trachea",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "In position ETT"
             }
         ],
         "90200114": [
@@ -4032,7 +4334,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "32849002",
                 "bodySite_Snomed.display": "Esophagus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "In position NGT"
             }
         ],
         "90200115": [
@@ -4045,7 +4348,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "81040000",
                 "bodySite_Snomed.display": "Pulmonary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "In position PAC"
             }
         ],
         "90200116": [
@@ -4058,7 +4362,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Incompletely imaged chest"
             }
         ],
         "90200117": [
@@ -4071,7 +4376,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "72410000",
                 "bodySite_Snomed.display": "Mediastinum",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Inferior mediastinal mass"
             }
         ],
         "90200118": [
@@ -4084,7 +4390,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "47495005",
                 "bodySite_Snomed.display": "Intercostal space",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Intercostal drain"
             }
         ],
         "90200120": [
@@ -4097,7 +4404,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Internal foreign body"
             }
         ],
         "90200122": [
@@ -4110,7 +4418,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse interstitial thickening"
             }
         ],
         "90200123": [
@@ -4123,7 +4432,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Basal interstitial thickening"
             }
         ],
         "90200125": [
@@ -4136,7 +4446,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Upper interstitial thickening"
             }
         ],
         "90200127": [
@@ -4149,7 +4460,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse fibrotic volume loss"
             }
         ],
         "90200128": [
@@ -4162,7 +4474,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Lower zone fibrotic volume loss"
             }
         ],
         "90200130": [
@@ -4175,7 +4488,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113254000",
                 "bodySite_Snomed.display": "Interstitial tissue of lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Upper zone fibrotic volume loss"
             }
         ],
         "90200133": [
@@ -4188,7 +4502,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "297167000",
                 "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Kyphosis"
             }
         ],
         "90200134": [
@@ -4201,7 +4516,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Atelectasis"
             }
         ],
         "90200135": [
@@ -4214,7 +4530,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Loculated effusion"
             }
         ],
         "90200138": [
@@ -4227,7 +4544,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Lung collapse"
             }
         ],
         "90200147": [
@@ -4240,7 +4558,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Post resection volume loss"
             }
         ],
         "90200148": [
@@ -4253,7 +4572,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Lung sutures"
             }
         ],
         "90200149": [
@@ -4266,7 +4586,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "244390008",
                 "bodySite_Snomed.display": "Head and neck vein",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Suboptimal CVC"
             }
         ],
         "90200150": [
@@ -4279,7 +4600,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "44567001",
                 "bodySite_Snomed.display": "Trachea",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Suboptimal ETT"
             }
         ],
         "90200151": [
@@ -4292,7 +4614,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "25271004",
                 "bodySite_Snomed.display": "Gastroesophageal junction",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Suboptimal gastric band"
             }
         ],
         "90200155": [
@@ -4305,7 +4628,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "32849002",
                 "bodySite_Snomed.display": "Esophagus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Suboptimal NGT"
             }
         ],
         "90200156": [
@@ -4318,7 +4642,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "81040000",
                 "bodySite_Snomed.display": "Pulmonary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Suboptimal PAC"
             }
         ],
         "90200157": [
@@ -4331,7 +4656,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "76752008",
                 "bodySite_Snomed.display": "Breast",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Mastectomy"
             }
         ],
         "90200159": [
@@ -4344,7 +4670,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "72410000",
                 "bodySite_Snomed.display": "Mediastinum",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Mediastinal clips"
             }
         ],
         "90200162": [
@@ -4357,7 +4684,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Diffuse nodular miliary lesions"
             }
         ],
         "90200164": [
@@ -4370,7 +4698,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Multiple masses or nodules"
             }
         ],
         "90200165": [
@@ -4383,7 +4712,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "45048000",
                 "bodySite_Snomed.display": "Neck",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Neck clips"
             }
         ],
         "90200168": [
@@ -4396,7 +4726,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Nipple shadow"
             }
         ],
         "90200170": [
@@ -4409,7 +4740,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "32849002",
                 "bodySite_Snomed.display": "Esophagus",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Oesophageal stent"
             }
         ],
         "90200172": [
@@ -4422,7 +4754,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "84667006",
                 "bodySite_Snomed.display": "Cervical vertebra",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Osteopaenia"
             }
         ],
         "90200175": [
@@ -4435,7 +4768,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Overexposed"
             }
         ],
         "90200178": [
@@ -4448,7 +4782,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "55678000",
                 "bodySite_Snomed.display": "Spinous process of vertebra",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Patient rotation"
             }
         ],
         "90200179": [
@@ -4461,7 +4796,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "56873002",
                 "bodySite_Snomed.display": "Breast bone",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Pectus carinatum"
             }
         ],
         "90200180": [
@@ -4474,7 +4810,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "56873002",
                 "bodySite_Snomed.display": "Breast bone",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Pectus excavatum"
             }
         ],
         "90200182": [
@@ -4487,7 +4824,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "54233001",
                 "bodySite_Snomed.display": "Peribronchial tissue",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Peribronchial cuffing"
             }
         ],
         "90200183": [
@@ -4500,7 +4838,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "42267001",
                 "bodySite_Snomed.display": "Pericardial fat",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Pericardial fat pad"
             }
         ],
         "90200189": [
@@ -4513,7 +4852,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Pleural mass"
             }
         ],
         "90200206": [
@@ -4526,7 +4866,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "81040000",
                 "bodySite_Snomed.display": "Pulmonary artery",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Pulmonary artery enlargement"
             }
         ],
         "90200207": [
@@ -4539,7 +4880,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Pulmonary congestion"
             }
         ],
         "90200209": [
@@ -4552,7 +4894,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113197003",
                 "bodySite_Snomed.display": "Bone structure of rib",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Rib fixation"
             }
         ],
         "90200211": [
@@ -4565,7 +4908,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113197003",
                 "bodySite_Snomed.display": "Bone structure of rib",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Rib lesion"
             }
         ],
         "90200213": [
@@ -4578,7 +4922,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "113197003",
                 "bodySite_Snomed.display": "Bone structure of rib",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Rib resection"
             }
         ],
         "90200214": [
@@ -4591,7 +4936,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "7885001",
                 "bodySite_Snomed.display": "Rotator cuff",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Rotator cuff anchor"
             }
         ],
         "90200216": [
@@ -4604,7 +4950,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "79601000",
                 "bodySite_Snomed.display": "Scapula",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Scapular fracture"
             }
         ],
         "90200217": [
@@ -4617,7 +4964,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "79601000",
                 "bodySite_Snomed.display": "Scapula",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Scapular lesion"
             }
         ],
         "90200219": [
@@ -4630,7 +4978,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "297167000",
                 "bodySite_Snomed.display": "Musculoskeletal structure of thoracic spine",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Scoliosis"
             }
         ],
         "90200220": [
@@ -4643,7 +4992,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Segmental collapse"
             }
         ],
         "90200229": [
@@ -4656,7 +5006,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Simple effusion"
             }
         ],
         "90200230": [
@@ -4669,7 +5020,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "91381003",
                 "bodySite_Snomed.display": "Pleural cavity",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Simple pneumothorax"
             }
         ],
         "90200232": [
@@ -4682,7 +5034,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "39607008",
                 "bodySite_Snomed.display": "Lung",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Solitary lung mass"
             }
         ],
         "90200237": [
@@ -4695,7 +5048,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51282000",
                 "bodySite_Snomed.display": "Bone structure of spine",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Spinal fixation"
             }
         ],
         "90200238": [
@@ -4708,7 +5062,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "8983005",
                 "bodySite_Snomed.display": "Intervertebral joint",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Spinal arthritis"
             }
         ],
         "90200239": [
@@ -4721,7 +5076,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "1141986006",
                 "bodySite_Snomed.display": "Thoracic spinal column region",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Spinal lesion"
             }
         ],
         "90200244": [
@@ -4734,7 +5090,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "56873002",
                 "bodySite_Snomed.display": "Breast bone",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Sternotomy wires"
             }
         ],
         "90200245": [
@@ -4747,7 +5104,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "71966008",
                 "bodySite_Snomed.display": "Subcutaneous tissue",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Subcutaneous emphysema"
             }
         ],
         "90200247": [
@@ -4760,7 +5118,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "72410000",
                 "bodySite_Snomed.display": "Mediastinum",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Superior mediastinal mass"
             }
         ],
         "90200251": [
@@ -4773,7 +5132,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "44567001",
                 "bodySite_Snomed.display": "Trachea",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Tracheal deviation"
             }
         ],
         "90200252": [
@@ -4786,7 +5146,8 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Underexposed"
             }
         ],
         "90200253": [
@@ -4799,25 +5160,26 @@
                 "radlex_system": "http://radlex.org",
                 "bodySite_Snomed.code": "51185008",
                 "bodySite_Snomed.display": "Chest",
-                "snomed_system": "http://snomed.info/sct"
+                "snomed_system": "http://snomed.info/sct",
+                "Nuance_observation.text": "Underinflation"
             }
         ]
-            
-        },
+    },
 
         "radelement_coding_system": {
 
             "RDES225": [
                 {
-                    "RadElement_observation.code": "RDES225",
-                    "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
-                    "RadElement_system": "http://radelement.org"
+                    "Radelement_observation.code": "RDES225",
+                    "Radelement_observation.display": "Chest Radiograph Airspace Opacities",
+                    "Radelement_system": "http://radelement.org",
+                    "Radelement_observation.text" : ""
                 },
                 {"focal_airspace_opacity": [
                         {
-                            "RadElement_observation.code": "RDES225",
-                            "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
-                            "RadElement_system": "http://radelement.org",
+                            "Radelement_observation.code": "RDES225",
+                            "Radelement_observation.display": "Chest Radiograph Airspace Opacities",
+                            "Radelement_system": "http://radelement.org",
                             "bodySite_Radlex.code": "RID1301",
                             "bodySite_Radlex.display": "lung",
                             "radlex_system": "http://radlex.org",
@@ -4829,9 +5191,9 @@
                     ]},
                 {"multifocal_airspace_opacity": [
                         {
-                            "RadElement_observation.code": "RDES225",
-                            "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
-                            "RadElement_system": "http://radelement.org",
+                            "Radelement_observation.code": "RDES225",
+                            "Radelement_observation.display": "Chest Radiograph Airspace Opacities",
+                            "Radelement_system": "http://radelement.org",
                             "bodySite_Radlex.code": "RID1301",
                             "bodySite_Radlex.display": "lung",
                             "radlex_system": "http://radlex.org",
@@ -4842,9 +5204,9 @@
                     ]},
                 {"diffuse_lower_airspace_opacity": [
                         {
-                            "RadElement_observation.code": "RDES225",
-                            "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
-                            "RadElement_system": "http://radelement.org",
+                            "Radelement_observation.code": "RDES225",
+                            "Radelement_observation.display": "Chest Radiograph Airspace Opacities",
+                            "Radelement_system": "http://radelement.org",
                             "bodySite_Radlex.code": "RID1354",
                             "bodySite_Radlex.display": "lower lung zone",
                             "radlex_system": "http://radlex.org",
@@ -4855,9 +5217,9 @@
                     ]},
                 {"diffuse_upper_airspace_opacity": [
                         {
-                            "RadElement_observation.code": "RDES225",
-                            "RadElement_observation.display": "Chest Radiograph Airspace Opacities",
-                            "RadElement_system": "http://radelement.org",
+                            "Radelement_observation.code": "RDES225",
+                            "Radelement_observation.display": "Chest Radiograph Airspace Opacities",
+                            "Radelement_system": "http://radelement.org",
                             "bodySite_Radlex.code": "RID1348",
                             "bodySite_Radlex.display": "upper lung zone",
                             "radlex_system": "http://radlex.org",
@@ -4872,9 +5234,10 @@
 
             "RDES254": [
                 {
-                    "RadElement_observation.code": "RDES254",
-                    "RadElement_observation.display": "Pleural Effusion",
-                    "RadElement_system": "http://radelement.org",
+                    "Radelement_observation.code": "RDES254",
+                    "Radelement_observation.display": "Pleural Effusion",
+                    "Radelement_observation.text" : "Pleural effusion",
+                    "Radelement_system": "http://radelement.org",
                     "bodySite_Radlex.code": "RID1362",
                     "bodySite_Radlex.display": "pleura",
                     "radlex_system": "http://radlex.org",
@@ -4887,9 +5250,10 @@
 
             "RDES76": [
                 {
-                    "RadElement_observation.code": "RDES76",
-                    "RadElement_observation.display": "Pneumonia",
-                    "RadElement_system": "http://radelement.org",
+                    "Radelement_observation.code": "RDES76",
+                    "Radelement_observation.display": "Pneumonia",
+                    "Radelement_observation.text" : "Pneumomediastinum",
+                    "Radelement_system": "http://radelement.org",
                     "bodySite_Radlex.code": "RID1301",
                     "bodySite_Radlex.display": "lung",
                     "radlex_system": "http://radlex.org",
@@ -4902,9 +5266,10 @@
 
             "RDES44": [
                 {
-                    "RadElement_observation.code": "RDES44",
-                    "RadElement_observation.display": "Pneumothorax",
-                    "RadElement_system": "http://radelement.org",
+                    "Radelement_observation.code": "RDES44",
+                    "Radelement_observation.display": "Pneumothorax",
+                    "Radelement_observation.text" : "Pneumothorax",
+                    "Radelement_system": "http://radelement.org",
                     "bodySite_Radlex.code": "RID1301",
                     "bodySite_Radlex.display": "lung",
                     "radlex_system": "http://radlex.org",
@@ -4917,9 +5282,10 @@
 
             "RDES227": [
                 {
-                    "RadElement_observation.code": "RDES227",
-                    "RadElement_observation.display": "Chest Radiograph Pulmonary Nodules",
-                    "RadElement_system": "http://radelement.org",
+                    "Radelement_observation.code": "RDES227",
+                    "Radelement_observation.display": "Chest Radiograph Pulmonary Nodules",
+                    "Radelement_observation.text" : "Solitary lung nodule",
+                    "Radelement_system": "http://radelement.org",
                     "bodySite_Radlex.code": "RID1301",
                     "bodySite_Radlex.display": "lung",
                     "radlex_system": "http://radlex.org",
@@ -4931,9 +5297,10 @@
 
             "RDES230": [
                 {
-                    "RadElement_observation.code": "RDES230",
-                    "RadElement_observation.display": "Vertebral Compression Fracture",
-                    "RadElement_system": "http://radelement.org",
+                    "Radelement_observation.code": "RDES230",
+                    "Radelement_observation.display": "Vertebral Compression Fracture",
+                    "Radelement_observation.text" : "Vertebral Compression Fracture",
+                    "Radelement_system": "http://radelement.org",
                     "bodySite_Radlex.code": "RID7741",
                     "bodySite_Radlex.display": "spine",
                     "radlex_system": "http://radlex.org"
@@ -4943,9 +5310,10 @@
 
             "RDES228": [
                 {
-                    "RadElement_observation.code": "RDES228",
-                    "RadElement_observation.display": "Pneumoperitoneum",
-                    "RadElement_system": "http://radelement.org",
+                    "Radelement_observation.code": "RDES228",
+                    "Radelement_observation.display": "Pneumoperitoneum",
+                    "Radelement_observation.text" : "Pneumoperitoneum",
+                    "Radelement_system": "http://radelement.org",
                     "bodySite_Radlex.code": "RID56",
                     "bodySite_Radlex.display": "abdomen",
                     "radlex_system": "http://radlex.org",

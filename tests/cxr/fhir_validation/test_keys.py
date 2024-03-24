@@ -100,42 +100,21 @@ class TestKeys(BaseClass):
         fhir_contents = self.fhir_json
         model_output_contents = self.model_output_json
         
-        
-        status = self.fhir_util.verify_probability(fhir_contents,'RoW',"radlex")
-        print(status)
-        # status = self.generic_util.verify_observation_code(fhir_contents,"uS","AnnaliSE","NUance","radelement")
-        # # self.generic_util.verify_observation_display(fhir_contents,"uS","AnnaliSE","NUance")
-        
-        if not status:
-            pytest.fail("failed")
 
-        
-        
-        
-        
-        # max_value = max(self.model_output_json['cxr_value']['study_laterality']['findings']['abdominal_clips']['values'].values())
-        # print(max_value)
-        
-        # print(op)
-        
-        # for i in op : 
-        
-        '''
-        parse fhir json
-        parse model output
-        if obs.code of finding from fhir.json matches in model output, 
-            - get key of max value of model output for that code
-            - In component of finding of fhir.json, verify above and value of 'display' is same
-            - then, the value of code should match as per req
-            - then value of valueQuantity should match with the max value %
-            - 
+        status = self.fhir_util.verify_probability_score(model_output_contents=model_output_contents,fhir_contents=fhir_contents,system=["row"])
+        status1 = self.fhir_util.verify_probability(fhir_contents=fhir_contents,system=["row","nuance", "snomed", "radlex"])
+        status2 = self.fhir_util.verify_laterality(model_output_contents=model_output_contents,fhir_contents=fhir_contents,system=["row"])
+        status3 = self.fhir_util.verify_presence_qualifier(model_output_contents=model_output_contents,fhir_contents=fhir_contents,
+                                                           config_json_path="/verification/config_files/all_present/config.json",system=["nuance", "snomed", "radlex"])
+
+        if not status or not status1 or not status2 or not status3:
+            pytest.fail("Test failed")
             
-        code should match for nuance and radele as well
-        '''
             
-        
-        
-        
+    def test_sample1(self):
+        fhir_contents = self.fhir_json
+        keyword = self.fhir_util.verify_observation1_code(fhir_contents=fhir_contents,system=["us","nuance","annalise"])
+        self.generic_util.run_keyword(keyword)
         
         
         

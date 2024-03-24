@@ -317,7 +317,7 @@ class ObservationCode(object):
                     self.verify_obs_code_annalise_system(fhir_contents,"ROW")
 
 
-        # This block verifies the condition/scenario for ROW and annalise coding system
+        # This block verifies the condition/scenario for US and annalise/nuance/radElement coding systems
         elif region_US and not region_ROW:
             valid_args_for_US = {"us", "annalise", "nuance", "radelement"}
             invalid_args_for_US = [arg for arg in args_lower if arg not in valid_args_for_US]

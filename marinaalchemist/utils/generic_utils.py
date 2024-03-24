@@ -53,4 +53,9 @@ class GenericUtils(object):
         return file_contents
     
     
+    def run_keyword(self, keyword):
+        status = keyword
+        if not status:
+            pytest.fail("Test Failed!")
+    
         

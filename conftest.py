@@ -20,6 +20,7 @@ def setup(request):
     request.cls.non_observation_df = ExcelUtils().excel_to_df(fhir_requirement_path, non_observation_excel_sheet)
     request.cls.fhir_json = read_fhir_json()
     request.cls.model_output_json = read_model_output_json()
+    request.cls.cxr_default_threshold = read_cxr_default_threshold()
     request.cls.docker_util = DockerUtils()
     request.cls.dicom_util = DicomUtils()
     request.cls.cxr_req = read_cxr_req()
@@ -54,6 +55,14 @@ def read_mappings_json():
     with open(mappings_json_path, 'r') as file: 
         mappings_json_contents = json.load(file)
     return mappings_json_contents
+
+
+def read_cxr_default_threshold():
+    cxr_default_threshold_path = Config().get_value_of_config_key("cxr_default_threshold_path")
+    with open(cxr_default_threshold_path, 'r') as file: 
+        cxr_default_threshold_contents = json.load(file)
+    return cxr_default_threshold_contents
+
 
 # @pytest.fixture(scope="class", params = ["input_path_TC_1","input_path_TC_2","input_path_TC_3","input_path_TC_4","input_path_TC_5",
 #                                          "input_path_TC_6","input_path_TC_7","input_path_TC_8"])

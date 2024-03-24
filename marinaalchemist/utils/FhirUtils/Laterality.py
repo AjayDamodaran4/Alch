@@ -3,18 +3,106 @@ from ..config_reader import Config
 import conftest
 from ..dicom_utils import DicomUtils
 from ..excelutils import ExcelUtils
+"""
+TO DO
+1. try new logic similar to probability
+2. what if no laterality is present in FHIR. say the findings presnet in FHIR.json are out of OPT-CLI_002 laterality group.
 
+"""
 
 class Laterality(object):
     
     def __init__(self):
-        self.annalise_code_block_executed = False
-        self.annalise_display_block_executed = False
         self.cxr_req = conftest.read_cxr_req()
         self.cxr_mappings = conftest.read_mappings_json()
+        self.fda_findings = ["pleural_effusion", "pneumothorax", "spine_wedge_fracture", "subdiaphragmatic_gas", "tension_pneumothorax", "RDES254", "RDES230", "RDES228"]
+        self.group_findings =["RDES225","RDES44"]
+        self.laterality_mismatch = []
+        
+    def expected_laterality_component(self, observation_name, model_output_contents):
+        laterality_dict = model_output_contents['cxr_value']['study_laterality']['findings'][observation_name]['values']
+        laterality = max(laterality_dict, key=laterality_dict.get)
+        laterality_value = max(laterality_dict.values()) * 100
+        
+        expected_laterality_component = {
+                                            "code": {
+                                                "coding": [
+                                                {
+                                                    "system": "http://snomed.info/sct",
+                                                    "code": self.cxr_req.get('laterality_codes',{}).get(self.cxr_req.get(laterality, None)),
+                                                    "display": self.cxr_req.get(laterality, None)
+                                                }
+                                                ]
+                                            },
+                                            "valueQuantity": {
+                                                "value": laterality_value,
+                                                "unit": "percent",
+                                                "system": "http://unitsofmeasure.org",
+                                                "code": "%"
+                                            }
+                                            }
+        
+        return expected_laterality_component
 
-    def verify_laterality(self,fhir_contents,model_output_contents,*args):
-        args_lower = [arg.lower() for arg in args]
+    def find_component_index_for_laterality(self,components):
+        """
+        Find the index of the dictionary in the components list that contains a value from the test list.
+
+        Args:
+        - components (list): A list of dictionaries to search through.
+        - laterality_details (list): A list of values to search for.
+
+        Returns:
+        - int: The index of the dictionary containing a value from the laterality_details list, or -1 if no match is found.
+        """
+        
+        laterality_details = ['right', 'right lateral', 'left', 'left lateral', 'bilateral', '24028007', '7771000', '51440002']
+
+    # Iterate through each dictionary in the components
+        for index, value in enumerate(components):
+            # Iterate through the 'coding' list within the 'code' key of the dictionary
+            for coding in value.get("code", {}).get("coding", []):
+                if coding.get("display") is not None or coding.get("code") is not None:
+                    # Check if the 'display' value is present in the test list
+                    if coding.get("display").lower() in laterality_details or coding.get("code").lower() in laterality_details:
+                        # If a match is found, return the index of the dictionary
+                        return index
+    
+    # If no match is found, return -1
+        return -1
+    
+    
+    
+    def extract_fhir_laterality_component(self,fhir_contents, observation_name, observation):
+        if observation_name == "246501002":
+            pass
+        else:
+            observation_components = fhir_contents["contained"][observation]["component"]
+            laterality_component_index = self.find_component_index_for_laterality(observation_components)
+            laterality_component_fhir = observation_components[laterality_component_index]
+            return laterality_component_fhir
+        
+        
+    
+    def assert_laterality(self, fhir_contents, model_output_contents, observation_name, observation):
+        expected_laterality_component = self.expected_laterality_component(observation_name, model_output_contents)
+        fhir_laterality_component = self.extract_fhir_laterality_component(fhir_contents, observation_name, observation)
+        for expected, actual in zip(expected_laterality_component.items(), fhir_laterality_component.items()):
+            try:
+                assert expected == actual, f"Laterality item {actual} does not match with requirement {expected} for {observation_name} observation"
+            except AssertionError:
+                self.laterality_mismatch.append(observation_name)
+                print(f"Laterality item {actual} does not match with requirement {expected} for {observation_name} observation")
+            
+
+
+    def verify_laterality(self,fhir_contents=None, model_output_contents=None,system=None):
+        if fhir_contents is None or model_output_contents is None or system is None:
+            print("arguments connot be None")
+            pytest.fail("arguments cannot be None for verify_laterality")
+        args_lower = [arg.lower() for arg in system]
+        
+        
         region_ROW = "row" in args_lower
         region_US = "us" in args_lower
         
@@ -22,199 +110,83 @@ class Laterality(object):
         
         invalid_args = [arg for arg in args_lower if arg not in valid_args]
         if invalid_args:
-            raise ValueError(f"The following arguments is not supported: {', '.join(invalid_args)}. Supported arguments are : ('row', 'us', 'annalise', 'nuance', 'radelement')")
+            raise ValueError(f"The following arguments is not supported: {', '.join(invalid_args)}. Supported arguments are : ('row', 'us')")
 
         if not (region_ROW or region_US):
             raise ValueError("regionOfInstance - 'ROW' or 'US' argument must be specified")
 
         if len(args_lower) != len(set(args_lower)):
             raise ValueError("Duplicate arguments detected. Please provide each argument only once.")
-        
-        result_flag = True
-        laterality_mapping_code = None # Initialized for mapping nuance/radelement codes to annalise coded
-        laterality_failures = []
-        laterality_value_failures = []
-        code_failures = []
-        system_failures = []
+
+        laterality_absence = []
+        observation_not_found = []
         laterality_presence = []
-        fda_findings = ["pleural_effusion", "pneumothorax", "spine_wedge_fracture", "subdiaphragmatic_gas", "tension_pneumothorax", "RDES225", "RDES254", "RDES44", "RDES230", "RDES228"]
         excel_util = ExcelUtils()
         opt_cli_laterality = excel_util.opt_cli_laterality()
-        laterality_details = ['RIGHT', 'Right lateral', 'LEFT', 'Left lateral', 'BILATERAL', 'Bilateral', '24028007', '7771000', '51440002']
-        if region_ROW:
-            for observation in range(3,len(fhir_contents['contained'])):
-                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-                if target_obs == "246501002":
-                    pass
-                elif target_obs in opt_cli_laterality:
-                    print(opt_cli_laterality)
-                    for key, value in self.cxr_mappings.items():
-                        if target_obs in (key, value):
-                            laterality_mapping_code = key
-                            laterality_dict = model_output_contents['cxr_value']['study_laterality']['findings'][laterality_mapping_code]['values']
-                            laterality = max(laterality_dict, key=laterality_dict.get)
-                            laterality_value = max(laterality_dict.values()) * 100
-                            observation_laterality = fhir_contents['contained'][observation]['component'][0]['code']['coding'][0]['display']
-                            observation_laterality_value = fhir_contents['contained'][observation]['component'][0]['valueQuantity']['value']
-                            laterality_code = fhir_contents['contained'][observation]['component'][0]['code']['coding'][0]['code']
-                            laterality_system = fhir_contents['contained'][observation]['component'][0]['code']['coding'][0]['system']
-                        
-                            with allure.step(f"Verification of Laterality, Laterality value, code and system of {target_obs} observation"):
-                                
-                                verifications = [
-                                    ("Laterality code", laterality_code, self.cxr_req['laterality_codes'][observation_laterality]),
-                                    ("Laterality system", laterality_system, self.cxr_req['laterality_codes']['system']),
-                                    ("Laterality", observation_laterality, self.cxr_req[laterality]),
-                                    ("Laterality value", observation_laterality_value, laterality_value)
-                                ]
-
-                                for message, actual, expected in verifications:
-                                    try:
-                                        print(f"{message} of {target_obs} observation from FHIR.json: {actual}, {message} of {target_obs} observation from requirement: {expected}")
-                                        allure.attach(f"{message} of {target_obs} observation from FHIR.json: {actual}, {message} of {target_obs} observation from requirement: {expected}", 
-                                                    f"{message} of {target_obs} observation", allure.attachment_type.TEXT)
-                                        assert actual == expected, f"{message} mismatch found for {target_obs} observation"
-                                        allure.attach(f"{message} of {target_obs} observation matches with requirement", "Result", allure.attachment_type.TEXT)
-                                    except AssertionError:
-                                        if message == "Laterality code":
-                                            code_failures.append(target_obs)
-                                        elif message == "Laterality system":
-                                            system_failures.append(target_obs)
-                                        elif message == "Laterality":
-                                            laterality_failures.append(target_obs)
-                                        elif message == "Laterality value":
-                                            laterality_value_failures.append(target_obs)
-                else:
-                    for component in fhir_contents['contained'][observation]['component']:
-                        for key, value in component.items():
-                            if isinstance(value, str):
-                                try:
-                                    assert value not in laterality_details, f"Laterality details are present in components of {target_obs} observation"
-                                except AssertionError:
-                                    laterality_presence.append(target_obs)
-                            elif isinstance(value, dict):
-                                for sub_key, sub_value in value.items():
-                                    if isinstance(sub_value, str):
-                                        try:
-                                            assert sub_value not in laterality_details, f"Laterality details are present in components of {target_obs} observation"
-                                        except AssertionError:
-                                            laterality_presence.append(target_obs)
-                                    elif isinstance(sub_value, list):
-                                        for sub_dict in sub_value:
-                                            for sub_key2, sub_value2 in sub_dict.items():
-                                                try:
-                                                    assert sub_value2 not in laterality_details, f"Laterality details are present in components of {target_obs} observation"
-                                                except AssertionError:
-                                                    laterality_presence.append(target_obs)
-                                                    print(laterality_presence)
-                
-            failure_types = [laterality_failures, code_failures, system_failures, laterality_value_failures]
-            failure_messages = ["Laterality", "Laterality code", "Laterality system", "Laterality value"]
-
-            for fail_type, fail_message in zip(failure_types, failure_messages):
-                if fail_type:
-                    result_flag = False
-                    print(f"Mismatch in {fail_message} is observed in following observations: {fail_type}")
-                    with allure.step(f"Mismatch in {fail_message} is observed in FHIR.json"):
-                        allure.attach(f"Mismatch in {fail_message} is observed for following observations: {fail_type}",
-                                    "Step Failed", allure.attachment_type.TEXT)
-                        
-                        
-            if laterality_presence:
-                result_flag = False
-                print(f"Laterality is present for following observations which is not expected. They dont belong to OPT-CLI-002 group : {laterality_presence}")
-                with allure.step(f"Laterality is present for following observations which is not expected. They dont belong to OPT-CLI-002 group"):
-                        allure.attach(f"Laterality is present for following observations which is not expected. They dont belong to OPT-CLI-002 group: {laterality_presence}",
-                                    "Step Failed", allure.attachment_type.TEXT)
-            return result_flag
+        
+        for observation in range(3,len(fhir_contents['contained'])):
+            observation_name = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
+            if observation_name == "246501002":
+                continue
+            else:
+                observation_components = fhir_contents["contained"][observation]["component"]
             
-        elif region_US:
-            for observation in range(3,len(fhir_contents['contained'])):
-                target_obs = (fhir_contents["contained"][observation]["code"]["coding"][0]["code"])
-                if target_obs == "246501002":
-                    pass
-                elif target_obs not in fda_findings:
-                    for key, value in self.cxr_mappings.items():
-                        if target_obs in (key, value):
-                            laterality_mapping_code = key
-                            laterality_dict = model_output_contents['cxr_value']['study_laterality']['findings'][laterality_mapping_code]['values']
-                            laterality = max(laterality_dict, key=laterality_dict.get)
-                            laterality_value = max(laterality_dict.values()) * 100
-                            if laterality_mapping_code in ["pneumomediastinum", "single_pulmonary_nodule"]:
-                                observation_laterality = fhir_contents['contained'][observation]['component'][1]['code']['coding'][0]['display']
-                                observation_laterality_value = fhir_contents['contained'][observation]['component'][1]['valueQuantity']['value']
-                                laterality_code = fhir_contents['contained'][observation]['component'][1]['code']['coding'][0]['code']
-                                laterality_system = fhir_contents['contained'][observation]['component'][1]['code']['coding'][0]['system']
-                            else:
-                                observation_laterality = fhir_contents['contained'][observation]['component'][0]['code']['coding'][0]['display']
-                                observation_laterality_value = fhir_contents['contained'][observation]['component'][0]['valueQuantity']['value']
-                                laterality_code = fhir_contents['contained'][observation]['component'][0]['code']['coding'][0]['code']
-                                laterality_system = fhir_contents['contained'][observation]['component'][0]['code']['coding'][0]['system']
-                            
-                            with allure.step(f"Verification of Laterality, Laterality value, code and system of {target_obs} observation"):
-                                verifications = [
-                                    ("Laterality code", laterality_code, self.cxr_req['laterality_codes'][observation_laterality]),
-                                    ("Laterality system", laterality_system, self.cxr_req['laterality_codes']['system']),
-                                    ("Laterality", observation_laterality, self.cxr_req[laterality]),
-                                    ("Laterality value", observation_laterality_value, laterality_value)
-                                ]
-
-                                for message, actual, expected in verifications:
-                                    try:
-                                        print(f"{message} of {target_obs} observation from FHIR.json: {actual}, {message} of {target_obs} observation from requirement: {expected}")
-                                        allure.attach(f"{message} of {target_obs} observation from FHIR.json: {actual}, {message} of {target_obs} observation from requirement: {expected}", 
-                                                    f"{message} of {target_obs} observation", allure.attachment_type.TEXT)
-                                        assert actual == expected, f"{message} mismatch found for {target_obs} observation"
-                                        allure.attach(f"{message} of {target_obs} observation matches with requirement", "Result", allure.attachment_type.TEXT)
-                                    except AssertionError:
-                                        if message == "Laterality code":
-                                            code_failures.append(target_obs)
-                                        elif message == "Laterality system":
-                                            system_failures.append(target_obs)
-                                        elif message == "Laterality":
-                                            laterality_failures.append(target_obs)
-                                        elif message == "Laterality value":
-                                            laterality_value_failures.append(target_obs)
-
-                else:
-                    for component in fhir_contents['contained'][observation]['component']:
-                        for key, value in component.items():
-                            if isinstance(value, str):
-                                try:
-                                    assert value not in laterality_details, f"Laterality details are present in components of {target_obs} observation"
-                                except AssertionError:
-                                    laterality_presence.append(target_obs)
-                            elif isinstance(value, dict):
-                                for sub_key, sub_value in value.items():
-                                    if isinstance(sub_value, str):
-                                        try:
-                                            assert sub_value not in laterality_details, f"Laterality details are present in components of {target_obs} observation"
-                                        except AssertionError:
-                                            laterality_presence.append(target_obs)
-                                    elif isinstance(sub_value, list):
-                                        for sub_dict in sub_value:
-                                            for sub_key2, sub_value2 in sub_dict.items():
-                                                try:
-                                                    assert sub_value2 not in laterality_details, f"Laterality details are present in components of {target_obs} observation"
-                                                except AssertionError:
-                                                    laterality_presence.append(target_obs)
+            if region_ROW and not region_US:
+                if observation_name in opt_cli_laterality:
+                    try:
+                        assert self.find_component_index_for_laterality(observation_components) != -1
+                        self.assert_laterality(fhir_contents, model_output_contents, observation_name, observation)
+                        print(f"laterality details match as per requirement for {observation_name} observation.")
+                    except AssertionError:
+                        laterality_absence.append(observation_name)
+                        continue
                     
-            failure_types = [laterality_failures, code_failures, system_failures, laterality_value_failures]
-            failure_messages = ["Laterality", "Laterality code", "Laterality system", "Laterality value"]
+                else:
+                    try:
+                        assert any(observation_name == key or observation_name == value for key, value in self.cxr_mappings.items())
+                    except AssertionError:
+                        observation_not_found.append(observation_name)
+                        continue
+                    
+                    
+                    try:
+                        assert self.find_component_index_for_laterality(observation_components) == -1
+                        print(f"Laterality details not present in {observation_name} observation. This is expected behaviour.")
+                    except AssertionError:
+                        print(f"FAIL: Laterality details are available in {observation_name} observation which is not expected.")
+                        laterality_presence.append(observation_name)
 
-            for fail_type, fail_message in zip(failure_types, failure_messages):
-                if fail_type:
-                    result_flag = False
-                    print(f"Mismatch in {fail_message} is observed in following observations: {fail_type}")
-                    with allure.step(f"Mismatch in {fail_message} is observed in FHIR.json"):
-                        allure.attach(f"Mismatch in {fail_message} is observed for following observations: {fail_type}",
-                                    "Step Failed", allure.attachment_type.TEXT)
+            # US region scenarios should be handled. Did not handle now since model_output.json not available for US region
+            elif region_US and not region_ROW:
+                if observation_name not in (self.fda_findings + self.group_findings):
+                    self.assert_laterality(fhir_contents, model_output_contents, observation_name, observation)
+                else:
+                    try:
+                        assert self.find_component_index_for_laterality(observation_components) == -1
+                    except AssertionError:
+                        print(f"Laterality details are available in {observation_name} observation which is not expected.")
+        
+        
+        
+        
+        if observation_not_found or self.laterality_mismatch or laterality_absence or laterality_presence:
+            error_messages = []
 
+            if observation_not_found:
+                error_messages.append(f"Observation code from FHIR.json not found in CXR supported observation coding system for following observations: {observation_not_found}")
+            if self.laterality_mismatch:
+                error_messages.append(f"Laterality Qualifier from FHIR.json does not match with requirement for following observations: {self.laterality_mismatch}")    
+            if laterality_absence:
+                error_messages.append(f"Laterality Qualifier is not available in FHIR.json for following observations: {laterality_absence}")    
             if laterality_presence:
-                result_flag = False
-                print(f"Laterality is present for following observations which is not expected as these findings are FDA approved. : {laterality_presence}")
-                with allure.step(f"Laterality is present for following observations which is not expected as these findings are FDA approved."):
-                        allure.attach(f"Laterality is present for following observations which is not expected as these findings are FDA approved.: {laterality_presence}",
-                                    "Step Failed", allure.attachment_type.TEXT)
-                        
-            return result_flag
+                error_messages.append(f"Laterality Qualifier is present for following observations: {laterality_presence} which is not expected. These observation doesnt belong to OPT-CLI-002 laterality group") 
+            
+            if error_messages:
+                print("\n".join(error_messages))
+                return False
+        else:
+            return True
+            
+
+
+
