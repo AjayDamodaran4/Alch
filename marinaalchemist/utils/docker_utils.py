@@ -32,7 +32,7 @@ class DockerUtils(BaseClass):
             output_path: {'bind': '/app/output', 'mode': 'rw'},
             Config.get_value_of_config_key("container_temp_path"): {'bind': '/app/temporary', 'mode': 'rw'},
             Config.get_value_of_config_key("container_prior_path"): {'bind': '/app/prior', 'mode': 'rw'},
-            Config.get_value_of_config_key("config_file_path"): {'bind': '/app/config.json', 'mode': 'rw'}
+            Config.get_value_of_config_key("config_file_path"): {'bind': '/app/signed_config.p7', 'mode': 'rw'}
         }
 
         environment = {
@@ -108,7 +108,6 @@ class DockerUtils(BaseClass):
     #             print(f"Error starting the container: {str(e)}")
     #
     def check_container_logs(self):
-        # target_string = "uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)"
         target_string = "Job processed successfully"
         max_check_time_seconds = 300  # Maximum checking time (seconds)
         check_interval_seconds = 10
@@ -121,6 +120,7 @@ class DockerUtils(BaseClass):
             while elapsed_time < max_check_time_seconds:
                 container = client.containers.get(self.container_name)
                 logs = container.logs().decode("utf-8")
+                print(logs)
     
                 if target_string in logs:
                     print(f"'{target_string}' message is observed in the container logs.")

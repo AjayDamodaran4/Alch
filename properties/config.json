@@ -12,13 +12,13 @@
   "requestPort": "8080",
   "container_name": "aiservice",
   "output_path": "/verification/output/",
-  "config_file_path": "/cxr_testdata/config/config.json",
+  "config_file_path": "/cxr_testdata/config/signed_config.p7",
   "TZ": "Europe/Stockholm",
   "runMode": "auto",
   "container_input_path": "/app/input",
   "container_output_path": "/app/output",
   "container_prior_path": "/app/prior",
   "container_temp_path": "/app/temp",
-  "docker_image": "274616382064.dkr.ecr.ap-south-2.amazonaws.com/marina:annalise-xray-chest-fhir_sc-2.1.4",
+  "docker_image": "274616382064.dkr.ecr.ap-south-2.amazonaws.com/marina:annalise-xray-chest-fhir_sc-2.1.3",
   "Example": "/verification/output/75/Annalise-cxr-FHIR.json"
 }
